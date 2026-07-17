@@ -19,13 +19,14 @@ export function FeaturedProjectSection({
     >
       <Container className="relative pt-10 md:pt-14">
         <article className="grid overflow-hidden border border-line bg-surface shadow-portfolio lg:grid-cols-[1.8fr_0.8fr]">
-          <div className="relative aspect-[16/10] border-b border-line bg-[#e8edf0] lg:aspect-auto lg:min-h-[26rem] lg:border-b-0 lg:border-r">
+          <div className="flex items-center border-b border-line bg-[#e8edf0] lg:border-b-0 lg:border-r">
             <Image
               alt={content.imageAlt}
-              className="object-cover object-top"
-              fill
+              className="h-auto w-full"
+              height={643}
               sizes="(max-width: 1023px) 100vw, 70vw"
               src={content.image}
+              width={1028}
             />
           </div>
 

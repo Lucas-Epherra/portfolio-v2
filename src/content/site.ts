@@ -41,7 +41,7 @@ export const siteContent = {
         "Built across frontend, backend, data and production delivery.",
       ],
       stack: ["Next.js", "TypeScript", "NestJS", "Prisma", "PostgreSQL"],
-      image: "/images/projects/mitaller360.webp",
+      image: "/images/projects/mitaller360-overview.webp",
       imageAlt: "MiTaller360 workshop management dashboard",
     },
     selectedProjects: {
@@ -160,7 +160,7 @@ export const siteContent = {
         "Construida desde el frontend y el backend hasta los datos y el despliegue productivo.",
       ],
       stack: ["Next.js", "TypeScript", "NestJS", "Prisma", "PostgreSQL"],
-      image: "/images/projects/mitaller360.webp",
+      image: "/images/projects/mitaller360-overview.webp",
       imageAlt: "Panel de gestión de talleres de MiTaller360",
     },
     selectedProjects: {
