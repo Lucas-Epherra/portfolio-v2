@@ -1,36 +1,60 @@
-import { CONTACT_EMAIL } from "@/content/site";
+import {
+  CONTACT_EMAIL,
+  GITHUB_URL,
+  LINKEDIN_URL,
+  SITE_URL,
+} from "@/content/site";
 import type { ContactContent } from "@/types/site-content";
 
-import { ArrowIcon } from "../ui/ArrowIcon";
 import { Container } from "../ui/Container";
 
 interface ContactSectionProps {
   content: ContactContent;
 }
 
-/** Ofrece un cierre directo para conversaciones laborales o de producto. */
+/** Cierra la portada con canales de contacto y perfiles profesionales reales. */
 export function ContactSection({ content }: ContactSectionProps) {
+  const links = [
+    { href: `mailto:${CONTACT_EMAIL}`, label: content.emailLabel, value: CONTACT_EMAIL },
+    { href: GITHUB_URL, label: "GitHub", value: "github.com/Lucas-Epherra" },
+    { href: LINKEDIN_URL, label: "LinkedIn", value: "linkedin.com/in/lucas-epherra" },
+    { href: SITE_URL, label: content.websiteLabel, value: "lucasepherra.com.ar" },
+  ];
+
   return (
-    <section id="contact" className="scroll-mt-8 bg-dark py-24 text-surface sm:py-32">
-      <Container>
-        <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-accent">
-          {content.eyebrow}
-        </p>
-        <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:items-end">
-          <h2 className="max-w-5xl font-serif text-5xl leading-[1.02] tracking-[-0.04em] sm:text-6xl lg:col-span-8 lg:text-7xl">
+    <section id="contact" className="scroll-mt-8 bg-surface py-16 sm:py-20">
+      <Container className="grid gap-12 lg:grid-cols-12 lg:items-center">
+        <div className="border-l-2 border-accent pl-7 lg:col-span-7 lg:pl-12">
+          <p className="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-accent">
+            {content.eyebrow}
+          </p>
+          <h2 className="mt-7 max-w-3xl font-serif text-5xl leading-[1.03] tracking-[-0.035em] sm:text-6xl">
             {content.title}
           </h2>
-          <p className="max-w-lg text-base leading-7 text-surface/65 lg:col-span-4">
-            {content.text}
-          </p>
+          <p className="mt-6 max-w-lg text-sm leading-6 text-muted">{content.text}</p>
         </div>
-        <a
-          className="group mt-16 flex items-center justify-between gap-6 border-y border-surface/20 py-7 font-serif text-2xl transition-colors hover:text-accent sm:text-4xl"
-          href={`mailto:${CONTACT_EMAIL}`}
-        >
-          <span>{content.emailLabel}</span>
-          <ArrowIcon className="size-8 shrink-0 transition-transform duration-300 group-hover:translate-x-2 sm:size-10" />
-        </a>
+
+        <ul className="border-t border-line lg:col-span-5">
+          {links.map((link) => {
+            const external = link.href.startsWith("http");
+
+            return (
+              <li className="border-b border-line" key={link.href}>
+                <a
+                  className="grid min-h-13 grid-cols-[5rem_1fr] items-center gap-4 text-sm transition-colors hover:text-accent"
+                  href={link.href}
+                  rel={external ? "noreferrer" : undefined}
+                  target={external ? "_blank" : undefined}
+                >
+                  <span className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-accent">
+                    {link.label}
+                  </span>
+                  <span className="truncate">{link.value}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </Container>
     </section>
   );

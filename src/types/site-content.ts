@@ -8,54 +8,44 @@ export interface NavigationItem {
 
 /** Acción principal o secundaria de la portada. */
 export interface CallToAction {
-  href: `#${string}` | `mailto:${string}`;
+  download?: boolean;
+  href: `#${string}` | `/${string}` | `mailto:${string}`;
   label: string;
 }
 
 /** Contenido localizado del hero principal. */
 export interface HeroContent {
-  availability: string;
   description: string;
-  eyebrow: string;
+  location: string[];
   primaryAction: CallToAction;
+  role: string;
   secondaryAction: CallToAction;
-  titleEnd: string;
-  titleFocus: string;
-  titleStart: string;
-}
-
-/** Etiqueta y valor verificable asociado a un proyecto. */
-export interface ProjectFact {
-  label: string;
-  value: string;
+  titleLines: string[];
 }
 
 /** Contenido del proyecto insignia presentado en la portada. */
 export interface FeaturedProjectContent {
-  capabilities: string[];
-  eyebrow: string;
-  facts: ProjectFact[];
-  panelLabel: string;
-  panelTitle: string;
+  category: string;
+  image: `/${string}`;
+  imageAlt: string;
+  number: string;
+  role: string;
+  roleLabel: string;
   stack: string[];
-  summary: string;
+  summary: string[];
   title: string;
-  workFlow: string[];
 }
 
-/** Capacidad profesional explicada mediante una responsabilidad concreta. */
-export interface CapabilityItem {
-  description: string;
-  title: string;
+/** Dato profesional breve presentado en la sección de perfil. */
+export interface AboutFact {
+  label: string;
+  value: string;
 }
 
 /** Presentación profesional y alcance técnico del perfil. */
 export interface AboutContent {
-  capabilities: CapabilityItem[];
-  eyebrow: string;
+  facts: AboutFact[];
   paragraphs: string[];
-  technologies: string[];
-  technologiesLabel: string;
   title: string;
 }
 
@@ -79,10 +69,7 @@ export interface SelectedProject {
 
 /** Grupo localizado de proyectos seleccionados. */
 export interface SelectedProjectsContent {
-  eyebrow: string;
-  introduction: string;
   projects: SelectedProject[];
-  title: string;
 }
 
 /** Paso verificable de la forma de trabajo. */
@@ -94,9 +81,7 @@ export interface ApproachStep {
 
 /** Forma de trabajo y servicios que puede ofrecer Lucas. */
 export interface ApproachContent {
-  eyebrow: string;
-  services: string[];
-  servicesLabel: string;
+  introduction: string;
   steps: ApproachStep[];
   title: string;
 }
@@ -107,6 +92,7 @@ export interface ContactContent {
   emailLabel: string;
   text: string;
   title: string;
+  websiteLabel: string;
 }
 
 /** Contenido localizado requerido por la primera versión de la portada. */
@@ -114,10 +100,10 @@ export interface SiteContent {
   about: AboutContent;
   approach: ApproachContent;
   contact: ContactContent;
-  contactLabel: string;
   description: string;
   featuredProject: FeaturedProjectContent;
   footerNote: string;
+  footerRights: string;
   hero: HeroContent;
   languageLabel: string;
   navigation: NavigationItem[];

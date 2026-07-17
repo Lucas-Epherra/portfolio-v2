@@ -11,103 +11,50 @@ export const siteContent = {
       "Full Stack Developer building complete web products with a strong frontend foundation, backend integrations and production delivery.",
     navigationLabel: "Primary navigation",
     languageLabel: "Cambiar el sitio a español",
-    contactLabel: "Start a conversation",
     navigation: [
-      { href: "#top", label: "Profile" },
-      { href: "#work", label: "Selected work" },
-      { href: "#about", label: "Capabilities" },
+      { href: "#work", label: "Work" },
+      { href: "#capabilities", label: "Capabilities" },
+      { href: "#about", label: "About" },
       { href: "#contact", label: "Contact" },
     ],
     hero: {
-      availability: "Open to product and engineering opportunities",
-      eyebrow: "Full Stack Developer · Product-minded execution",
-      titleStart: "I build",
-      titleFocus: "web products",
-      titleEnd: "from interface to production.",
+      role: "Full Stack Developer",
+      location: ["ARG", "UTC-3"],
+      titleLines: ["I design, build and", "ship complete", "web products."],
       description:
-        "I’m Lucas Epherra. I work across frontend, APIs, authentication, data and deployment to turn product requirements into complete, maintainable web experiences.",
-      primaryAction: { href: "#work", label: "See selected work" },
+        "From interfaces and product flows to APIs, data and production.",
+      primaryAction: { href: "#work", label: "Explore selected work" },
       secondaryAction: {
-        href: "mailto:lucasepherra@gmail.com",
-        label: "Start a conversation",
+        download: true,
+        href: "/cv/lucas-epherra-cv-en.pdf",
+        label: "Download CV",
       },
     },
     featuredProject: {
-      eyebrow: "Selected work · 01",
+      number: "01",
       title: "MiTaller360",
-      summary:
-        "A SaaS product for the day-to-day management of automotive workshops, connecting operational workflows, data and platform administration in one system.",
-      facts: [
-        { label: "Role", value: "Co-founder · Full Stack Developer" },
-        { label: "Product", value: "Multi-workshop SaaS" },
-        { label: "Scope", value: "Frontend · Backend · Data · Delivery" },
+      category: "Workshop management SaaS",
+      roleLabel: "Role",
+      role: "Co-founder · Full Stack Developer",
+      summary: [
+        "A complete platform for workshops to manage clients, vehicles, work orders, scheduling and receipts.",
+        "Built across frontend, backend, data and production delivery.",
       ],
-      capabilities: [
-        "Authentication and permissions",
-        "Clients, vehicles and work orders",
-        "Scheduling, receipts and transactional email",
-        "Platform administration and audit trail",
-      ],
-      stack: [
-        "Next.js",
-        "TypeScript",
-        "NestJS",
-        "Prisma",
-        "PostgreSQL",
-      ],
-      panelLabel: "Operational architecture",
-      panelTitle: "One workspace, connected workflows",
-      workFlow: ["Workshop", "Work order", "Receipt"],
-    },
-    about: {
-      eyebrow: "Profile · Capabilities",
-      title: "A frontend foundation with full product scope.",
-      paragraphs: [
-        "I build interfaces with close attention to hierarchy, accessibility and responsive behavior, then connect them to the services and data that make the product work.",
-        "My recent work includes authentication, permissions, REST APIs, relational data, transactional email, production deployments and the QA needed to keep those flows reliable.",
-      ],
-      capabilities: [
-        {
-          title: "Product interfaces",
-          description: "Responsive, accessible experiences shaped around real workflows.",
-        },
-        {
-          title: "Backend integration",
-          description: "APIs, authentication, permissions and external service connections.",
-        },
-        {
-          title: "Data and delivery",
-          description: "Relational persistence, deployment and production-focused QA.",
-        },
-      ],
-      technologiesLabel: "Working stack",
-      technologies: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "NestJS",
-        "PostgreSQL",
-        "Prisma",
-        "Supabase",
-        "Resend",
-      ],
+      stack: ["Next.js", "TypeScript", "NestJS", "Prisma", "PostgreSQL"],
+      image: "/images/projects/mitaller360.webp",
+      imageAlt: "MiTaller360 workshop management dashboard",
     },
     selectedProjects: {
-      eyebrow: "Selected work · 02—03",
-      title: "Different products, the same focus on execution.",
-      introduction:
-        "Two projects that show collaborative product work and delivery for a real professional service.",
       projects: [
         {
           number: "02",
           title: "OpsCore",
-          category: "Collaborative operational platform",
+          category: "Operational incident management",
           summary:
-            "Incident management product with protected navigation, role-based interfaces, assignment and resolution flows, notifications, dashboards and REST API integration.",
+            "Frontend development, protected navigation, role-based interfaces and REST API integration for a collaborative operational platform.",
           image: "/images/projects/opscore.webp",
           alt: "OpsCore operational incident dashboard",
-          stack: ["Next.js", "React", "Tailwind CSS", "Django REST API"],
+          stack: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Django REST API"],
           links: [
             {
               href: "https://github.com/No-Country-simulation/S04-26-Equipo-19-Web-App-Development",
@@ -118,12 +65,12 @@ export const siteContent = {
         {
           number: "03",
           title: "Estudio Jurídico Lachat",
-          category: "Professional website · Production",
+          category: "Professional legal website",
           summary:
-            "A production website for a law firm, built around local SEO and a consultation flow with file uploads, lead persistence and transactional email.",
+            "A production website with responsive design, local SEO, lead persistence, file uploads and transactional email.",
           image: "/images/projects/estudio-lachat.webp",
           alt: "Homepage of the Estudio Jurídico Lachat website",
-          stack: ["Next.js", "TypeScript", "Supabase", "Resend"],
+          stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Resend"],
           links: [
             {
               href: "https://www.estudiolachat.com.ar/",
@@ -134,142 +81,102 @@ export const siteContent = {
       ],
     },
     approach: {
-      eyebrow: "How I work",
-      title: "Clear decisions, contained complexity, verifiable delivery.",
+      title: "What I build",
+      introduction: "Products with clear interfaces and solid foundations.",
       steps: [
         {
           number: "01",
-          title: "Understand the workflow",
-          description: "Define the user, the real task and the technical constraints before shaping the interface.",
+          title: "Product development",
+          description: "Full web applications with clean architecture and attention to detail.",
         },
         {
           number: "02",
-          title: "Build by responsibility",
-          description: "Separate presentation, data and integration concerns so the product remains maintainable.",
+          title: "Frontend engineering",
+          description: "Interfaces and flows that are responsive, accessible and maintainable.",
         },
         {
           number: "03",
-          title: "Verify the full path",
-          description: "Review responsive behavior, accessibility, typed contracts and the production build.",
+          title: "Backend and APIs",
+          description: "Services, authentication, data modeling and external integrations.",
+        },
+        {
+          number: "04",
+          title: "Data and infrastructure",
+          description: "Databases, deployment and production environments that support the product.",
         },
       ],
-      servicesLabel: "Available for",
-      services: [
-        "Professional websites",
-        "Web applications and management panels",
-        "Modernization and integration of web systems",
+    },
+    about: {
+      title: "About",
+      paragraphs: [
+        "I’m a Full Stack Developer focused on building useful products with a strong balance between design, code and real-world needs.",
+        "I enjoy turning product requirements into working software, solving problems and shipping value.",
+      ],
+      facts: [
+        { label: "Location", value: "Argentina" },
+        { label: "Availability", value: "Open to new opportunities" },
+        { label: "Timezone", value: "UTC-3" },
       ],
     },
     contact: {
-      eyebrow: "Let’s work together",
-      title: "Have a product, role or web challenge in mind?",
-      text: "I’m open to conversations with product teams, engineering teams and businesses that need thoughtful web execution.",
-      emailLabel: "Write to Lucas",
+      eyebrow: "Contact",
+      title: "Let’s talk about your next product.",
+      text: "Open to product roles, engineering teams and selected freelance projects.",
+      emailLabel: "Email",
+      websiteLabel: "Website",
     },
-    footerNote: "Designed and built from Argentina.",
+    footerRights: "All rights reserved.",
+    footerNote: "Built with Next.js, TypeScript and Tailwind CSS.",
   },
   es: {
     description:
       "Desarrollador Full Stack que construye productos web completos con una base sólida en frontend, integraciones backend y despliegue en producción.",
     navigationLabel: "Navegación principal",
     languageLabel: "Switch site language to English",
-    contactLabel: "Iniciar una conversación",
     navigation: [
-      { href: "#top", label: "Perfil" },
       { href: "#work", label: "Proyectos" },
-      { href: "#about", label: "Capacidades" },
+      { href: "#capabilities", label: "Capacidades" },
+      { href: "#about", label: "Sobre mí" },
       { href: "#contact", label: "Contacto" },
     ],
     hero: {
-      availability: "Disponible para oportunidades de producto e ingeniería",
-      eyebrow: "Full Stack Developer · Ejecución con visión de producto",
-      titleStart: "Construyo",
-      titleFocus: "productos web",
-      titleEnd: "de la interfaz a producción.",
+      role: "Full Stack Developer",
+      location: ["ARG", "UTC-3"],
+      titleLines: ["Diseño, desarrollo y", "despliego productos", "web completos."],
       description:
-        "Soy Lucas Epherra. Trabajo en frontend, APIs, autenticación, datos y despliegue para convertir necesidades de producto en experiencias web completas y mantenibles.",
-      primaryAction: { href: "#work", label: "Ver proyectos" },
+        "Desde interfaces y flujos de producto hasta APIs, datos y producción.",
+      primaryAction: { href: "#work", label: "Explorar proyectos" },
       secondaryAction: {
-        href: "mailto:lucasepherra@gmail.com",
-        label: "Iniciar una conversación",
+        download: true,
+        href: "/cv/lucas-epherra-cv-es.pdf",
+        label: "Descargar CV",
       },
     },
     featuredProject: {
-      eyebrow: "Proyecto seleccionado · 01",
+      number: "01",
       title: "MiTaller360",
-      summary:
-        "Un producto SaaS para la gestión cotidiana de talleres mecánicos que conecta flujos operativos, datos y administración de plataforma en un único sistema.",
-      facts: [
-        { label: "Rol", value: "Cofundador · Full Stack Developer" },
-        { label: "Producto", value: "SaaS multi-taller" },
-        { label: "Alcance", value: "Frontend · Backend · Datos · Despliegue" },
+      category: "SaaS de gestión para talleres",
+      roleLabel: "Rol",
+      role: "Cofundador · Full Stack Developer",
+      summary: [
+        "Una plataforma completa para gestionar clientes, vehículos, órdenes de trabajo, agenda y recibos.",
+        "Construida desde el frontend y el backend hasta los datos y el despliegue productivo.",
       ],
-      capabilities: [
-        "Autenticación y permisos",
-        "Clientes, vehículos y órdenes de trabajo",
-        "Agenda, recibos y emails transaccionales",
-        "Administración de plataforma y auditoría",
-      ],
-      stack: [
-        "Next.js",
-        "TypeScript",
-        "NestJS",
-        "Prisma",
-        "PostgreSQL",
-      ],
-      panelLabel: "Arquitectura operativa",
-      panelTitle: "Un espacio, flujos conectados",
-      workFlow: ["Taller", "Orden de trabajo", "Recibo"],
-    },
-    about: {
-      eyebrow: "Perfil · Capacidades",
-      title: "Una base frontend con alcance completo de producto.",
-      paragraphs: [
-        "Construyo interfaces cuidando jerarquía, accesibilidad y comportamiento responsive, y las conecto con los servicios y datos que hacen funcionar el producto.",
-        "Mi trabajo reciente incluye autenticación, permisos, APIs REST, datos relacionales, emails transaccionales, despliegues productivos y el QA necesario para sostener esos flujos.",
-      ],
-      capabilities: [
-        {
-          title: "Interfaces de producto",
-          description: "Experiencias responsive y accesibles construidas alrededor de flujos reales.",
-        },
-        {
-          title: "Integración backend",
-          description: "APIs, autenticación, permisos y conexiones con servicios externos.",
-        },
-        {
-          title: "Datos y despliegue",
-          description: "Persistencia relacional, publicación y QA orientado a producción.",
-        },
-      ],
-      technologiesLabel: "Stack de trabajo",
-      technologies: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "NestJS",
-        "PostgreSQL",
-        "Prisma",
-        "Supabase",
-        "Resend",
-      ],
+      stack: ["Next.js", "TypeScript", "NestJS", "Prisma", "PostgreSQL"],
+      image: "/images/projects/mitaller360.webp",
+      imageAlt: "Panel de gestión de talleres de MiTaller360",
     },
     selectedProjects: {
-      eyebrow: "Proyectos seleccionados · 02—03",
-      title: "Productos distintos, el mismo foco en la ejecución.",
-      introduction:
-        "Dos proyectos que muestran trabajo colaborativo de producto y una entrega productiva para un servicio profesional real.",
       projects: [
         {
           number: "02",
           title: "OpsCore",
-          category: "Plataforma operativa colaborativa",
+          category: "Gestión de incidentes operativos",
           summary:
-            "Producto para gestionar incidentes con navegación protegida, interfaces por rol, flujos de asignación y resolución, notificaciones, dashboards e integración con API REST.",
+            "Desarrollo frontend, navegación protegida, interfaces por rol e integración con API REST para una plataforma operativa colaborativa.",
           image: "/images/projects/opscore.webp",
           alt: "Dashboard operativo de incidentes de OpsCore",
-          stack: ["Next.js", "React", "Tailwind CSS", "Django REST API"],
+          stack: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Django REST API"],
           links: [
             {
               href: "https://github.com/No-Country-simulation/S04-26-Equipo-19-Web-App-Development",
@@ -280,12 +187,12 @@ export const siteContent = {
         {
           number: "03",
           title: "Estudio Jurídico Lachat",
-          category: "Sitio profesional · Producción",
+          category: "Sitio web jurídico profesional",
           summary:
-            "Sitio productivo para un estudio jurídico, desarrollado alrededor del SEO local y un flujo de consultas con carga de archivos, persistencia de leads y emails transaccionales.",
+            "Un sitio productivo con diseño responsive, SEO local, persistencia de leads, carga de archivos y emails transaccionales.",
           image: "/images/projects/estudio-lachat.webp",
           alt: "Página principal del sitio Estudio Jurídico Lachat",
-          stack: ["Next.js", "TypeScript", "Supabase", "Resend"],
+          stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Resend"],
           links: [
             {
               href: "https://www.estudiolachat.com.ar/",
@@ -296,38 +203,51 @@ export const siteContent = {
       ],
     },
     approach: {
-      eyebrow: "Cómo trabajo",
-      title: "Decisiones claras, complejidad contenida y entregas verificables.",
+      title: "Lo que construyo",
+      introduction: "Productos con interfaces claras y fundamentos sólidos.",
       steps: [
         {
           number: "01",
-          title: "Entender el flujo",
-          description: "Defino el usuario, la tarea real y las restricciones técnicas antes de diseñar la interfaz.",
+          title: "Desarrollo de producto",
+          description: "Aplicaciones web completas con arquitectura limpia y atención al detalle.",
         },
         {
           number: "02",
-          title: "Construir por responsabilidad",
-          description: "Separo presentación, datos e integraciones para que el producto siga siendo mantenible.",
+          title: "Ingeniería frontend",
+          description: "Interfaces y flujos responsive, accesibles y mantenibles.",
         },
         {
           number: "03",
-          title: "Verificar el recorrido completo",
-          description: "Reviso responsive, accesibilidad, contratos tipados y el build de producción.",
+          title: "Backend y APIs",
+          description: "Servicios, autenticación, modelado de datos e integraciones externas.",
+        },
+        {
+          number: "04",
+          title: "Datos e infraestructura",
+          description: "Bases de datos, despliegues y entornos productivos que sostienen el producto.",
         },
       ],
-      servicesLabel: "Disponible para",
-      services: [
-        "Sitios web profesionales",
-        "Aplicaciones web y paneles de gestión",
-        "Modernización e integración de sistemas web",
+    },
+    about: {
+      title: "Sobre mí",
+      paragraphs: [
+        "Soy Full Stack Developer y construyo productos útiles buscando un equilibrio sólido entre diseño, código y necesidades reales.",
+        "Disfruto convertir requerimientos de producto en software funcional, resolver problemas y entregar valor.",
+      ],
+      facts: [
+        { label: "Ubicación", value: "Argentina" },
+        { label: "Disponibilidad", value: "Abierto a nuevas oportunidades" },
+        { label: "Zona horaria", value: "UTC-3" },
       ],
     },
     contact: {
-      eyebrow: "Trabajemos juntos",
-      title: "¿Tenés un producto, una oportunidad o un desafío web en mente?",
-      text: "Estoy abierto a conversar con equipos de producto, equipos de ingeniería y empresas que necesiten una ejecución web cuidada.",
-      emailLabel: "Escribirle a Lucas",
+      eyebrow: "Contacto",
+      title: "Hablemos de tu próximo producto.",
+      text: "Disponible para roles de producto, equipos de ingeniería y proyectos freelance seleccionados.",
+      emailLabel: "Email",
+      websiteLabel: "Sitio web",
     },
-    footerNote: "Diseñado y desarrollado desde Argentina.",
+    footerRights: "Todos los derechos reservados.",
+    footerNote: "Desarrollado con Next.js, TypeScript y Tailwind CSS.",
   },
 } satisfies LocalizedSiteContent;

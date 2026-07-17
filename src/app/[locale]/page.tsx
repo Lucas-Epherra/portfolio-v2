@@ -36,7 +36,6 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
         {locale === "es" ? "Saltar al contenido" : "Skip to content"}
       </a>
       <SiteHeader
-        contactLabel={content.contactLabel}
         languageLabel={content.languageLabel}
         locale={locale}
         navigation={content.navigation}
@@ -45,12 +44,12 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
       <main id="main-content">
         <HeroSection content={content.hero} />
         <FeaturedProjectSection content={content.featuredProject} />
-        <AboutSection content={content.about} />
         <SelectedProjectsSection content={content.selectedProjects} />
         <ApproachSection content={content.approach} />
+        <AboutSection content={content.about} />
         <ContactSection content={content.contact} />
       </main>
-      <SiteFooter note={content.footerNote} />
+      <SiteFooter note={content.footerNote} rights={content.footerRights} />
     </>
   );
 }

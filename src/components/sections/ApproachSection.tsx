@@ -6,46 +6,33 @@ interface ApproachSectionProps {
   content: ApproachContent;
 }
 
-/** Explica un proceso de trabajo concreto y los tipos de colaboración disponibles. */
+/** Resume las áreas de construcción de producto mediante capacidades concretas. */
 export function ApproachSection({ content }: ApproachSectionProps) {
   return (
-    <section className="bg-background py-24 sm:py-32">
-      <Container>
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-5">
-            <p className="mb-7 text-[0.68rem] font-bold uppercase tracking-[0.22em] text-accent">
-              {content.eyebrow}
-            </p>
-            <h2 className="max-w-xl font-serif text-5xl leading-[1.02] tracking-[-0.04em] sm:text-6xl">
-              {content.title}
-            </h2>
-          </div>
-
-          <div className="lg:col-span-6 lg:col-start-7">
-            <ol className="divide-y divide-line border-t border-line">
-              {content.steps.map((step) => (
-                <li className="grid gap-4 py-7 sm:grid-cols-[3rem_1fr]" key={step.number}>
-                  <span className="font-serif text-xl text-accent">{step.number}</span>
-                  <div>
-                    <h3 className="text-lg font-bold tracking-[-0.025em]">{step.title}</h3>
-                    <p className="mt-2 max-w-xl text-sm leading-6 text-muted">{step.description}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-
-            <div className="mt-10 rounded-portfolio bg-accent p-7 text-dark sm:p-9">
-              <p className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-dark/65">
-                {content.servicesLabel}
-              </p>
-              <ul className="mt-6 divide-y divide-dark/20 border-y border-dark/20 font-serif text-2xl">
-                {content.services.map((service) => (
-                  <li className="py-4" key={service}>{service}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+    <section id="capabilities" className="scroll-mt-8 bg-dark py-16 text-surface sm:py-20">
+      <Container className="grid gap-12 lg:grid-cols-12 lg:gap-10">
+        <div className="lg:col-span-4">
+          <h2 className="font-serif text-4xl tracking-[-0.03em] sm:text-5xl">
+            {content.title}
+          </h2>
+          <p className="mt-4 max-w-xs text-lg leading-7 text-surface/55">
+            {content.introduction}
+          </p>
+          <span className="mt-8 block h-px w-28 bg-accent" aria-hidden="true" />
         </div>
+
+        <ol className="border-t border-surface/15 lg:col-span-8">
+          {content.steps.map((step) => (
+            <li
+              className="grid gap-3 border-b border-surface/15 py-5 sm:grid-cols-[3rem_0.8fr_1.4fr] sm:items-start"
+              key={step.number}
+            >
+              <span className="text-xs font-bold text-accent">{step.number}</span>
+              <h3 className="text-sm font-semibold text-surface/80">{step.title}</h3>
+              <p className="text-xs leading-5 text-surface/50">{step.description}</p>
+            </li>
+          ))}
+        </ol>
       </Container>
     </section>
   );
