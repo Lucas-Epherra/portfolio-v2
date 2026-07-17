@@ -9,7 +9,7 @@ interface AboutSectionProps {
 /** Presenta una síntesis profesional y datos de disponibilidad verificables. */
 export function AboutSection({ content }: AboutSectionProps) {
   return (
-    <section id="about" className="scroll-mt-8 border-b border-line bg-surface py-14 sm:py-18">
+    <section id="about" className="scroll-mt-8 border-b border-line bg-surface py-10 sm:py-12">
       <Container className="grid gap-10 lg:grid-cols-12 lg:gap-0">
         <div className="lg:col-span-2">
           <h2 className="font-serif text-3xl tracking-[-0.025em]">{content.title}</h2>

@@ -9,7 +9,7 @@ interface ApproachSectionProps {
 /** Resume las áreas de construcción de producto mediante capacidades concretas. */
 export function ApproachSection({ content }: ApproachSectionProps) {
   return (
-    <section id="capabilities" className="scroll-mt-8 bg-dark py-16 text-surface sm:py-20">
+    <section id="capabilities" className="scroll-mt-8 bg-dark py-14 text-surface sm:py-16">
       <Container className="grid gap-12 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-4">
           <h2 className="font-serif text-4xl tracking-[-0.03em] sm:text-5xl">
@@ -24,7 +24,7 @@ export function ApproachSection({ content }: ApproachSectionProps) {
         <ol className="border-t border-surface/15 lg:col-span-8">
           {content.steps.map((step) => (
             <li
-              className="grid gap-3 border-b border-surface/15 py-5 sm:grid-cols-[3rem_0.8fr_1.4fr] sm:items-start"
+              className="grid gap-3 border-b border-surface/15 py-4 sm:grid-cols-[3rem_0.8fr_1.4fr] sm:items-start"
               key={step.number}
             >
               <span className="text-xs font-bold text-accent">{step.number}</span>

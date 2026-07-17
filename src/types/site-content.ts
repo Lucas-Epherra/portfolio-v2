@@ -62,8 +62,8 @@ export interface SelectedProject {
   image: `/${string}`;
   links: ProjectLink[];
   number: string;
+  role: string;
   stack: string[];
-  summary: string;
   title: string;
 }
 
@@ -90,9 +90,8 @@ export interface ApproachContent {
 export interface ContactContent {
   eyebrow: string;
   emailLabel: string;
-  text: string;
+  locationLabel: string;
   title: string;
-  websiteLabel: string;
 }
 
 /** Contenido localizado requerido por la primera versión de la portada. */

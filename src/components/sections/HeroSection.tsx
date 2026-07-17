@@ -12,9 +12,9 @@ interface HeroSectionProps {
 /** Abre la portada con un manifiesto profesional, retrato y acciones directas. */
 export function HeroSection({ content }: HeroSectionProps) {
   return (
-    <section id="top" className="overflow-hidden bg-dark text-surface">
-      <Container className="grid min-h-[calc(100dvh-6rem)] md:grid-cols-12">
-        <aside className="hidden border-x border-surface/15 md:col-span-1 md:flex md:flex-col md:items-center md:justify-between md:py-10">
+    <section id="top" className="hero-surface overflow-hidden bg-dark text-surface">
+      <Container className="grid min-h-[calc(100dvh-6rem)] md:grid-cols-[4.75rem_minmax(0,1.35fr)_minmax(20rem,1fr)]">
+        <aside className="hidden border-x border-surface/15 md:flex md:flex-col md:items-center md:justify-between md:py-10">
           <span className="font-serif text-xl text-accent">LE</span>
           <span className="[writing-mode:vertical-rl] rotate-180 text-[0.62rem] font-bold uppercase tracking-[0.25em] text-surface/55">
             {content.role}
@@ -26,11 +26,11 @@ export function HeroSection({ content }: HeroSectionProps) {
           </span>
         </aside>
 
-        <div className="reveal flex flex-col justify-center py-16 md:col-span-6 md:px-10 lg:px-16">
+        <div className="reveal flex flex-col justify-center py-14 md:px-10 lg:px-14">
           <p className="mb-8 text-[0.65rem] font-bold uppercase tracking-[0.22em] text-accent md:hidden">
             {content.role}
           </p>
-          <h1 className="font-serif text-5xl leading-[1.03] tracking-[-0.035em] sm:text-6xl lg:text-[4.7rem]">
+          <h1 className="font-serif text-5xl leading-[1.03] tracking-[-0.035em] sm:text-6xl lg:text-[4.3rem]">
             {content.titleLines.map((line) => (
               <span className="block" key={line}>{line}</span>
             ))}
@@ -60,7 +60,7 @@ export function HeroSection({ content }: HeroSectionProps) {
           </div>
         </div>
 
-        <div className="reveal reveal-delay-1 relative min-h-[32rem] md:col-span-5 md:min-h-full">
+        <div className="reveal reveal-delay-1 relative min-h-[30rem] md:min-h-full">
           <Image
             alt="Lucas Epherra, Full Stack Developer"
             className="object-cover object-[50%_28%] saturate-[0.88]"

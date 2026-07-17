@@ -26,7 +26,7 @@ export function SiteHeader({
       <Container className="flex h-20 items-center justify-between gap-4 sm:h-24">
         <Link
           aria-label="Lucas Epherra — Home"
-          className="shrink-0 text-sm font-extrabold uppercase tracking-[0.24em] sm:text-lg"
+          className="shrink-0 text-base font-extrabold uppercase tracking-[0.24em] sm:text-xl"
           href={`/${locale}`}
         >
           <span className="sm:hidden">L. E.</span>

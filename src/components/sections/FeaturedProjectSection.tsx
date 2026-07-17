@@ -16,10 +16,10 @@ export function FeaturedProjectSection({
     <section id="work" className="relative z-[1] scroll-mt-8 bg-surface pb-6">
       <Container className="-mt-12 md:-mt-20">
         <article className="grid overflow-hidden border border-line bg-surface shadow-portfolio lg:grid-cols-[1.8fr_0.8fr]">
-          <div className="relative min-h-72 border-b border-line bg-[#e8edf0] sm:min-h-96 lg:min-h-[30rem] lg:border-b-0 lg:border-r">
+          <div className="relative aspect-[1366/606] border-b border-line bg-[#e8edf0] lg:aspect-auto lg:min-h-[26rem] lg:border-b-0 lg:border-r">
             <Image
               alt={content.imageAlt}
-              className="object-cover object-left-top"
+              className="object-contain object-left-top"
               fill
               sizes="(max-width: 1023px) 100vw, 70vw"
               src={content.image}

@@ -50,8 +50,7 @@ export const siteContent = {
           number: "02",
           title: "OpsCore",
           category: "Operational incident management",
-          summary:
-            "Frontend development, protected navigation, role-based interfaces and REST API integration for a collaborative operational platform.",
+          role: "Frontend Developer",
           image: "/images/projects/opscore.webp",
           alt: "OpsCore operational incident dashboard",
           stack: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Django REST API"],
@@ -66,8 +65,7 @@ export const siteContent = {
           number: "03",
           title: "Estudio Jurídico Lachat",
           category: "Professional legal website",
-          summary:
-            "A production website with responsive design, local SEO, lead persistence, file uploads and transactional email.",
+          role: "Full Stack Developer",
           image: "/images/projects/estudio-lachat.webp",
           alt: "Homepage of the Estudio Jurídico Lachat website",
           stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Resend"],
@@ -113,7 +111,7 @@ export const siteContent = {
         "I enjoy turning product requirements into working software, solving problems and shipping value.",
       ],
       facts: [
-        { label: "Location", value: "Argentina" },
+        { label: "Location", value: "Tres Arroyos, Buenos Aires, Argentina" },
         { label: "Availability", value: "Open to new opportunities" },
         { label: "Timezone", value: "UTC-3" },
       ],
@@ -121,9 +119,8 @@ export const siteContent = {
     contact: {
       eyebrow: "Contact",
       title: "Let’s talk about your next product.",
-      text: "Open to product roles, engineering teams and selected freelance projects.",
       emailLabel: "Email",
-      websiteLabel: "Website",
+      locationLabel: "Location",
     },
     footerRights: "All rights reserved.",
     footerNote: "Built with Next.js, TypeScript and Tailwind CSS.",
@@ -142,7 +139,7 @@ export const siteContent = {
     hero: {
       role: "Full Stack Developer",
       location: ["ARG", "UTC-3"],
-      titleLines: ["Diseño, desarrollo y", "despliego productos", "web completos."],
+      titleLines: ["Diseño y despliego", "productos web", "completos."],
       description:
         "Desde interfaces y flujos de producto hasta APIs, datos y producción.",
       primaryAction: { href: "#work", label: "Explorar proyectos" },
@@ -172,8 +169,7 @@ export const siteContent = {
           number: "02",
           title: "OpsCore",
           category: "Gestión de incidentes operativos",
-          summary:
-            "Desarrollo frontend, navegación protegida, interfaces por rol e integración con API REST para una plataforma operativa colaborativa.",
+          role: "Frontend Developer",
           image: "/images/projects/opscore.webp",
           alt: "Dashboard operativo de incidentes de OpsCore",
           stack: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Django REST API"],
@@ -188,8 +184,7 @@ export const siteContent = {
           number: "03",
           title: "Estudio Jurídico Lachat",
           category: "Sitio web jurídico profesional",
-          summary:
-            "Un sitio productivo con diseño responsive, SEO local, persistencia de leads, carga de archivos y emails transaccionales.",
+          role: "Full Stack Developer",
           image: "/images/projects/estudio-lachat.webp",
           alt: "Página principal del sitio Estudio Jurídico Lachat",
           stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Resend"],
@@ -235,7 +230,7 @@ export const siteContent = {
         "Disfruto convertir requerimientos de producto en software funcional, resolver problemas y entregar valor.",
       ],
       facts: [
-        { label: "Ubicación", value: "Argentina" },
+        { label: "Ubicación", value: "Tres Arroyos, Buenos Aires, Argentina" },
         { label: "Disponibilidad", value: "Abierto a nuevas oportunidades" },
         { label: "Zona horaria", value: "UTC-3" },
       ],
@@ -243,9 +238,8 @@ export const siteContent = {
     contact: {
       eyebrow: "Contacto",
       title: "Hablemos de tu próximo producto.",
-      text: "Disponible para roles de producto, equipos de ingeniería y proyectos freelance seleccionados.",
       emailLabel: "Email",
-      websiteLabel: "Sitio web",
+      locationLabel: "Ubicación",
     },
     footerRights: "Todos los derechos reservados.",
     footerNote: "Desarrollado con Next.js, TypeScript y Tailwind CSS.",
