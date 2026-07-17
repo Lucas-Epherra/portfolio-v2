@@ -34,6 +34,7 @@ export const siteContent = {
       number: "01",
       title: "MiTaller360",
       category: "Workshop management SaaS",
+      highlights: ["Authentication", "Work orders", "Scheduling", "Administration"],
       roleLabel: "Role",
       role: "Co-founder · Full Stack Developer",
       summary: [
@@ -43,6 +44,16 @@ export const siteContent = {
       stack: ["Next.js", "TypeScript", "NestJS", "Prisma", "PostgreSQL"],
       image: "/images/projects/mitaller360-overview.webp",
       imageAlt: "MiTaller360 workshop management dashboard",
+      links: [
+        {
+          href: "https://www.mitaller360.com",
+          label: "View live product",
+        },
+        {
+          href: "https://github.com/Lucas-Epherra/talleres-mvp",
+          label: "View repository",
+        },
+      ],
     },
     selectedProjects: {
       projects: [
@@ -84,21 +95,25 @@ export const siteContent = {
       steps: [
         {
           number: "01",
+          icon: "product",
           title: "Product development",
           description: "Full web applications with clean architecture and attention to detail.",
         },
         {
           number: "02",
+          icon: "frontend",
           title: "Frontend engineering",
           description: "Interfaces and flows that are responsive, accessible and maintainable.",
         },
         {
           number: "03",
+          icon: "backend",
           title: "Backend and APIs",
           description: "Services, authentication, data modeling and external integrations.",
         },
         {
           number: "04",
+          icon: "data",
           title: "Data and infrastructure",
           description: "Databases, deployment and production environments that support the product.",
         },
@@ -153,6 +168,7 @@ export const siteContent = {
       number: "01",
       title: "MiTaller360",
       category: "SaaS de gestión para talleres",
+      highlights: ["Autenticación", "Órdenes", "Agenda", "Administración"],
       roleLabel: "Rol",
       role: "Cofundador · Full Stack Developer",
       summary: [
@@ -162,6 +178,16 @@ export const siteContent = {
       stack: ["Next.js", "TypeScript", "NestJS", "Prisma", "PostgreSQL"],
       image: "/images/projects/mitaller360-overview.webp",
       imageAlt: "Panel de gestión de talleres de MiTaller360",
+      links: [
+        {
+          href: "https://www.mitaller360.com",
+          label: "Ver producto",
+        },
+        {
+          href: "https://github.com/Lucas-Epherra/talleres-mvp",
+          label: "Ver repositorio",
+        },
+      ],
     },
     selectedProjects: {
       projects: [
@@ -203,21 +229,25 @@ export const siteContent = {
       steps: [
         {
           number: "01",
+          icon: "product",
           title: "Desarrollo de producto",
           description: "Aplicaciones web completas con arquitectura limpia y atención al detalle.",
         },
         {
           number: "02",
+          icon: "frontend",
           title: "Ingeniería frontend",
           description: "Interfaces y flujos responsive, accesibles y mantenibles.",
         },
         {
           number: "03",
+          icon: "backend",
           title: "Backend y APIs",
           description: "Servicios, autenticación, modelado de datos e integraciones externas.",
         },
         {
           number: "04",
+          icon: "data",
           title: "Datos e infraestructura",
           description: "Bases de datos, despliegues y entornos productivos que sostienen el producto.",
         },

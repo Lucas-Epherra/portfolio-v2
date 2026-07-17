@@ -15,7 +15,7 @@ export function AboutSection({ content }: AboutSectionProps) {
           <h2 className="font-serif text-3xl tracking-[-0.025em]">{content.title}</h2>
         </div>
 
-        <div className="grid gap-4 border-line text-sm leading-6 text-muted lg:col-span-5 lg:border-l lg:px-10">
+        <div className="grid gap-4 border-line text-sm leading-6 text-foreground/70 lg:col-span-5 lg:border-l lg:px-10">
           {content.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -23,11 +23,11 @@ export function AboutSection({ content }: AboutSectionProps) {
 
         <dl className="border-t border-line lg:col-span-5 lg:border-l lg:border-t-0 lg:pl-10">
           {content.facts.map((fact) => (
-            <div className="grid grid-cols-[6.5rem_1fr] gap-4 border-b border-line py-3 last:border-b-0" key={fact.label}>
-              <dt className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-muted">
+            <div className="grid grid-cols-[7rem_1fr] gap-4 border-b border-line py-3.5 last:border-b-0" key={fact.label}>
+              <dt className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-foreground/55">
                 {fact.label}
               </dt>
-              <dd className="text-sm text-muted">{fact.value}</dd>
+              <dd className="text-sm text-foreground/75">{fact.value}</dd>
             </div>
           ))}
         </dl>

@@ -26,7 +26,7 @@ export function SiteHeader({
       <Container className="flex h-20 items-center justify-between gap-4 sm:h-24">
         <Link
           aria-label="Lucas Epherra — Home"
-          className="shrink-0 text-base font-extrabold uppercase tracking-[0.24em] sm:text-xl"
+          className="shrink-0 text-base font-extrabold uppercase tracking-[0.24em] transition-colors duration-300 hover:text-accent sm:text-xl"
           href={`/${locale}`}
         >
           <span className="sm:hidden">L. E.</span>
@@ -34,14 +34,14 @@ export function SiteHeader({
         </Link>
 
         <nav aria-label={navigationLabel}>
-          <ul className="flex items-center gap-5 lg:gap-10">
+          <ul className="flex items-center gap-5 md:gap-6 lg:gap-10">
             {navigation.map((item) => (
               <li
                 className={item.href === "#work" ? "block" : "hidden md:block"}
                 key={item.href}
               >
                 <a
-                  className="text-xs font-semibold text-surface/65 transition-colors duration-300 hover:text-surface lg:text-sm"
+                  className="group relative inline-flex py-3 text-xs font-semibold text-surface/65 transition-colors duration-300 after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 hover:text-surface hover:after:scale-x-100 md:text-[0.8rem] lg:text-sm"
                   href={item.href}
                 >
                   {item.label}

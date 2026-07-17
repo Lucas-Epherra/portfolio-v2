@@ -1,8 +1,9 @@
 import Image from "next/image";
+import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr/ArrowRight";
+import { DownloadSimpleIcon } from "@phosphor-icons/react/dist/ssr/DownloadSimple";
 
 import type { HeroContent } from "@/types/site-content";
 
-import { ArrowIcon } from "../ui/ArrowIcon";
 import { Container } from "../ui/Container";
 
 interface HeroSectionProps {
@@ -13,8 +14,8 @@ interface HeroSectionProps {
 export function HeroSection({ content }: HeroSectionProps) {
   return (
     <section id="top" className="hero-surface overflow-hidden bg-dark text-surface">
-      <Container className="grid min-h-[calc(100dvh-6rem)] md:grid-cols-[4.75rem_minmax(0,1.35fr)_minmax(20rem,1fr)]">
-        <aside className="hidden border-x border-surface/15 md:flex md:flex-col md:items-center md:justify-between md:py-10">
+      <Container className="grid min-h-[calc(100dvh-5rem)] sm:min-h-[calc(100dvh-6rem)] md:grid-cols-[minmax(0,1.15fr)_minmax(16rem,0.85fr)] lg:grid-cols-[4.75rem_minmax(0,1.35fr)_minmax(20rem,1fr)]">
+        <aside className="hidden border-x border-surface/15 lg:flex lg:flex-col lg:items-center lg:justify-between lg:py-10">
           <span className="font-serif text-xl text-accent">LE</span>
           <span className="[writing-mode:vertical-rl] rotate-180 text-[0.62rem] font-bold uppercase tracking-[0.25em] text-surface/55">
             {content.role}
@@ -26,11 +27,11 @@ export function HeroSection({ content }: HeroSectionProps) {
           </span>
         </aside>
 
-        <div className="reveal flex flex-col justify-center py-14 md:px-10 lg:px-14">
-          <p className="mb-8 text-[0.65rem] font-bold uppercase tracking-[0.22em] text-accent md:hidden">
+        <div className="reveal flex flex-col justify-center py-14 md:px-6 lg:px-10 xl:px-14">
+          <p className="mb-8 text-[0.65rem] font-bold uppercase tracking-[0.22em] text-accent lg:hidden">
             {content.role}
           </p>
-          <h1 className="font-serif text-5xl leading-[1.03] tracking-[-0.035em] sm:text-6xl lg:text-[4.3rem]">
+          <h1 className="font-serif text-5xl leading-[1.03] tracking-[-0.035em] sm:text-6xl md:text-[2.8rem] lg:text-5xl xl:text-[4.5rem]">
             {content.titleLines.map((line) => (
               <span className="block" key={line}>{line}</span>
             ))}
@@ -45,7 +46,11 @@ export function HeroSection({ content }: HeroSectionProps) {
               href={content.primaryAction.href}
             >
               {content.primaryAction.label}
-              <ArrowIcon className="size-5 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRightIcon
+                aria-hidden="true"
+                className="size-5 transition-transform duration-300 group-hover:translate-x-1"
+                weight="regular"
+              />
             </a>
             <a
               className="inline-flex min-h-13 items-center gap-5 border border-accent/70 px-6 text-sm font-bold text-surface transition-colors duration-300 hover:bg-surface hover:text-dark active:translate-y-px"
@@ -53,14 +58,12 @@ export function HeroSection({ content }: HeroSectionProps) {
               href={content.secondaryAction.href}
             >
               {content.secondaryAction.label}
-              <svg aria-hidden="true" className="size-4" fill="none" viewBox="0 0 20 20">
-                <path d="M10 3v10m-4-4 4 4 4-4M4 17h12" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-              </svg>
+              <DownloadSimpleIcon aria-hidden="true" className="size-4" weight="regular" />
             </a>
           </div>
         </div>
 
-        <div className="reveal reveal-delay-1 relative min-h-[30rem] md:min-h-full">
+        <div className="reveal reveal-delay-1 relative min-h-[26rem] sm:min-h-[30rem] md:min-h-full">
           <Image
             alt="Lucas Epherra, Full Stack Developer"
             className="object-cover object-[50%_28%] saturate-[0.88]"

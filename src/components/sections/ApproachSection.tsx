@@ -1,10 +1,22 @@
-import type { ApproachContent } from "@/types/site-content";
+import { BrowserIcon } from "@phosphor-icons/react/dist/ssr/Browser";
+import { DatabaseIcon } from "@phosphor-icons/react/dist/ssr/Database";
+import { PlugsConnectedIcon } from "@phosphor-icons/react/dist/ssr/PlugsConnected";
+import { StackIcon } from "@phosphor-icons/react/dist/ssr/Stack";
+
+import type { ApproachContent, ApproachIconName } from "@/types/site-content";
 
 import { Container } from "../ui/Container";
 
 interface ApproachSectionProps {
   content: ApproachContent;
 }
+
+const approachIcons = {
+  backend: PlugsConnectedIcon,
+  data: DatabaseIcon,
+  frontend: BrowserIcon,
+  product: StackIcon,
+} satisfies Record<ApproachIconName, typeof StackIcon>;
 
 /** Resume las áreas de construcción de producto mediante capacidades concretas. */
 export function ApproachSection({ content }: ApproachSectionProps) {
@@ -22,16 +34,25 @@ export function ApproachSection({ content }: ApproachSectionProps) {
         </div>
 
         <ol className="border-t border-surface/15 lg:col-span-8">
-          {content.steps.map((step) => (
-            <li
-              className="grid gap-3 border-b border-surface/15 py-4 sm:grid-cols-[3rem_0.8fr_1.4fr] sm:items-start"
-              key={step.number}
-            >
-              <span className="text-xs font-bold text-accent">{step.number}</span>
-              <h3 className="text-sm font-semibold text-surface/80">{step.title}</h3>
-              <p className="text-xs leading-5 text-surface/50">{step.description}</p>
-            </li>
-          ))}
+          {content.steps.map((step) => {
+            const StepIcon = approachIcons[step.icon];
+
+            return (
+              <li
+                className="grid grid-cols-[2rem_2.25rem_1fr] items-start gap-x-3 gap-y-2 border-b border-surface/15 py-5 sm:grid-cols-[3rem_2.5rem_0.8fr_1.4fr]"
+                key={step.number}
+              >
+                <span className="pt-2 text-xs font-bold text-accent">{step.number}</span>
+                <span className="flex size-8 items-center justify-center border border-surface/15 text-accent">
+                  <StepIcon aria-hidden="true" className="size-[1.125rem]" weight="regular" />
+                </span>
+                <h3 className="pt-1.5 text-sm font-semibold text-surface/85">{step.title}</h3>
+                <p className="col-span-2 col-start-2 text-sm leading-6 text-surface/60 sm:col-span-1 sm:col-start-auto sm:pt-1">
+                  {step.description}
+                </p>
+              </li>
+            );
+          })}
         </ol>
       </Container>
     </section>

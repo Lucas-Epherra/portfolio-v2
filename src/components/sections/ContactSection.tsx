@@ -3,6 +3,12 @@ import {
   GITHUB_URL,
   LINKEDIN_URL,
 } from "@/content/site";
+import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr/ArrowRight";
+import { ArrowSquareOutIcon } from "@phosphor-icons/react/dist/ssr/ArrowSquareOut";
+import { EnvelopeSimpleIcon } from "@phosphor-icons/react/dist/ssr/EnvelopeSimple";
+import { GithubLogoIcon } from "@phosphor-icons/react/dist/ssr/GithubLogo";
+import { LinkedinLogoIcon } from "@phosphor-icons/react/dist/ssr/LinkedinLogo";
+import { MapPinIcon } from "@phosphor-icons/react/dist/ssr/MapPin";
 import type { ContactContent } from "@/types/site-content";
 
 import { Container } from "../ui/Container";
@@ -11,42 +17,14 @@ interface ContactSectionProps {
   content: ContactContent;
 }
 
-type ContactIconName = "email" | "github" | "linkedin" | "location";
+const contactIcons = {
+  email: EnvelopeSimpleIcon,
+  github: GithubLogoIcon,
+  linkedin: LinkedinLogoIcon,
+  location: MapPinIcon,
+};
 
-interface ContactIconProps {
-  name: ContactIconName;
-}
-
-/** Representa cada canal de contacto con un icono lineal uniforme y decorativo. */
-function ContactIcon({ name }: ContactIconProps) {
-  const paths: Record<ContactIconName, React.ReactNode> = {
-    email: <path d="M3 5.5h14v10H3v-10Zm.7.5L10 11l6.3-5" />,
-    github: (
-      <path d="M10 2.5a7.5 7.5 0 0 0-2.37 14.62c.38.07.51-.16.51-.36v-1.48c-2.1.46-2.54-.9-2.54-.9-.34-.87-.84-1.1-.84-1.1-.69-.47.05-.46.05-.46.76.05 1.16.78 1.16.78.68 1.16 1.78.83 2.21.63.07-.49.27-.83.48-1.02-1.67-.19-3.43-.84-3.43-3.71 0-.82.29-1.49.78-2.02-.08-.19-.34-.96.07-1.99 0 0 .64-.2 2.06.77A7.2 7.2 0 0 1 10 6.01a7.2 7.2 0 0 1 1.88.25c1.43-.97 2.06-.77 2.06-.77.41 1.03.15 1.8.07 1.99.49.53.78 1.2.78 2.02 0 2.88-1.76 3.52-3.44 3.71.27.23.51.69.51 1.4v2.15c0 .2.14.43.52.36A7.5 7.5 0 0 0 10 2.5Z" />
-    ),
-    linkedin: (
-      <path d="M5.2 7.3v8.2M5.2 4.5v.1M8.8 15.5v-4.6c0-2.2 3.8-2.4 3.8.1v4.5M8.8 7.3v8.2M2.5 2.5h15v15h-15z" />
-    ),
-    location: (
-      <path d="M10 17s5-4.3 5-9a5 5 0 0 0-10 0c0 4.7 5 9 5 9Zm0-6.8a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z" />
-    ),
-  };
-
-  return (
-    <svg
-      aria-hidden="true"
-      className="size-5 text-accent"
-      fill="none"
-      viewBox="0 0 20 20"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.4"
-    >
-      {paths[name]}
-    </svg>
-  );
-}
+type ContactIconName = keyof typeof contactIcons;
 
 /** Cierra la portada con ubicación y canales profesionales verificables. */
 export function ContactSection({ content }: ContactSectionProps) {
@@ -97,18 +75,34 @@ export function ContactSection({ content }: ContactSectionProps) {
         <ul className="border-t border-line lg:col-span-5">
           {links.map((link) => {
             const external = link.href.startsWith("http");
+            const ContactIcon = contactIcons[link.icon];
+            const DirectionIcon = external ? ArrowSquareOutIcon : ArrowRightIcon;
 
             return (
               <li className="border-b border-line" key={link.href}>
                 <a
                   aria-label={`${link.label}: ${link.value}`}
-                  className="grid min-h-11 grid-cols-[1.5rem_1fr] items-center gap-4 text-sm transition-colors hover:text-accent"
+                  className="group grid min-h-16 grid-cols-[2rem_minmax(0,1fr)_1rem] items-center gap-4 py-3 transition-colors hover:text-accent"
                   href={link.href}
                   rel={external ? "noreferrer" : undefined}
                   target={external ? "_blank" : undefined}
                 >
-                  <ContactIcon name={link.icon} />
-                  <span className="truncate">{link.value}</span>
+                  <span className="flex size-8 items-center justify-center border border-line text-accent transition-colors group-hover:border-accent/50">
+                    <ContactIcon aria-hidden="true" className="size-[1.125rem]" weight="regular" />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-[0.6rem] font-bold uppercase tracking-[0.16em] text-muted">
+                      {link.label}
+                    </span>
+                    <span className="mt-1 block truncate text-sm text-foreground/80 transition-colors group-hover:text-accent">
+                      {link.value}
+                    </span>
+                  </span>
+                  <DirectionIcon
+                    aria-hidden="true"
+                    className="size-4 text-muted transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
+                    weight="regular"
+                  />
                 </a>
               </li>
             );

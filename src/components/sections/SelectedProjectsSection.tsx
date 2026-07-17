@@ -1,8 +1,8 @@
 import Image from "next/image";
+import { ArrowSquareOutIcon } from "@phosphor-icons/react/dist/ssr/ArrowSquareOut";
 
 import type { SelectedProjectsContent } from "@/types/site-content";
 
-import { ArrowIcon } from "../ui/ArrowIcon";
 import { Container } from "../ui/Container";
 
 interface SelectedProjectsSectionProps {
@@ -18,7 +18,7 @@ export function SelectedProjectsSection({
       <Container className="grid gap-6">
         {content.projects.map((project) => (
           <article
-            className="grid overflow-hidden border border-line bg-surface lg:grid-cols-[0.78fr_1.75fr]"
+            className="group/project grid overflow-hidden border border-line bg-surface transition-colors duration-300 hover:border-accent/45 lg:grid-cols-[0.78fr_1.75fr]"
             key={project.title}
           >
             <div className="flex flex-col justify-center p-7 lg:p-8">
@@ -39,23 +39,27 @@ export function SelectedProjectsSection({
               <div className="mt-6">
                 {project.links.map((link) => (
                   <a
-                    className="group inline-flex items-center gap-2 text-xs font-bold text-foreground underline decoration-line underline-offset-6 hover:text-accent"
+                    className="group/link inline-flex items-center gap-2 text-xs font-bold text-foreground underline decoration-line underline-offset-6 transition-colors hover:text-accent"
                     href={link.href}
                     key={link.href}
                     rel="noreferrer"
                     target="_blank"
                   >
                     {link.label}
-                    <ArrowIcon className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    <ArrowSquareOutIcon
+                      aria-hidden="true"
+                      className="size-4 transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"
+                      weight="regular"
+                    />
                   </a>
                 ))}
               </div>
             </div>
 
-            <div className="relative min-h-72 border-t border-line bg-background lg:min-h-80 lg:border-l lg:border-t-0">
+            <div className="relative min-h-72 overflow-hidden border-t border-line bg-background lg:min-h-80 lg:border-l lg:border-t-0">
               <Image
                 alt={project.alt}
-                className="object-cover object-top"
+                className="object-cover object-top transition-transform duration-500 ease-out group-hover/project:scale-[1.012]"
                 fill
                 sizes="(max-width: 1023px) 100vw, 70vw"
                 src={project.image}

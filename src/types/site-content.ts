@@ -23,11 +23,19 @@ export interface HeroContent {
   titleLines: string[];
 }
 
+/** Enlace verificable asociado a un proyecto seleccionado. */
+export interface ProjectLink {
+  href: `https://${string}`;
+  label: string;
+}
+
 /** Contenido del proyecto insignia presentado en la portada. */
 export interface FeaturedProjectContent {
   category: string;
+  highlights: string[];
   image: `/${string}`;
   imageAlt: string;
+  links: ProjectLink[];
   number: string;
   role: string;
   roleLabel: string;
@@ -49,12 +57,6 @@ export interface AboutContent {
   title: string;
 }
 
-/** Enlace verificable asociado a un proyecto seleccionado. */
-export interface ProjectLink {
-  href: `https://${string}`;
-  label: string;
-}
-
 /** Proyecto secundario con imagen y alcance resumido. */
 export interface SelectedProject {
   alt: string;
@@ -72,9 +74,13 @@ export interface SelectedProjectsContent {
   projects: SelectedProject[];
 }
 
+/** Identificador semántico de cada capacidad técnica. */
+export type ApproachIconName = "backend" | "data" | "frontend" | "product";
+
 /** Paso verificable de la forma de trabajo. */
 export interface ApproachStep {
   description: string;
+  icon: ApproachIconName;
   number: string;
   title: string;
 }
