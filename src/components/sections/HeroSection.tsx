@@ -72,7 +72,6 @@ export function HeroSection({ content }: HeroSectionProps) {
           <div className="absolute inset-y-0 left-0 w-px bg-surface/15" aria-hidden="true" />
         </div>
       </Container>
-      <div className="h-12 md:h-20" aria-hidden="true" />
     </section>
   );
 }

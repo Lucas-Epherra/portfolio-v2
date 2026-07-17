@@ -13,8 +13,11 @@ export function FeaturedProjectSection({
   content,
 }: FeaturedProjectSectionProps) {
   return (
-    <section id="work" className="relative z-[1] scroll-mt-8 bg-surface pb-6">
-      <Container className="-mt-12 md:-mt-20">
+    <section
+      id="work"
+      className="relative z-[1] scroll-mt-8 bg-surface pb-6 before:absolute before:inset-x-0 before:top-0 before:h-24 before:bg-dark before:content-['']"
+    >
+      <Container className="relative pt-10 md:pt-14">
         <article className="grid overflow-hidden border border-line bg-surface shadow-portfolio lg:grid-cols-[1.8fr_0.8fr]">
           <div className="relative aspect-[1366/606] border-b border-line bg-[#e8edf0] lg:aspect-auto lg:min-h-[26rem] lg:border-b-0 lg:border-r">
             <Image
