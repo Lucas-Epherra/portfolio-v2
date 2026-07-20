@@ -15,11 +15,19 @@ export interface CaseStudyFact {
   value: string;
 }
 
-/** Imagen complementaria con dimensiones y descripción accesible. */
+/** Posición editorial disponible para una captura dentro de la galería. */
+export type CaseStudyImageLayout =
+  | "compact"
+  | "featured"
+  | "portrait"
+  | "wide";
+
+/** Imagen complementaria con dimensiones, descripción y posición editorial. */
 export interface CaseStudyImage {
   alt: string;
   caption: string;
   height: number;
+  layout: CaseStudyImageLayout;
   src: `/${string}`;
   width: number;
 }
@@ -62,14 +70,18 @@ export interface CaseStudyContent {
 export interface CaseStudyUiContent {
   backToPortfolio: string;
   caseStudyLabel: string;
+  closeImageLabel: string;
   contactLabel: string;
   decisionsLabel: string;
+  galleryDescription: string;
   galleryLabel: string;
+  galleryTitle: string;
   nextCase: string;
   overviewLabel: string;
   portfolioLabel: string;
   previousCase: string;
   skipToContent: string;
+  viewImageLabel: string;
 }
 
 /** Colección localizada indexada por idioma y slug. */

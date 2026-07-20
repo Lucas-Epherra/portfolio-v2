@@ -110,6 +110,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     { href: "#technical-decisions", label: ui.decisionsLabel },
     { href: `/${locale}#contact`, label: ui.contactLabel },
   ];
+  const galleryPosition = caseStudy.sections.findIndex(
+    (section) => section.id === "delivery",
+  );
+  const sectionBoundary =
+    galleryPosition === -1 ? caseStudy.sections.length : galleryPosition;
+  const sectionsBeforeGallery = caseStudy.sections.slice(0, sectionBoundary);
+  const sectionsAfterGallery = caseStudy.sections.slice(sectionBoundary);
 
   return (
     <>
@@ -125,10 +132,17 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       />
       <main id="main-content">
         <CaseStudyHero content={caseStudy} locale={locale} ui={ui} />
-        {caseStudy.sections.map((section, index) => (
+        {sectionsBeforeGallery.map((section, index) => (
           <CaseStudySection content={section} key={section.id} muted={index % 2 === 1} />
         ))}
-        <CaseStudyGallery images={caseStudy.gallery} title={ui.galleryLabel} />
+        <CaseStudyGallery images={caseStudy.gallery} ui={ui} />
+        {sectionsAfterGallery.map((section, index) => (
+          <CaseStudySection
+            content={section}
+            key={section.id}
+            muted={(sectionBoundary + index) % 2 === 1}
+          />
+        ))}
         <CaseStudyNavigation
           locale={locale}
           next={next}

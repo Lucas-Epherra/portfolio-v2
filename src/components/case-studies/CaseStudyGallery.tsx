@@ -1,45 +1,51 @@
-import Image from "next/image";
-
-import type { CaseStudyImage } from "@/types/case-study";
+import type { CaseStudyImage, CaseStudyUiContent } from "@/types/case-study";
 
 import { Container } from "../ui/Container";
+import { CaseStudyGalleryItem } from "./CaseStudyGalleryItem";
 
 interface CaseStudyGalleryProps {
   images: CaseStudyImage[];
-  title: string;
+  ui: CaseStudyUiContent;
 }
 
-/** Muestra evidencia visual adicional sin alterar ni exponer datos sensibles. */
-export function CaseStudyGallery({ images, title }: CaseStudyGalleryProps) {
+/** Organiza evidencia visual del producto en una composición editorial responsive. */
+export function CaseStudyGallery({ images, ui }: CaseStudyGalleryProps) {
   if (images.length === 0) {
     return null;
   }
 
   return (
-    <section className="bg-dark py-14 text-surface sm:py-16">
+    <section
+      aria-labelledby="case-study-gallery-title"
+      className="scroll-mt-8 bg-dark py-14 text-surface sm:py-16 lg:py-20"
+      id="gallery"
+    >
       <Container>
-        <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-accent">
-          {title}
-        </p>
-
-        <div className="mt-8 grid gap-6">
-          {images.map((image) => (
-            <figure
-              className="overflow-hidden border border-surface/15 bg-surface text-foreground"
-              key={image.src}
+        <header className="grid gap-7 border-b border-surface/15 pb-9 lg:grid-cols-12 lg:gap-12">
+          <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-accent lg:col-span-4">
+            {ui.galleryLabel}
+          </p>
+          <div className="lg:col-span-8">
+            <h2
+              className="max-w-3xl font-serif text-4xl leading-[1.02] tracking-[-0.035em] sm:text-5xl"
+              id="case-study-gallery-title"
             >
-              <Image
-                alt={image.alt}
-                className="h-auto w-full"
-                height={image.height}
-                sizes="(max-width: 1536px) 100vw, 1440px"
-                src={image.src}
-                width={image.width}
-              />
-              <figcaption className="border-t border-line px-5 py-4 text-xs leading-5 text-muted sm:px-7">
-                {image.caption}
-              </figcaption>
-            </figure>
+              {ui.galleryTitle}
+            </h2>
+            <p className="mt-5 max-w-2xl text-sm leading-6 text-surface/60 sm:text-base sm:leading-7">
+              {ui.galleryDescription}
+            </p>
+          </div>
+        </header>
+
+        <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-6">
+          {images.map((image) => (
+            <CaseStudyGalleryItem
+              closeLabel={ui.closeImageLabel}
+              image={image}
+              key={image.src}
+              viewLabel={ui.viewImageLabel}
+            />
           ))}
         </div>
       </Container>

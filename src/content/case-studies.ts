@@ -15,26 +15,36 @@ export const caseStudyUi = {
   en: {
     backToPortfolio: "Back to selected work",
     caseStudyLabel: "Case study",
+    closeImageLabel: "Close image",
     contactLabel: "Contact",
     decisionsLabel: "Decisions",
-    galleryLabel: "Product detail",
+    galleryDescription:
+      "Selected product states show how the operational system works beyond its main dashboard.",
+    galleryLabel: "Product gallery",
+    galleryTitle: "The workshop workflow, seen in context.",
     nextCase: "Next case study",
     overviewLabel: "Overview",
     portfolioLabel: "Portfolio",
     previousCase: "Previous case study",
     skipToContent: "Skip to case study content",
+    viewImageLabel: "View full image",
   },
   es: {
     backToPortfolio: "Volver a proyectos",
     caseStudyLabel: "Caso de estudio",
+    closeImageLabel: "Cerrar imagen",
     contactLabel: "Contacto",
     decisionsLabel: "Decisiones",
-    galleryLabel: "Detalle del producto",
+    galleryDescription:
+      "Una selección de estados del producto muestra cómo funciona el sistema operativo más allá del dashboard principal.",
+    galleryLabel: "Galería del producto",
+    galleryTitle: "El flujo del taller, visto en contexto.",
     nextCase: "Siguiente caso de estudio",
     overviewLabel: "Resumen",
     portfolioLabel: "Portfolio",
     previousCase: "Caso de estudio anterior",
     skipToContent: "Saltar al contenido del caso de estudio",
+    viewImageLabel: "Ver imagen completa",
   },
 } satisfies LocalizedCaseStudyUi;
 
@@ -49,7 +59,7 @@ export const caseStudies = {
         "Case study of MiTaller360, a production-deployed SaaS for workshop operations built across frontend, backend, data and delivery.",
       summary:
         "A complete operational product that centralizes customers, vehicles, work orders, scheduling, receipts and workshop administration.",
-      heroImage: "/images/projects/mitaller360-overview.webp",
+      heroImage: "/images/case-studies/mitaller360/dashboard.webp",
       heroAlt: "MiTaller360 workshop operations dashboard",
       stack: [
         "Next.js",
@@ -133,12 +143,40 @@ export const caseStudies = {
       ],
       gallery: [
         {
-          src: "/images/projects/mitaller360-workflow.webp",
-          alt: "MiTaller360 work order status overview",
+          src: "/images/case-studies/mitaller360/work-order-detail.webp",
+          alt: "MiTaller360 work order detail with diagnosis, parts and costs",
           caption:
-            "Operational status overview for pending, in-progress, ready, delivered and cancelled work orders.",
-          width: 1028,
-          height: 300,
+            "A work order connects the reported issue, diagnosis, parts, labor and final cost in one operational record.",
+          width: 1672,
+          height: 941,
+          layout: "wide",
+        },
+        {
+          src: "/images/case-studies/mitaller360/mobile-dashboard.webp",
+          alt: "Responsive MiTaller360 dashboard on a mobile viewport",
+          caption:
+            "The daily workshop summary remains usable on mobile without reducing the operational hierarchy.",
+          width: 600,
+          height: 1280,
+          layout: "portrait",
+        },
+        {
+          src: "/images/case-studies/mitaller360/work-orders.webp",
+          alt: "MiTaller360 work order search, filters and operational counters",
+          caption:
+            "Search, status filters and counters provide a direct entry point into active workshop work.",
+          width: 1366,
+          height: 768,
+          layout: "compact",
+        },
+        {
+          src: "/images/case-studies/mitaller360/schedule.webp",
+          alt: "MiTaller360 monthly workshop schedule",
+          caption:
+            "The monthly schedule connects appointments with workshop capacity and related work orders.",
+          width: 1366,
+          height: 768,
+          layout: "compact",
         },
       ],
     },
@@ -305,7 +343,7 @@ export const caseStudies = {
         "Caso de estudio de MiTaller360, un SaaS desplegado en producción y construido desde el frontend hasta el backend, los datos y la entrega.",
       summary:
         "Un producto operativo completo que centraliza clientes, vehículos, órdenes de trabajo, agenda, recibos y administración del taller.",
-      heroImage: "/images/projects/mitaller360-overview.webp",
+      heroImage: "/images/case-studies/mitaller360/dashboard.webp",
       heroAlt: "Dashboard operativo de talleres de MiTaller360",
       stack: [
         "Next.js",
@@ -389,12 +427,40 @@ export const caseStudies = {
       ],
       gallery: [
         {
-          src: "/images/projects/mitaller360-workflow.webp",
-          alt: "Resumen de estados de órdenes de MiTaller360",
+          src: "/images/case-studies/mitaller360/work-order-detail.webp",
+          alt: "Detalle de una orden de MiTaller360 con diagnóstico, repuestos y costos",
           caption:
-            "Resumen operativo de órdenes pendientes, en proceso, listas, entregadas y anuladas.",
-          width: 1028,
-          height: 300,
+            "Una orden conecta el problema reportado, el diagnóstico, los repuestos, la mano de obra y el costo final en un único registro operativo.",
+          width: 1672,
+          height: 941,
+          layout: "wide",
+        },
+        {
+          src: "/images/case-studies/mitaller360/mobile-dashboard.webp",
+          alt: "Dashboard responsive de MiTaller360 en una pantalla móvil",
+          caption:
+            "El resumen diario del taller continúa siendo utilizable en mobile sin perder la jerarquía operativa.",
+          width: 600,
+          height: 1280,
+          layout: "portrait",
+        },
+        {
+          src: "/images/case-studies/mitaller360/work-orders.webp",
+          alt: "Buscador, filtros y contadores operativos de órdenes en MiTaller360",
+          caption:
+            "La búsqueda, los filtros por estado y los contadores ofrecen una entrada directa al trabajo activo del taller.",
+          width: 1366,
+          height: 768,
+          layout: "compact",
+        },
+        {
+          src: "/images/case-studies/mitaller360/schedule.webp",
+          alt: "Agenda mensual del taller en MiTaller360",
+          caption:
+            "La agenda mensual conecta los turnos con la capacidad del taller y las órdenes relacionadas.",
+          width: 1366,
+          height: 768,
+          layout: "compact",
         },
       ],
     },
