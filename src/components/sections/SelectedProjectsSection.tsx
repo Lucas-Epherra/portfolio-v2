@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr/ArrowRight";
 import { ArrowSquareOutIcon } from "@phosphor-icons/react/dist/ssr/ArrowSquareOut";
 
 import type { SelectedProjectsContent } from "@/types/site-content";
@@ -36,7 +38,18 @@ export function SelectedProjectsSection({
                   </li>
                 ))}
               </ul>
-              <div className="mt-6">
+              <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+                <Link
+                  className="group/case inline-flex items-center gap-2 text-xs font-bold text-foreground underline decoration-line underline-offset-6 transition-colors hover:text-accent"
+                  href={project.caseStudy.href}
+                >
+                  {project.caseStudy.label}
+                  <ArrowRightIcon
+                    aria-hidden="true"
+                    className="size-4 transition-transform duration-300 group-hover/case:translate-x-1"
+                    weight="regular"
+                  />
+                </Link>
                 {project.links.map((link) => (
                   <a
                     className="group/link inline-flex items-center gap-2 text-xs font-bold text-foreground underline decoration-line underline-offset-6 transition-colors hover:text-accent"

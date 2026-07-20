@@ -6,6 +6,7 @@ import type { NavigationItem } from "@/types/site-content";
 import { Container } from "../ui/Container";
 
 interface SiteHeaderProps {
+  alternateHref?: `/${string}`;
   languageLabel: string;
   locale: Locale;
   navigation: NavigationItem[];
@@ -14,6 +15,7 @@ interface SiteHeaderProps {
 
 /** Presenta marca, navegación interna y cambio de idioma sobre el hero oscuro. */
 export function SiteHeader({
+  alternateHref,
   languageLabel,
   locale,
   navigation,
@@ -35,9 +37,9 @@ export function SiteHeader({
 
         <nav aria-label={navigationLabel}>
           <ul className="flex items-center gap-5 md:gap-6 lg:gap-10">
-            {navigation.map((item) => (
+            {navigation.map((item, index) => (
               <li
-                className={item.href === "#work" ? "block" : "hidden md:block"}
+                className={index === 0 ? "block" : "hidden md:block"}
                 key={item.href}
               >
                 <a
@@ -57,7 +59,7 @@ export function SiteHeader({
           <Link
             aria-label={languageLabel}
             className="min-h-11 py-3 text-surface/55 transition-colors hover:text-surface"
-            href={`/${alternateLocale}`}
+            href={alternateHref ?? `/${alternateLocale}`}
             hrefLang={alternateLocale}
             lang={alternateLocale}
           >

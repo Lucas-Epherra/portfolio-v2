@@ -2,7 +2,7 @@ import type { Locale } from "@/types/locale";
 
 /** Enlace interno utilizado por la navegación principal. */
 export interface NavigationItem {
-  href: `#${string}`;
+  href: `#${string}` | `/${string}`;
   label: string;
 }
 
@@ -29,8 +29,15 @@ export interface ProjectLink {
   label: string;
 }
 
+/** Enlace interno hacia una página propia del portfolio. */
+export interface InternalProjectLink {
+  href: `/${string}`;
+  label: string;
+}
+
 /** Contenido del proyecto insignia presentado en la portada. */
 export interface FeaturedProjectContent {
+  caseStudy: InternalProjectLink;
   category: string;
   highlights: string[];
   image: `/${string}`;
@@ -60,6 +67,7 @@ export interface AboutContent {
 /** Proyecto secundario con imagen y alcance resumido. */
 export interface SelectedProject {
   alt: string;
+  caseStudy: InternalProjectLink;
   category: string;
   image: `/${string}`;
   links: ProjectLink[];

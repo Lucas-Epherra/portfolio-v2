@@ -33,6 +33,10 @@ export const siteContent = {
     featuredProject: {
       number: "01",
       title: "MiTaller360",
+      caseStudy: {
+        href: "/en/projects/mitaller360",
+        label: "Read case study",
+      },
       category: "Workshop management SaaS",
       highlights: ["Authentication", "Work orders", "Scheduling", "Administration"],
       roleLabel: "Role",
@@ -60,6 +64,10 @@ export const siteContent = {
         {
           number: "02",
           title: "OpsCore",
+          caseStudy: {
+            href: "/en/projects/opscore",
+            label: "Read case study",
+          },
           category: "Operational incident management",
           role: "Frontend Developer",
           image: "/images/projects/opscore.webp",
@@ -75,6 +83,10 @@ export const siteContent = {
         {
           number: "03",
           title: "Estudio Jurídico Lachat",
+          caseStudy: {
+            href: "/en/projects/estudio-lachat",
+            label: "Read case study",
+          },
           category: "Professional legal website",
           role: "Full Stack Developer",
           image: "/images/projects/estudio-lachat.webp",
@@ -167,6 +179,10 @@ export const siteContent = {
     featuredProject: {
       number: "01",
       title: "MiTaller360",
+      caseStudy: {
+        href: "/es/projects/mitaller360",
+        label: "Ver caso de estudio",
+      },
       category: "SaaS de gestión para talleres",
       highlights: ["Autenticación", "Órdenes", "Agenda", "Administración"],
       roleLabel: "Rol",
@@ -194,6 +210,10 @@ export const siteContent = {
         {
           number: "02",
           title: "OpsCore",
+          caseStudy: {
+            href: "/es/projects/opscore",
+            label: "Ver caso de estudio",
+          },
           category: "Gestión de incidentes operativos",
           role: "Frontend Developer",
           image: "/images/projects/opscore.webp",
@@ -209,6 +229,10 @@ export const siteContent = {
         {
           number: "03",
           title: "Estudio Jurídico Lachat",
+          caseStudy: {
+            href: "/es/projects/estudio-lachat",
+            label: "Ver caso de estudio",
+          },
           category: "Sitio web jurídico profesional",
           role: "Full Stack Developer",
           image: "/images/projects/estudio-lachat.webp",
