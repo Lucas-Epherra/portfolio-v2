@@ -302,8 +302,8 @@ export const caseStudies = {
       galleryTitle: "A professional service, presented with clarity.",
       galleryDescription:
         "Selected public pages and consultation states show how the editorial experience supports credibility and client contact.",
-      heroImage: "/images/projects/estudio-lachat.webp",
-      heroAlt: "Estudio Jurídico Lachat website homepage",
+      heroImage: "/images/case-studies/estudio-lachat/homepage.webp",
+      heroAlt: "Estudio Jurídico Lachat desktop homepage",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Resend", "Vercel"],
       facts: [
         { label: "Role", value: "Full Stack Developer" },
@@ -370,7 +370,53 @@ export const caseStudies = {
           ],
         },
       ],
-      gallery: [],
+      gallery: [
+        {
+          src: "/images/case-studies/estudio-lachat/services.webp",
+          alt: "Estudio Jurídico Lachat legal services page",
+          caption:
+            "The service overview translates legal practice areas into concrete situations and direct consultation paths.",
+          width: 1366,
+          height: 768,
+          layout: "featured",
+        },
+        {
+          src: "/images/case-studies/estudio-lachat/process.webp",
+          alt: "Estudio Jurídico Lachat consultation process",
+          caption:
+            "A three-step explanation makes the consultation process predictable before the visitor shares personal information.",
+          width: 1366,
+          height: 768,
+          layout: "wide",
+        },
+        {
+          src: "/images/case-studies/estudio-lachat/mobile-homepage.webp",
+          alt: "Estudio Jurídico Lachat homepage on a mobile viewport",
+          caption:
+            "The editorial hierarchy, brand identity and primary contact actions remain clear on mobile.",
+          width: 778,
+          height: 1600,
+          layout: "portrait",
+        },
+        {
+          src: "/images/case-studies/estudio-lachat/about.webp",
+          alt: "Estudio Jurídico Lachat professional approach section",
+          caption:
+            "The practice positioning combines preventive criteria, remote assistance and direct language.",
+          width: 1366,
+          height: 768,
+          layout: "compact",
+        },
+        {
+          src: "/images/case-studies/estudio-lachat/contact-form.webp",
+          alt: "Estudio Jurídico Lachat online consultation form",
+          caption:
+            "The intake form structures each enquiry, accepts supporting documents and prepares the lead workflow.",
+          width: 1366,
+          height: 768,
+          layout: "compact",
+        },
+      ],
     },
   },
   es: {
@@ -632,8 +678,8 @@ export const caseStudies = {
       galleryTitle: "Un servicio profesional, presentado con claridad.",
       galleryDescription:
         "Las páginas públicas y los estados de consulta seleccionados muestran cómo la experiencia editorial sostiene la credibilidad y el contacto con potenciales clientes.",
-      heroImage: "/images/projects/estudio-lachat.webp",
-      heroAlt: "Página principal del sitio Estudio Jurídico Lachat",
+      heroImage: "/images/case-studies/estudio-lachat/homepage.webp",
+      heroAlt: "Página principal de Estudio Jurídico Lachat en escritorio",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Resend", "Vercel"],
       facts: [
         { label: "Rol", value: "Full Stack Developer" },
@@ -700,7 +746,53 @@ export const caseStudies = {
           ],
         },
       ],
-      gallery: [],
+      gallery: [
+        {
+          src: "/images/case-studies/estudio-lachat/services.webp",
+          alt: "Página de servicios legales de Estudio Jurídico Lachat",
+          caption:
+            "La presentación de servicios traduce las áreas jurídicas en situaciones concretas y caminos directos de consulta.",
+          width: 1366,
+          height: 768,
+          layout: "featured",
+        },
+        {
+          src: "/images/case-studies/estudio-lachat/process.webp",
+          alt: "Proceso de consulta de Estudio Jurídico Lachat",
+          caption:
+            "La explicación en tres pasos vuelve previsible el proceso antes de que la persona comparta información personal.",
+          width: 1366,
+          height: 768,
+          layout: "wide",
+        },
+        {
+          src: "/images/case-studies/estudio-lachat/mobile-homepage.webp",
+          alt: "Página principal de Estudio Jurídico Lachat en una pantalla móvil",
+          caption:
+            "La jerarquía editorial, la identidad y las acciones principales de contacto se mantienen claras en mobile.",
+          width: 778,
+          height: 1600,
+          layout: "portrait",
+        },
+        {
+          src: "/images/case-studies/estudio-lachat/about.webp",
+          alt: "Sección sobre el enfoque profesional de Estudio Jurídico Lachat",
+          caption:
+            "El posicionamiento del estudio combina criterio preventivo, atención remota y lenguaje directo.",
+          width: 1366,
+          height: 768,
+          layout: "compact",
+        },
+        {
+          src: "/images/case-studies/estudio-lachat/contact-form.webp",
+          alt: "Formulario de consulta online de Estudio Jurídico Lachat",
+          caption:
+            "El formulario estructura cada consulta, admite documentación de respaldo y prepara el flujo de captación.",
+          width: 1366,
+          height: 768,
+          layout: "compact",
+        },
+      ],
     },
   },
 } satisfies LocalizedCaseStudies;
