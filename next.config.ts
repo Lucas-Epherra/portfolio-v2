@@ -8,6 +8,51 @@ const nextConfig: NextConfig = {
         destination: "/en",
         permanent: true,
       },
+      {
+        source: "/index.html",
+        destination: "/en",
+        permanent: true,
+      },
+      {
+        source: "/es/index.html",
+        destination: "/es",
+        permanent: true,
+      },
+      {
+        source: "/projects/opscore.html",
+        destination: "/en/projects/opscore",
+        permanent: true,
+      },
+      {
+        source: "/projects/estudio-lachat.html",
+        destination: "/en/projects/estudio-lachat",
+        permanent: true,
+      },
+      {
+        source: "/es/projects/opscore.html",
+        destination: "/es/projects/opscore",
+        permanent: true,
+      },
+      {
+        source: "/es/projects/estudio-lachat.html",
+        destination: "/es/projects/estudio-lachat",
+        permanent: true,
+      },
+      {
+        source: "/assets/cv/lucas-epherra-cv.pdf",
+        destination: "/cv/lucas-epherra-cv-es.pdf",
+        permanent: true,
+      },
+      {
+        source: "/assets/cv/lucas-epherra-cv-english.pdf",
+        destination: "/cv/lucas-epherra-cv-en.pdf",
+        permanent: true,
+      },
+      {
+        source: "/assets/preview/portfolio-cover.jpg",
+        destination: "/images/social/portfolio-og.png",
+        permanent: true,
+      },
     ];
   },
 };

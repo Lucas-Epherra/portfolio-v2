@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Manrope, Source_Serif_4 } from "next/font/google";
 import { notFound } from "next/navigation";
 
-import { SITE_URL, siteContent } from "@/content/site";
+import { SITE_URL, SOCIAL_IMAGE_PATH, siteContent } from "@/content/site";
 import { isLocale, SUPPORTED_LOCALES } from "@/lib/locales";
 
 import "../globals.css";
@@ -26,6 +26,11 @@ interface LocaleLayoutProps {
 
 export const dynamicParams = false;
 
+export const viewport: Viewport = {
+  colorScheme: "light",
+  themeColor: "#1f2321",
+};
+
 /** Genera en build solamente las rutas correspondientes a idiomas soportados. */
 export function generateStaticParams(): Array<{ locale: string }> {
   return SUPPORTED_LOCALES.map((locale) => ({ locale }));
@@ -48,6 +53,10 @@ export async function generateMetadata({
 
   const content = siteContent[locale];
   const languageLocale = locale === "es" ? "es_AR" : "en_US";
+  const socialImageAlt =
+    locale === "es"
+      ? "Portfolio de Lucas Epherra, Full Stack Developer"
+      : "Lucas Epherra's Full Stack Developer portfolio";
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -69,6 +78,14 @@ export async function generateMetadata({
     },
     openGraph: {
       description: content.description,
+      images: [
+        {
+          alt: socialImageAlt,
+          height: 630,
+          url: SOCIAL_IMAGE_PATH,
+          width: 1200,
+        },
+      ],
       locale: languageLocale,
       siteName: "Lucas Epherra — Portfolio",
       title: "Lucas Epherra | Full Stack Developer",
@@ -76,8 +93,9 @@ export async function generateMetadata({
       url: `/${locale}`,
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       description: content.description,
+      images: [SOCIAL_IMAGE_PATH],
       title: "Lucas Epherra | Full Stack Developer",
     },
   };

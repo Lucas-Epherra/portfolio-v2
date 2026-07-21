@@ -1,6 +1,7 @@
 import type { LocalizedSiteContent } from "@/types/site-content";
 
 export const SITE_URL = "https://www.lucasepherra.com.ar";
+export const SOCIAL_IMAGE_PATH = "/images/social/portfolio-og.png";
 export const CONTACT_EMAIL = "lucasepherra@gmail.com";
 export const GITHUB_URL = "https://github.com/Lucas-Epherra";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/lucas-epherra/";
@@ -145,7 +146,7 @@ export const siteContent = {
     },
     contact: {
       eyebrow: "Contact",
-      title: "Let’s talk about your next product.",
+      title: "Let’s talk about projects, teams and opportunities.",
       emailLabel: "Email",
       locationLabel: "Location",
     },
@@ -291,7 +292,7 @@ export const siteContent = {
     },
     contact: {
       eyebrow: "Contacto",
-      title: "Hablemos de tu próximo producto.",
+      title: "Hablemos de proyectos, equipos y oportunidades.",
       emailLabel: "Email",
       locationLabel: "Ubicación",
     },
