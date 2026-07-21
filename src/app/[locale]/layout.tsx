@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Source_Serif_4 } from "next/font/google";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/next";
 
 import { SITE_URL, SOCIAL_IMAGE_PATH, siteContent } from "@/content/site";
 import { isLocale, SUPPORTED_LOCALES } from "@/lib/locales";
@@ -119,7 +120,10 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${manrope.variable} ${sourceSerif.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
