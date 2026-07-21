@@ -10,6 +10,10 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { SelectedProjectsSection } from "@/components/sections/SelectedProjectsSection";
 import { siteContent } from "@/content/site";
 import { isLocale } from "@/lib/locales";
+import {
+  createProfilePageStructuredData,
+  serializeStructuredData,
+} from "@/lib/structured-data";
 
 interface PortfolioPageProps {
   params: Promise<{ locale: string }>;
@@ -29,9 +33,19 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
   }
 
   const content = siteContent[locale];
+  const structuredData = createProfilePageStructuredData(
+    locale,
+    content.description,
+  );
 
   return (
     <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: serializeStructuredData(structuredData),
+        }}
+        type="application/ld+json"
+      />
       <a className="skip-link" href="#main-content">
         {locale === "es" ? "Saltar al contenido" : "Skip to content"}
       </a>

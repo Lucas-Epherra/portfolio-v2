@@ -79,7 +79,7 @@ export function CaseStudyNavigation({
           </Link>
         ) : (
           <Link
-            className="group border border-line bg-dark p-6 text-right text-surface transition-colors duration-300 hover:border-accent/70 sm:p-8"
+            className="group border border-line bg-dark p-6 text-right text-surface transition-colors duration-300 hover:border-accent-on-dark/70 sm:p-8"
             href={`/${locale}#contact`}
           >
             <span className="flex items-center justify-end gap-3 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-surface/50">

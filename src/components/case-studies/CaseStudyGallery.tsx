@@ -29,7 +29,7 @@ export function CaseStudyGallery({
     >
       <Container>
         <header className="grid gap-7 border-b border-surface/15 pb-9 lg:grid-cols-12 lg:gap-12">
-          <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-accent lg:col-span-4">
+          <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-accent-on-dark lg:col-span-4">
             {ui.galleryLabel}
           </p>
           <div className="lg:col-span-8">

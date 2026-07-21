@@ -34,7 +34,7 @@ export function CaseStudyHero({ content, locale, ui }: CaseStudyHeroProps) {
 
           <div className="mt-12 grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
-              <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-accent">
+              <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-accent-on-dark">
                 {ui.caseStudyLabel} · {content.number}
               </p>
               <h1 className="mt-5 max-w-4xl font-serif text-5xl leading-[0.98] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
@@ -52,8 +52,8 @@ export function CaseStudyHero({ content, locale, ui }: CaseStudyHeroProps) {
                   <a
                     className={
                       index === 0
-                        ? "group inline-flex min-h-12 items-center gap-3 bg-accent px-5 text-sm font-bold text-dark transition-colors duration-300 hover:bg-surface"
-                        : "group inline-flex min-h-12 items-center gap-3 border border-accent/70 px-5 text-sm font-bold text-surface transition-colors duration-300 hover:bg-surface hover:text-dark"
+                        ? "group inline-flex min-h-12 items-center gap-3 bg-accent-on-dark px-5 text-sm font-bold text-dark transition-colors duration-300 hover:bg-surface"
+                        : "group inline-flex min-h-12 items-center gap-3 border border-accent-on-dark/70 px-5 text-sm font-bold text-surface transition-colors duration-300 hover:bg-surface hover:text-dark"
                     }
                     href={action.href}
                     key={action.href}
@@ -77,7 +77,7 @@ export function CaseStudyHero({ content, locale, ui }: CaseStudyHeroProps) {
                   className="grid grid-cols-[7rem_1fr] gap-5 border-b border-surface/15 py-4"
                   key={fact.label}
                 >
-                  <dt className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-surface/40">
+                  <dt className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-surface/55">
                     {fact.label}
                   </dt>
                   <dd className="text-sm leading-6 text-surface/70">{fact.value}</dd>
@@ -89,7 +89,7 @@ export function CaseStudyHero({ content, locale, ui }: CaseStudyHeroProps) {
           <ul className="mt-12 flex flex-wrap gap-x-3 gap-y-2 border-t border-surface/15 pt-6 text-xs text-surface/55">
             {content.stack.map((technology) => (
               <li
-                className="after:ml-3 after:text-accent after:content-['/'] last:after:content-none"
+                className="after:ml-3 after:text-accent-on-dark after:content-['/'] last:after:content-none"
                 key={technology}
               >
                 {technology}

@@ -28,7 +28,7 @@ export function SiteHeader({
       <Container className="flex h-20 items-center justify-between gap-4 sm:h-24">
         <Link
           aria-label="Lucas Epherra — Home"
-          className="shrink-0 text-base font-extrabold uppercase tracking-[0.24em] transition-colors duration-300 hover:text-accent sm:text-xl"
+          className="shrink-0 text-base font-extrabold uppercase tracking-[0.24em] transition-colors duration-300 hover:text-accent-on-dark sm:text-xl"
           href={`/${locale}`}
         >
           <span className="sm:hidden">L. E.</span>
@@ -43,7 +43,7 @@ export function SiteHeader({
                 key={item.href}
               >
                 <a
-                  className="group relative inline-flex py-3 text-xs font-semibold text-surface/65 transition-colors duration-300 after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 hover:text-surface hover:after:scale-x-100 md:text-[0.8rem] lg:text-sm"
+                  className="group relative inline-flex py-3 text-xs font-semibold text-surface/65 transition-colors duration-300 after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-accent-on-dark after:transition-transform after:duration-300 hover:text-surface hover:after:scale-x-100 md:text-[0.8rem] lg:text-sm"
                   href={item.href}
                 >
                   {item.label}
@@ -54,7 +54,7 @@ export function SiteHeader({
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 text-xs font-bold uppercase tracking-[0.16em]">
-          <span className="text-accent">{locale}</span>
+          <span className="text-accent-on-dark">{locale}</span>
           <span className="text-surface/25" aria-hidden="true">/</span>
           <Link
             aria-label={languageLabel}

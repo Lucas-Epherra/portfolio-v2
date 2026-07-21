@@ -74,7 +74,8 @@ export function FeaturedProjectSection({
 
             <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 border-t border-line pt-6">
               <Link
-                className="group/case inline-flex min-h-10 items-center gap-3 bg-dark px-4 text-xs font-bold text-surface transition-colors duration-300 hover:bg-accent hover:text-dark"
+                aria-label={`${content.caseStudy.label}: ${content.title}`}
+                className="group/case inline-flex min-h-10 items-center gap-3 bg-dark px-4 text-xs font-bold text-surface transition-colors duration-300 hover:bg-accent-on-dark hover:text-dark"
                 href={content.caseStudy.href}
               >
                 {content.caseStudy.label}

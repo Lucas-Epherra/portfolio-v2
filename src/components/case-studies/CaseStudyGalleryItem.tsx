@@ -73,7 +73,7 @@ export function CaseStudyGalleryItem({
           src={image.src}
           width={image.width}
         />
-        <span className="absolute right-4 top-4 grid size-10 place-items-center border border-surface/20 bg-dark/90 text-surface transition-colors duration-300 group-hover:bg-accent group-hover:text-dark sm:right-5 sm:top-5">
+        <span className="absolute right-4 top-4 grid size-10 place-items-center border border-surface/20 bg-dark/90 text-surface transition-colors duration-300 group-hover:bg-accent-on-dark group-hover:text-dark sm:right-5 sm:top-5">
           <ArrowsOutSimpleIcon aria-hidden="true" className="size-4" weight="regular" />
         </span>
       </button>
@@ -93,7 +93,7 @@ export function CaseStudyGalleryItem({
             <p className="text-xs leading-5 text-surface/65">{image.caption}</p>
             <button
               aria-label={closeLabel}
-              className="grid size-10 shrink-0 place-items-center border border-surface/20 text-surface transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-dark"
+              className="grid size-10 shrink-0 place-items-center border border-surface/20 text-surface transition-colors duration-300 hover:border-accent-on-dark hover:bg-accent-on-dark hover:text-dark"
               onClick={closeImage}
               type="button"
             >

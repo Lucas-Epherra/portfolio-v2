@@ -40,6 +40,7 @@ export function SelectedProjectsSection({
               </ul>
               <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
                 <Link
+                  aria-label={`${project.caseStudy.label}: ${project.title}`}
                   className="group/case inline-flex items-center gap-2 text-xs font-bold text-foreground underline decoration-line underline-offset-6 transition-colors hover:text-accent"
                   href={project.caseStudy.href}
                 >

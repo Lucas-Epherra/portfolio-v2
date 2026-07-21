@@ -5,8 +5,10 @@
   --portfolio-surface: #faf9f5;
   --portfolio-foreground: #20211f;
   --portfolio-dark: #1f2321;
-  --portfolio-accent: #b4583c;
-  --portfolio-muted: #667066;
+  --portfolio-accent: #9c462f;
+  --portfolio-accent-on-dark: #d87858;
+  --portfolio-focus: #c36747;
+  --portfolio-muted: #646f64;
   --portfolio-line: rgb(32 33 31 / 16%);
   --portfolio-radius: 0.75rem;
   --portfolio-shadow: 0 1.5rem 4rem rgb(31 35 33 / 10%);
@@ -18,6 +20,7 @@
   --color-foreground: var(--portfolio-foreground);
   --color-dark: var(--portfolio-dark);
   --color-accent: var(--portfolio-accent);
+  --color-accent-on-dark: var(--portfolio-accent-on-dark);
   --color-muted: var(--portfolio-muted);
   --color-line: var(--portfolio-line);
   --font-sans: var(--font-manrope);
@@ -108,7 +111,7 @@ a {
 }
 
 :focus-visible {
-  outline: 0.125rem solid var(--portfolio-accent);
+  outline: 0.125rem solid var(--portfolio-focus);
   outline-offset: 0.25rem;
 }
 

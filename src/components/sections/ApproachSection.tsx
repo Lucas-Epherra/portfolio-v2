@@ -30,7 +30,7 @@ export function ApproachSection({ content }: ApproachSectionProps) {
           <p className="mt-4 max-w-xs text-lg leading-7 text-surface/55">
             {content.introduction}
           </p>
-          <span className="mt-8 block h-px w-28 bg-accent" aria-hidden="true" />
+          <span className="mt-8 block h-px w-28 bg-accent-on-dark" aria-hidden="true" />
         </div>
 
         <ol className="border-t border-surface/15 lg:col-span-8">
@@ -42,8 +42,8 @@ export function ApproachSection({ content }: ApproachSectionProps) {
                 className="grid grid-cols-[2rem_2.25rem_1fr] items-start gap-x-3 gap-y-2 border-b border-surface/15 py-5 sm:grid-cols-[3rem_2.5rem_0.8fr_1.4fr]"
                 key={step.number}
               >
-                <span className="pt-2 text-xs font-bold text-accent">{step.number}</span>
-                <span className="flex size-8 items-center justify-center border border-surface/15 text-accent">
+                <span className="pt-2 text-xs font-bold text-accent-on-dark">{step.number}</span>
+                <span className="flex size-8 items-center justify-center border border-surface/15 text-accent-on-dark">
                   <StepIcon aria-hidden="true" className="size-[1.125rem]" weight="regular" />
                 </span>
                 <h3 className="pt-1.5 text-sm font-semibold text-surface/85">{step.title}</h3>
