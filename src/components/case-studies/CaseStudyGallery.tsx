@@ -4,12 +4,19 @@ import { Container } from "../ui/Container";
 import { CaseStudyGalleryItem } from "./CaseStudyGalleryItem";
 
 interface CaseStudyGalleryProps {
+  description: string;
   images: CaseStudyImage[];
+  title: string;
   ui: CaseStudyUiContent;
 }
 
 /** Organiza evidencia visual del producto en una composición editorial responsive. */
-export function CaseStudyGallery({ images, ui }: CaseStudyGalleryProps) {
+export function CaseStudyGallery({
+  description,
+  images,
+  title,
+  ui,
+}: CaseStudyGalleryProps) {
   if (images.length === 0) {
     return null;
   }
@@ -30,10 +37,10 @@ export function CaseStudyGallery({ images, ui }: CaseStudyGalleryProps) {
               className="max-w-3xl font-serif text-4xl leading-[1.02] tracking-[-0.035em] sm:text-5xl"
               id="case-study-gallery-title"
             >
-              {ui.galleryTitle}
+              {title}
             </h2>
             <p className="mt-5 max-w-2xl text-sm leading-6 text-surface/60 sm:text-base sm:leading-7">
-              {ui.galleryDescription}
+              {description}
             </p>
           </div>
         </header>

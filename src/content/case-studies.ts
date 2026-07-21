@@ -18,10 +18,7 @@ export const caseStudyUi = {
     closeImageLabel: "Close image",
     contactLabel: "Contact",
     decisionsLabel: "Decisions",
-    galleryDescription:
-      "Selected product states show how the operational system works beyond its main dashboard.",
     galleryLabel: "Product gallery",
-    galleryTitle: "The workshop workflow, seen in context.",
     nextCase: "Next case study",
     overviewLabel: "Overview",
     portfolioLabel: "Portfolio",
@@ -35,10 +32,7 @@ export const caseStudyUi = {
     closeImageLabel: "Cerrar imagen",
     contactLabel: "Contacto",
     decisionsLabel: "Decisiones",
-    galleryDescription:
-      "Una selección de estados del producto muestra cómo funciona el sistema operativo más allá del dashboard principal.",
     galleryLabel: "Galería del producto",
-    galleryTitle: "El flujo del taller, visto en contexto.",
     nextCase: "Siguiente caso de estudio",
     overviewLabel: "Resumen",
     portfolioLabel: "Portfolio",
@@ -59,6 +53,9 @@ export const caseStudies = {
         "Case study of MiTaller360, a production-deployed SaaS for workshop operations built across frontend, backend, data and delivery.",
       summary:
         "A complete operational product that centralizes customers, vehicles, work orders, scheduling, receipts and workshop administration.",
+      galleryTitle: "The workshop workflow, seen in context.",
+      galleryDescription:
+        "Selected product states show how the operational system works beyond its main dashboard.",
       heroImage: "/images/case-studies/mitaller360/dashboard.webp",
       heroAlt: "MiTaller360 workshop operations dashboard",
       stack: [
@@ -189,8 +186,11 @@ export const caseStudies = {
         "Case study of the frontend and API integration work delivered for OpsCore, a collaborative operational incident management MVP.",
       summary:
         "A collaborative product for reporting, assigning, resolving and analyzing operational incidents through role-specific workflows.",
-      heroImage: "/images/projects/opscore.webp",
-      heroAlt: "OpsCore operational incident dashboard",
+      galleryTitle: "The incident lifecycle, seen from each role.",
+      galleryDescription:
+        "Reporting, supervision and resolution views show how the interface adapts information and available actions to each operational responsibility.",
+      heroImage: "/images/case-studies/opscore/dashboard.webp",
+      heroAlt: "OpsCore manager dashboard with operational incident metrics",
       stack: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Django REST API", "Vercel"],
       facts: [
         { label: "Role", value: "Frontend Developer" },
@@ -251,7 +251,44 @@ export const caseStudies = {
           ],
         },
       ],
-      gallery: [],
+      gallery: [
+        {
+          src: "/images/case-studies/opscore/incidents.webp",
+          alt: "OpsCore supervisor incident list with alerts and filters",
+          caption:
+            "Supervisors receive pending alerts, filter visible incidents and move directly into assignment or follow-up.",
+          width: 1254,
+          height: 1254,
+          layout: "wide",
+        },
+        {
+          src: "/images/case-studies/opscore/mobile-login.webp",
+          alt: "OpsCore login interface on a mobile viewport",
+          caption:
+            "The authentication flow and protected access remain clear and usable on mobile devices.",
+          width: 924,
+          height: 1600,
+          layout: "portrait",
+        },
+        {
+          src: "/images/case-studies/opscore/incident-detail.webp",
+          alt: "Resolved OpsCore incident with operational details and root cause",
+          caption:
+            "The incident record centralizes priority, responsibility, root cause, resolution and elapsed time while enforcing role permissions.",
+          width: 1122,
+          height: 1402,
+          layout: "compact",
+        },
+        {
+          src: "/images/case-studies/opscore/report-incident.webp",
+          alt: "OpsCore incident report form for an operator",
+          caption:
+            "Operators report a new incident through a focused form that records their active session automatically.",
+          width: 1254,
+          height: 1254,
+          layout: "compact",
+        },
+      ],
     },
     "estudio-lachat": {
       slug: "estudio-lachat",
@@ -262,6 +299,9 @@ export const caseStudies = {
         "Case study of the production website and lead workflow developed for Estudio Jurídico Lachat.",
       summary:
         "A professional website for a real legal practice, combining a clear editorial presence with consultation capture, document uploads and local search foundations.",
+      galleryTitle: "A professional service, presented with clarity.",
+      galleryDescription:
+        "Selected public pages and consultation states show how the editorial experience supports credibility and client contact.",
       heroImage: "/images/projects/estudio-lachat.webp",
       heroAlt: "Estudio Jurídico Lachat website homepage",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Resend", "Vercel"],
@@ -343,6 +383,9 @@ export const caseStudies = {
         "Caso de estudio de MiTaller360, un SaaS desplegado en producción y construido desde el frontend hasta el backend, los datos y la entrega.",
       summary:
         "Un producto operativo completo que centraliza clientes, vehículos, órdenes de trabajo, agenda, recibos y administración del taller.",
+      galleryTitle: "El flujo del taller, visto en contexto.",
+      galleryDescription:
+        "Una selección de estados del producto muestra cómo funciona el sistema operativo más allá del dashboard principal.",
       heroImage: "/images/case-studies/mitaller360/dashboard.webp",
       heroAlt: "Dashboard operativo de talleres de MiTaller360",
       stack: [
@@ -473,8 +516,11 @@ export const caseStudies = {
         "Caso de estudio del frontend y la integración con API desarrollados para OpsCore, un MVP colaborativo de gestión de incidentes.",
       summary:
         "Un producto colaborativo para reportar, asignar, resolver y analizar incidentes operativos mediante flujos específicos por rol.",
-      heroImage: "/images/projects/opscore.webp",
-      heroAlt: "Dashboard operativo de incidentes de OpsCore",
+      galleryTitle: "El ciclo del incidente, visto desde cada rol.",
+      galleryDescription:
+        "Las vistas de reporte, supervisión y resolución muestran cómo la interfaz adapta la información y las acciones disponibles a cada responsabilidad operativa.",
+      heroImage: "/images/case-studies/opscore/dashboard.webp",
+      heroAlt: "Dashboard de manager de OpsCore con métricas de incidentes operativos",
       stack: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Django REST API", "Vercel"],
       facts: [
         { label: "Rol", value: "Frontend Developer" },
@@ -535,7 +581,44 @@ export const caseStudies = {
           ],
         },
       ],
-      gallery: [],
+      gallery: [
+        {
+          src: "/images/case-studies/opscore/incidents.webp",
+          alt: "Listado de incidentes de OpsCore con alertas y filtros para supervisión",
+          caption:
+            "Los supervisores reciben alertas pendientes, filtran los incidentes visibles y acceden directamente a la asignación o el seguimiento.",
+          width: 1254,
+          height: 1254,
+          layout: "wide",
+        },
+        {
+          src: "/images/case-studies/opscore/mobile-login.webp",
+          alt: "Interfaz de acceso a OpsCore en una pantalla móvil",
+          caption:
+            "El flujo de autenticación y el acceso protegido mantienen claridad y usabilidad en dispositivos móviles.",
+          width: 924,
+          height: 1600,
+          layout: "portrait",
+        },
+        {
+          src: "/images/case-studies/opscore/incident-detail.webp",
+          alt: "Incidente resuelto de OpsCore con detalle operativo y causa raíz",
+          caption:
+            "El registro centraliza prioridad, responsable, causa raíz, resolución y tiempo transcurrido, respetando los permisos del rol.",
+          width: 1122,
+          height: 1402,
+          layout: "compact",
+        },
+        {
+          src: "/images/case-studies/opscore/report-incident.webp",
+          alt: "Formulario de reporte de incidentes de OpsCore para un operador",
+          caption:
+            "El operador registra un incidente mediante un formulario enfocado que incorpora automáticamente su sesión activa.",
+          width: 1254,
+          height: 1254,
+          layout: "compact",
+        },
+      ],
     },
     "estudio-lachat": {
       slug: "estudio-lachat",
@@ -546,6 +629,9 @@ export const caseStudies = {
         "Caso de estudio del sitio productivo y el flujo de captación desarrollado para Estudio Jurídico Lachat.",
       summary:
         "Un sitio profesional para un estudio jurídico real, combinando una presencia editorial clara con consultas, carga de documentación y fundamentos de posicionamiento local.",
+      galleryTitle: "Un servicio profesional, presentado con claridad.",
+      galleryDescription:
+        "Las páginas públicas y los estados de consulta seleccionados muestran cómo la experiencia editorial sostiene la credibilidad y el contacto con potenciales clientes.",
       heroImage: "/images/projects/estudio-lachat.webp",
       heroAlt: "Página principal del sitio Estudio Jurídico Lachat",
       stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Resend", "Vercel"],

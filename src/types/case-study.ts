@@ -56,6 +56,8 @@ export interface CaseStudyContent {
   description: string;
   facts: CaseStudyFact[];
   gallery: CaseStudyImage[];
+  galleryDescription: string;
+  galleryTitle: string;
   heroAlt: string;
   heroImage: `/${string}`;
   number: string;
@@ -73,9 +75,7 @@ export interface CaseStudyUiContent {
   closeImageLabel: string;
   contactLabel: string;
   decisionsLabel: string;
-  galleryDescription: string;
   galleryLabel: string;
-  galleryTitle: string;
   nextCase: string;
   overviewLabel: string;
   portfolioLabel: string;

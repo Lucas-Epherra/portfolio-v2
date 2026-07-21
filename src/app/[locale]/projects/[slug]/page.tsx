@@ -135,7 +135,12 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         {sectionsBeforeGallery.map((section, index) => (
           <CaseStudySection content={section} key={section.id} muted={index % 2 === 1} />
         ))}
-        <CaseStudyGallery images={caseStudy.gallery} ui={ui} />
+        <CaseStudyGallery
+          description={caseStudy.galleryDescription}
+          images={caseStudy.gallery}
+          title={caseStudy.galleryTitle}
+          ui={ui}
+        />
         {sectionsAfterGallery.map((section, index) => (
           <CaseStudySection
             content={section}
