@@ -3,7 +3,7 @@ import { Manrope, Source_Serif_4 } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/next";
 
-import { SITE_URL, SOCIAL_IMAGE_PATH, siteContent } from "@/content/site";
+import { SITE_URL, SOCIAL_IMAGE_PATHS, siteContent } from "@/content/site";
 import { isLocale, SUPPORTED_LOCALES } from "@/lib/locales";
 
 import "../globals.css";
@@ -54,6 +54,7 @@ export async function generateMetadata({
 
   const content = siteContent[locale];
   const languageLocale = locale === "es" ? "es_AR" : "en_US";
+  const socialImagePath = SOCIAL_IMAGE_PATHS[locale];
   const socialImageAlt =
     locale === "es"
       ? "Portfolio de Lucas Epherra, Full Stack Developer"
@@ -83,7 +84,7 @@ export async function generateMetadata({
         {
           alt: socialImageAlt,
           height: 630,
-          url: SOCIAL_IMAGE_PATH,
+          url: socialImagePath,
           width: 1200,
         },
       ],
@@ -96,7 +97,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       description: content.description,
-      images: [SOCIAL_IMAGE_PATH],
+      images: [socialImagePath],
       title: "Lucas Epherra | Full Stack Developer",
     },
   };

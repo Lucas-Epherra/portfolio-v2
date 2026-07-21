@@ -75,7 +75,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/assets/preview/portfolio-cover.jpg",
-        destination: "/images/social/portfolio-og.png",
+        destination: "/images/social/portfolio-og-en-v2.png",
         permanent: true,
       },
     ];
