@@ -20,6 +20,14 @@ const layoutClasses = {
   wide: "lg:col-span-8",
 } satisfies Record<CaseStudyImage["layout"], string>;
 
+const layoutSizes = {
+  compact: "(max-width: 1023px) 100vw, 34vw",
+  featured:
+    "(max-width: 1023px) 100vw, (max-width: 1535px) calc(100vw - 6rem), 1344px",
+  portrait: "(max-width: 1023px) 100vw, 33vw",
+  wide: "(max-width: 1023px) 100vw, 66vw",
+} satisfies Record<CaseStudyImage["layout"], string>;
+
 /** Presenta una captura y la amplía en un diálogo nativo accesible. */
 export function CaseStudyGalleryItem({
   closeLabel,
@@ -61,13 +69,7 @@ export function CaseStudyGalleryItem({
               : "h-auto w-full"
           }
           height={image.height}
-          sizes={
-            isPortrait
-              ? "(max-width: 1023px) 100vw, 33vw"
-              : image.layout === "wide"
-                ? "(max-width: 1023px) 100vw, 66vw"
-                : "(max-width: 1023px) 100vw, 34vw"
-          }
+          sizes={layoutSizes[image.layout]}
           src={image.src}
           width={image.width}
         />
