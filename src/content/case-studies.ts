@@ -49,6 +49,8 @@ export const caseStudies = {
       number: "01",
       title: "MiTaller360",
       category: "Workshop management SaaS",
+      contribution:
+        "I co-founded a SaaS that centralizes work orders, scheduling and receipts for workshops.",
       description:
         "Case study of MiTaller360, a production-deployed SaaS for workshop operations built across frontend, backend, data and delivery.",
       summary:
@@ -76,11 +78,7 @@ export const caseStudies = {
         { label: "Status", value: "Production deployed · Early validation" },
       ],
       actions: [
-        { href: "https://www.mitaller360.com", label: "View live product" },
-        {
-          href: "https://github.com/Lucas-Epherra/talleres-mvp",
-          label: "View repository",
-        },
+        { href: "https://www.mitaller360.com", label: "Access MiTaller360" },
       ],
       sections: [
         {
@@ -182,6 +180,8 @@ export const caseStudies = {
       number: "02",
       title: "OpsCore",
       category: "Operational incident management",
+      contribution:
+        "I implemented role-based incident reporting, assignment and resolution flows and integrated the frontend with a REST API.",
       description:
         "Case study of the frontend and API integration work delivered for OpsCore, a collaborative operational incident management MVP.",
       summary:
@@ -295,96 +295,95 @@ export const caseStudies = {
       number: "03",
       title: "Estudio Jurídico Lachat",
       category: "Professional legal website",
+      contribution:
+        "I turned a landing page into a multi-page site with practice areas, legal guides and local SEO, routing every enquiry to WhatsApp with a message tailored to each page.",
       description:
-        "Case study of the production website and lead workflow developed for Estudio Jurídico Lachat.",
+        "Case study of the multi-page website developed and published for Estudio Jurídico Lachat.",
       summary:
-        "A professional website for a real legal practice, combining a clear editorial presence with consultation capture, document uploads and local search foundations.",
-      galleryTitle: "A professional service, presented with clarity.",
+        "The website of a real legal practice, rebuilt as a multi-page site with practice areas, legal guides and WhatsApp consultations.",
+      galleryTitle: "A legal practice, explained page by page.",
       galleryDescription:
-        "Selected public pages and consultation states show how the editorial experience supports credibility and client contact.",
+        "Practice areas, guides and the contact page show how the site answers common questions before the first message.",
       heroImage: "/images/case-studies/estudio-lachat/homepage.webp",
       heroAlt: "Estudio Jurídico Lachat desktop homepage",
-      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Resend", "Vercel"],
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Schema.org", "Vercel"],
       facts: [
         { label: "Role", value: "Full Stack Developer" },
         { label: "Client", value: "Estudio Jurídico Lachat" },
-        { label: "Scope", value: "Website, leads, email and local SEO" },
+        { label: "Scope", value: "Multi-page site, content and local SEO" },
         { label: "Status", value: "Live in production" },
       ],
       actions: [
         { href: "https://www.estudiolachat.com.ar/", label: "View live site" },
-        {
-          href: "https://github.com/Lucas-Epherra/estudio-lachat-next",
-          label: "View repository",
-        },
       ],
       sections: [
         {
           id: "overview",
           number: "01",
           eyebrow: "Context",
-          title: "A credible digital presence for a real professional practice.",
+          title: "From a single landing page to a site people can navigate.",
           paragraphs: [
-            "The project needed to communicate legal services clearly without feeling distant or generic. The site had to support local positioning while giving potential clients a direct way to explain their situation and attach documentation.",
-            "The visual direction uses an editorial structure, restrained colors and clear language to reinforce trust before asking the visitor to make contact.",
+            "The first version was a one-page landing with a contact form. As the practice grew to nine practice areas and two in-person locations, a single scroll could no longer explain what the practice handles or how a consultation works.",
+            "The second version reorganizes the content into navigable pages, so each visitor can find their situation, read about it and reach the practice with context.",
           ],
         },
         {
           id: "scope",
           number: "02",
           eyebrow: "Product scope",
-          title: "The website also works as an intake workflow.",
+          title: "Each area, guide and question has its own page.",
           paragraphs: [
-            "Beyond the public pages, I implemented the complete consultation flow and its supporting services.",
+            "I rebuilt the site structure, the visual design and the content model, working with the content provided by the practice.",
           ],
           bullets: [
-            "Structured consultation forms with validation.",
-            "Document uploads for legal enquiries.",
-            "Lead persistence in Supabase.",
-            "Transactional email notifications through Resend.",
-            "Responsive navigation and accessible semantic structure.",
+            "Nine practice areas, each with its own page, common situations and FAQs.",
+            "Legal guides with author, credentials and update date.",
+            "A frequently asked questions page grouped by topic.",
+            "About and contact pages with locations, opening hours and first consultation details.",
+            "Breadcrumbs, a mobile menu and a floating WhatsApp button on every page.",
           ],
         },
         {
           id: "technical-decisions",
           number: "03",
           eyebrow: "Technical decisions",
-          title: "Search visibility and maintainability were part of the build.",
+          title: "Contact moved from a form to WhatsApp.",
           paragraphs: [
-            "The application was rebuilt with Next.js App Router and strict TypeScript, using reusable sections and server-first rendering where interactivity was not required.",
+            "The first version stored enquiries with attachments in Supabase and sent email notifications. In the redesign, consultations were routed to WhatsApp, where visitors can also send documents. The form remains in the code, disabled.",
+            "Each page opens the chat with its own prefilled message, so the practice knows which area or guide the enquiry comes from.",
           ],
           bullets: [
-            "Localized service content and semantic heading structure.",
-            "Metadata, Open Graph previews and structured search information.",
-            "Local SEO foundations for legal searches in Tres Arroyos.",
-            "Clear separation between interface, form validation, persistence and email delivery.",
+            "Prefilled WhatsApp messages resolved from the current route.",
+            "Structured data for the legal service, people, FAQs, services and articles.",
+            "Per-page metadata, sitemap and llms.txt for search and AI assistants.",
+            "Permanent redirects whenever a route or area was renamed.",
           ],
         },
         {
           id: "delivery",
           number: "04",
           eyebrow: "Production delivery",
-          title: "Domain, services and deployment configured as one product.",
+          title: "Iterated with the client and published in production.",
           paragraphs: [
-            "The work included the production domain, Vercel deployment, Supabase resources, Resend configuration and final responsive checks. The result is a live client website rather than a portfolio-only concept.",
+            "Changes were delivered through branches and Pull Requests, reviewed with the practice and deployed on Vercel with its own domain. The result is a live client website rather than a portfolio-only concept.",
           ],
         },
       ],
       gallery: [
         {
           src: "/images/case-studies/estudio-lachat/services.webp",
-          alt: "Estudio Jurídico Lachat legal services page",
+          alt: "Estudio Jurídico Lachat practice areas page",
           caption:
-            "The service overview translates legal practice areas into concrete situations and direct consultation paths.",
+            "The practice areas page describes each area through concrete situations and links to its own page.",
           width: 1366,
           height: 768,
           layout: "featured",
         },
         {
-          src: "/images/case-studies/estudio-lachat/process.webp",
-          alt: "Estudio Jurídico Lachat consultation process",
+          src: "/images/case-studies/estudio-lachat/guide.webp",
+          alt: "Estudio Jurídico Lachat guide on starting a succession",
           caption:
-            "A three-step explanation makes the consultation process predictable before the visitor shares personal information.",
+            "Guides answer frequent questions in depth, with author, credentials and update date.",
           width: 1366,
           height: 768,
           layout: "wide",
@@ -393,25 +392,25 @@ export const caseStudies = {
           src: "/images/case-studies/estudio-lachat/mobile-homepage.webp",
           alt: "Estudio Jurídico Lachat homepage on a mobile viewport",
           caption:
-            "The editorial hierarchy, brand identity and primary contact actions remain clear on mobile.",
+            "On mobile, the WhatsApp action and the practice areas stay within reach from the first screen.",
           width: 778,
           height: 1600,
           layout: "portrait",
         },
         {
-          src: "/images/case-studies/estudio-lachat/about.webp",
-          alt: "Estudio Jurídico Lachat professional approach section",
+          src: "/images/case-studies/estudio-lachat/service-area.webp",
+          alt: "Estudio Jurídico Lachat succession practice area page",
           caption:
-            "The practice positioning combines preventive criteria, remote assistance and direct language.",
+            "Each area page opens WhatsApp with a message specific to that area.",
           width: 1366,
           height: 768,
           layout: "compact",
         },
         {
-          src: "/images/case-studies/estudio-lachat/contact-form.webp",
-          alt: "Estudio Jurídico Lachat online consultation form",
+          src: "/images/case-studies/estudio-lachat/contact.webp",
+          alt: "Estudio Jurídico Lachat contact page centered on WhatsApp",
           caption:
-            "The intake form structures each enquiry, accepts supporting documents and prepares the lead workflow.",
+            "The contact page explains next steps, locations and opening hours before the first message.",
           width: 1366,
           height: 768,
           layout: "compact",
@@ -425,6 +424,8 @@ export const caseStudies = {
       number: "01",
       title: "MiTaller360",
       category: "SaaS de gestión para talleres",
+      contribution:
+        "Cofundé un SaaS que centraliza órdenes de trabajo, agenda y recibos para talleres.",
       description:
         "Caso de estudio de MiTaller360, un SaaS desplegado en producción y construido desde el frontend hasta el backend, los datos y la entrega.",
       summary:
@@ -452,11 +453,7 @@ export const caseStudies = {
         { label: "Estado", value: "Desplegado · Validación temprana" },
       ],
       actions: [
-        { href: "https://www.mitaller360.com", label: "Ver producto" },
-        {
-          href: "https://github.com/Lucas-Epherra/talleres-mvp",
-          label: "Ver repositorio",
-        },
+        { href: "https://www.mitaller360.com", label: "Acceder a MiTaller360" },
       ],
       sections: [
         {
@@ -558,6 +555,8 @@ export const caseStudies = {
       number: "02",
       title: "OpsCore",
       category: "Gestión de incidentes operativos",
+      contribution:
+        "Implementé flujos de reporte, asignación y resolución de incidentes por rol e integré el frontend con una API REST.",
       description:
         "Caso de estudio del frontend y la integración con API desarrollados para OpsCore, un MVP colaborativo de gestión de incidentes.",
       summary:
@@ -671,96 +670,95 @@ export const caseStudies = {
       number: "03",
       title: "Estudio Jurídico Lachat",
       category: "Sitio web jurídico profesional",
+      contribution:
+        "Convertí una landing en un sitio multipágina con áreas de práctica, guías jurídicas y SEO local, y llevé cada consulta a WhatsApp con un mensaje según la página.",
       description:
-        "Caso de estudio del sitio productivo y el flujo de captación desarrollado para Estudio Jurídico Lachat.",
+        "Caso de estudio del sitio multipágina desarrollado y publicado para Estudio Jurídico Lachat.",
       summary:
-        "Un sitio profesional para un estudio jurídico real, combinando una presencia editorial clara con consultas, carga de documentación y fundamentos de posicionamiento local.",
-      galleryTitle: "Un servicio profesional, presentado con claridad.",
+        "El sitio de un estudio jurídico real, rehecho como sitio multipágina con áreas de práctica, guías jurídicas y consultas por WhatsApp.",
+      galleryTitle: "Un estudio jurídico, explicado página por página.",
       galleryDescription:
-        "Las páginas públicas y los estados de consulta seleccionados muestran cómo la experiencia editorial sostiene la credibilidad y el contacto con potenciales clientes.",
+        "Las áreas de práctica, las guías y la página de contacto muestran cómo el sitio responde las dudas frecuentes antes del primer mensaje.",
       heroImage: "/images/case-studies/estudio-lachat/homepage.webp",
       heroAlt: "Página principal de Estudio Jurídico Lachat en escritorio",
-      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Resend", "Vercel"],
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Schema.org", "Vercel"],
       facts: [
         { label: "Rol", value: "Full Stack Developer" },
         { label: "Cliente", value: "Estudio Jurídico Lachat" },
-        { label: "Alcance", value: "Sitio, leads, emails y SEO local" },
+        { label: "Alcance", value: "Sitio multipágina, contenido y SEO local" },
         { label: "Estado", value: "Publicado en producción" },
       ],
       actions: [
         { href: "https://www.estudiolachat.com.ar/", label: "Ver sitio publicado" },
-        {
-          href: "https://github.com/Lucas-Epherra/estudio-lachat-next",
-          label: "Ver repositorio",
-        },
       ],
       sections: [
         {
           id: "overview",
           number: "01",
           eyebrow: "Contexto",
-          title: "Una presencia digital creíble para un estudio profesional real.",
+          title: "De una landing a un sitio que se puede recorrer.",
           paragraphs: [
-            "El proyecto necesitaba comunicar servicios jurídicos con claridad sin sentirse distante ni genérico. El sitio debía favorecer el posicionamiento local y ofrecer una forma directa de explicar una situación y adjuntar documentación.",
-            "La dirección visual utiliza una estructura editorial, colores contenidos y lenguaje claro para reforzar confianza antes de solicitar el contacto.",
+            "La primera versión era una landing de una sola página con formulario de contacto. Cuando el estudio pasó a nueve áreas de práctica y dos sedes presenciales, una sola página ya no alcanzaba para explicar qué temas atiende ni cómo funciona una consulta.",
+            "La segunda versión ordena el contenido en páginas navegables, para que cada persona encuentre su situación, lea sobre ella y llegue al estudio con contexto.",
           ],
         },
         {
           id: "scope",
           number: "02",
           eyebrow: "Alcance del producto",
-          title: "El sitio también funciona como flujo de ingreso de consultas.",
+          title: "Cada área, guía y pregunta tiene su propia página.",
           paragraphs: [
-            "Además de las páginas públicas implementé el flujo completo de consultas y los servicios que lo sostienen.",
+            "Rehíce la estructura del sitio, el diseño visual y el modelo de contenido, trabajando con el contenido que aportó el estudio.",
           ],
           bullets: [
-            "Formularios estructurados con validación.",
-            "Carga de documentación para consultas jurídicas.",
-            "Persistencia de leads en Supabase.",
-            "Notificaciones transaccionales mediante Resend.",
-            "Navegación responsive y estructura semántica accesible.",
+            "Nueve áreas de práctica, cada una con su página, situaciones frecuentes y preguntas.",
+            "Guías jurídicas con autora, matrícula y fecha de actualización.",
+            "Página de preguntas frecuentes agrupadas por tema.",
+            "Páginas de nosotros y contacto con sedes, horarios y datos de la primera consulta.",
+            "Breadcrumbs, menú móvil y botón flotante de WhatsApp en todas las páginas.",
           ],
         },
         {
           id: "technical-decisions",
           number: "03",
           eyebrow: "Decisiones técnicas",
-          title: "La visibilidad en buscadores y la mantenibilidad formaron parte del desarrollo.",
+          title: "El contacto pasó del formulario a WhatsApp.",
           paragraphs: [
-            "La aplicación fue reconstruida con Next.js App Router y TypeScript estricto, utilizando secciones reutilizables y renderizado server-first donde no se requería interacción.",
+            "La primera versión guardaba las consultas con adjuntos en Supabase y enviaba notificaciones por correo. En el rediseño las consultas pasaron a WhatsApp, donde también se puede enviar documentación. El formulario quedó en el código, desactivado.",
+            "Cada página abre el chat con su propio mensaje precargado, así el estudio sabe desde qué área o guía llega la consulta.",
           ],
           bullets: [
-            "Contenido de servicios y jerarquía semántica de encabezados.",
-            "Metadata, Open Graph e información estructurada para buscadores.",
-            "Fundamentos de SEO local para búsquedas jurídicas en Tres Arroyos.",
-            "Separación clara entre interfaz, validación, persistencia y entrega de emails.",
+            "Mensajes de WhatsApp precargados según la ruta actual.",
+            "Datos estructurados del estudio, sus profesionales, preguntas frecuentes, servicios y artículos.",
+            "Metadata por página, sitemap y llms.txt para buscadores y asistentes de IA.",
+            "Redirecciones permanentes cada vez que se renombró una ruta o un área.",
           ],
         },
         {
           id: "delivery",
           number: "04",
           eyebrow: "Entrega productiva",
-          title: "Dominio, servicios y despliegue configurados como un único producto.",
+          title: "Iterado con la clienta y publicado en producción.",
           paragraphs: [
-            "El trabajo incluyó dominio productivo, despliegue en Vercel, recursos de Supabase, configuración de Resend y validaciones responsive finales. El resultado es un sitio real para un cliente, no un concepto creado solamente para el portfolio.",
+            "Los cambios se entregaron con ramas y Pull Requests, se revisaron con el estudio y se desplegaron en Vercel con dominio propio. El resultado es un sitio real para un cliente, no un concepto creado solamente para el portfolio.",
           ],
         },
       ],
       gallery: [
         {
           src: "/images/case-studies/estudio-lachat/services.webp",
-          alt: "Página de servicios legales de Estudio Jurídico Lachat",
+          alt: "Página de áreas de práctica de Estudio Jurídico Lachat",
           caption:
-            "La presentación de servicios traduce las áreas jurídicas en situaciones concretas y caminos directos de consulta.",
+            "La página de áreas describe cada una con situaciones concretas y enlaza a su propia página.",
           width: 1366,
           height: 768,
           layout: "featured",
         },
         {
-          src: "/images/case-studies/estudio-lachat/process.webp",
-          alt: "Proceso de consulta de Estudio Jurídico Lachat",
+          src: "/images/case-studies/estudio-lachat/guide.webp",
+          alt: "Guía de Estudio Jurídico Lachat sobre cómo iniciar una sucesión",
           caption:
-            "La explicación en tres pasos vuelve previsible el proceso antes de que la persona comparta información personal.",
+            "Las guías responden en profundidad las dudas frecuentes, con autora, matrícula y fecha de actualización.",
           width: 1366,
           height: 768,
           layout: "wide",
@@ -769,25 +767,25 @@ export const caseStudies = {
           src: "/images/case-studies/estudio-lachat/mobile-homepage.webp",
           alt: "Página principal de Estudio Jurídico Lachat en una pantalla móvil",
           caption:
-            "La jerarquía editorial, la identidad y las acciones principales de contacto se mantienen claras en mobile.",
+            "En mobile, la acción de WhatsApp y las áreas de práctica quedan al alcance desde la primera pantalla.",
           width: 778,
           height: 1600,
           layout: "portrait",
         },
         {
-          src: "/images/case-studies/estudio-lachat/about.webp",
-          alt: "Sección sobre el enfoque profesional de Estudio Jurídico Lachat",
+          src: "/images/case-studies/estudio-lachat/service-area.webp",
+          alt: "Página del área de sucesiones de Estudio Jurídico Lachat",
           caption:
-            "El posicionamiento del estudio combina criterio preventivo, atención remota y lenguaje directo.",
+            "Cada página de área abre WhatsApp con un mensaje propio de esa área.",
           width: 1366,
           height: 768,
           layout: "compact",
         },
         {
-          src: "/images/case-studies/estudio-lachat/contact-form.webp",
-          alt: "Formulario de consulta online de Estudio Jurídico Lachat",
+          src: "/images/case-studies/estudio-lachat/contact.webp",
+          alt: "Página de contacto de Estudio Jurídico Lachat centrada en WhatsApp",
           caption:
-            "El formulario estructura cada consulta, admite documentación de respaldo y prepara el flujo de captación.",
+            "La página de contacto explica los próximos pasos, las sedes y los horarios antes del primer mensaje.",
           width: 1366,
           height: 768,
           layout: "compact",

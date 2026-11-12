@@ -7,6 +7,7 @@ import { CaseStudyNavigation } from "@/components/case-studies/CaseStudyNavigati
 import { CaseStudySection } from "@/components/case-studies/CaseStudySection";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { Container } from "@/components/ui/Container";
 import {
   CASE_STUDY_ORDER,
   caseStudies,
@@ -117,6 +118,11 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     galleryPosition === -1 ? caseStudy.sections.length : galleryPosition;
   const sectionsBeforeGallery = caseStudy.sections.slice(0, sectionBoundary);
   const sectionsAfterGallery = caseStudy.sections.slice(sectionBoundary);
+  const stations = [
+    ...sectionsBeforeGallery.map((section) => ({ href: `#${section.id}`, label: section.eyebrow })),
+    ...(caseStudy.gallery.length > 0 ? [{ href: "#gallery", label: ui.galleryLabel }] : []),
+    ...sectionsAfterGallery.map((section) => ({ href: `#${section.id}`, label: section.eyebrow })),
+  ];
 
   return (
     <>
@@ -124,30 +130,47 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         {ui.skipToContent}
       </a>
       <SiteHeader
+        cvAction={siteContent[locale].hero.secondaryAction}
         alternateHref={`/${alternateLocale}/projects/${caseStudy.slug}`}
         languageLabel={siteContent[locale].languageLabel}
         locale={locale}
         navigation={navigation}
         navigationLabel={siteContent[locale].navigationLabel}
+        themeLabel={siteContent[locale].themeLabel}
       />
       <main id="main-content">
         <CaseStudyHero content={caseStudy} locale={locale} ui={ui} />
-        {sectionsBeforeGallery.map((section, index) => (
-          <CaseStudySection content={section} key={section.id} muted={index % 2 === 1} />
-        ))}
-        <CaseStudyGallery
-          description={caseStudy.galleryDescription}
-          images={caseStudy.gallery}
-          title={caseStudy.galleryTitle}
-          ui={ui}
-        />
-        {sectionsAfterGallery.map((section, index) => (
-          <CaseStudySection
-            content={section}
-            key={section.id}
-            muted={(sectionBoundary + index) % 2 === 1}
-          />
-        ))}
+        <Container className="grid gap-10 pb-6 lg:grid-cols-[13rem_minmax(0,1fr)] lg:gap-16">
+          <nav aria-label={ui.caseStudyLabel} className="hidden lg:block">
+            <ol className="sticky top-8 grid gap-1 border-l border-line">
+              {stations.map((station) => (
+                <li key={station.href}>
+                  <a
+                    className="-ml-px flex min-h-10 items-center border-l-2 border-transparent pl-4 text-[0.9375rem] text-muted transition-colors duration-200 hover:border-lime-strong hover:text-ink"
+                    href={station.href}
+                  >
+                    {station.label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+
+          <div>
+            {sectionsBeforeGallery.map((section) => (
+              <CaseStudySection content={section} key={section.id} />
+            ))}
+            <CaseStudyGallery
+              description={caseStudy.galleryDescription}
+              images={caseStudy.gallery}
+              title={caseStudy.galleryTitle}
+              ui={ui}
+            />
+            {sectionsAfterGallery.map((section) => (
+              <CaseStudySection content={section} key={section.id} />
+            ))}
+          </div>
+        </Container>
         <CaseStudyNavigation
           locale={locale}
           next={next}

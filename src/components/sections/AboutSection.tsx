@@ -1,36 +1,56 @@
+import Image from "next/image";
+
 import type { AboutContent } from "@/types/site-content";
 
 import { Container } from "../ui/Container";
 
 interface AboutSectionProps {
   content: AboutContent;
+  portraitAlt: string;
 }
 
-/** Presenta una síntesis profesional y datos de disponibilidad verificables. */
-export function AboutSection({ content }: AboutSectionProps) {
+/** Presenta retrato, síntesis profesional y datos de disponibilidad verificables. */
+export function AboutSection({ content, portraitAlt }: AboutSectionProps) {
   return (
-    <section id="about" className="scroll-mt-8 border-b border-line bg-surface py-10 sm:py-12">
-      <Container className="grid gap-10 lg:grid-cols-12 lg:gap-0">
-        <div className="lg:col-span-2">
-          <h2 className="font-serif text-3xl tracking-[-0.025em]">{content.title}</h2>
-        </div>
+    <section aria-labelledby="about-title" className="scroll-mt-4" id="about">
+      <Container className="pb-20 sm:pb-28">
+        <div className="grid gap-3 rounded-[1.75rem] border border-line bg-panel p-3 shadow-panel md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[1.125rem] bg-chip md:aspect-auto md:min-h-[32rem]">
+            <Image
+              alt={portraitAlt}
+              className="object-cover object-[50%_28%]"
+              fill
+              sizes="(max-width: 767px) calc(100vw - 3rem), 40vw"
+              src="/images/lucas-epherra.webp"
+            />
+          </div>
 
-        <div className="grid gap-4 border-line text-sm leading-6 text-foreground/70 lg:col-span-5 lg:border-l lg:px-10">
-          {content.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
-
-        <dl className="border-t border-line lg:col-span-5 lg:border-l lg:border-t-0 lg:pl-10">
-          {content.facts.map((fact) => (
-            <div className="grid grid-cols-[7rem_1fr] gap-4 border-b border-line py-3.5 last:border-b-0" key={fact.label}>
-              <dt className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-muted">
-                {fact.label}
-              </dt>
-              <dd className="text-sm text-foreground/75">{fact.value}</dd>
+          <div className="flex flex-col justify-center p-5 sm:p-8 lg:p-12">
+            <h2
+              className="font-display text-4xl font-semibold tracking-[-0.03em] sm:text-5xl"
+              id="about-title"
+            >
+              {content.title}
+            </h2>
+            <div className="mt-6 grid max-w-[60ch] gap-4 text-lg leading-relaxed text-ink/80">
+              {content.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
-          ))}
-        </dl>
+
+            <dl className="mt-10 border-t border-line">
+              {content.facts.map((fact) => (
+                <div
+                  className="grid gap-1 border-b border-line py-3.5 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-4"
+                  key={fact.label}
+                >
+                  <dt className="text-muted">{fact.label}</dt>
+                  <dd className="font-medium leading-snug">{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
       </Container>
     </section>
   );

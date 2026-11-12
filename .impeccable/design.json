@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T11:26:00.306Z",
+  "title": "Design System: Lucas Epherra — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "lime": {
+        "role": "primary",
+        "displayName": "Acid Lime",
+        "canonical": "#c8f03c",
+        "tonalRamp": [
+          "#2a3508",
+          "#435510",
+          "#5f7818",
+          "#809f20",
+          "#a3c82a",
+          "#c8f03c",
+          "#dcf684",
+          "#f0fbcf"
+        ]
+      },
+      "lime-strong": {
+        "role": "primary",
+        "displayName": "Deep Lime",
+        "canonical": "#b4dc22",
+        "tonalRamp": [
+          "#263006",
+          "#3d4e0c",
+          "#587212",
+          "#759718",
+          "#94bd1e",
+          "#b4dc22",
+          "#d2ec74",
+          "#ecf8c6"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Graphite Ink",
+        "canonical": "#111311",
+        "tonalRamp": [
+          "#111311",
+          "#2a2e2a",
+          "#43483f",
+          "#5f645c",
+          "#7f847b",
+          "#a4a89f",
+          "#cdd0c8",
+          "#eff0ec"
+        ]
+      },
+      "ink-hover": {
+        "role": "neutral",
+        "displayName": "Ink Lift",
+        "canonical": "#2a2e2a",
+        "tonalRamp": [
+          "#111311",
+          "#2a2e2a",
+          "#43483f",
+          "#5f645c",
+          "#7f847b",
+          "#a4a89f",
+          "#cdd0c8",
+          "#eff0ec"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Graphite Ground",
+        "canonical": "#f4f5f2",
+        "tonalRamp": [
+          "#1c1d1b",
+          "#3a3c38",
+          "#5b5e58",
+          "#7f827b",
+          "#a6a9a2",
+          "#cdd0c9",
+          "#e8eae4",
+          "#f4f5f2"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#1f201e",
+          "#3d3f3c",
+          "#5f615d",
+          "#838580",
+          "#a9aba6",
+          "#d0d2cd",
+          "#eceeea",
+          "#ffffff"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Slate Muted",
+        "canonical": "#565b55",
+        "tonalRamp": [
+          "#1a1c1a",
+          "#2f322e",
+          "#434740",
+          "#565b55",
+          "#73786f",
+          "#979b93",
+          "#c0c3bb",
+          "#e6e8e2"
+        ]
+      },
+      "chip": {
+        "role": "neutral",
+        "displayName": "Chip Grey",
+        "canonical": "#e8eae4",
+        "tonalRamp": [
+          "#1d1e1b",
+          "#3b3d38",
+          "#5d6058",
+          "#81847c",
+          "#a8aba3",
+          "#cfd1ca",
+          "#e8eae4",
+          "#f6f7f3"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgb(17 19 17 / 10%)",
+        "tonalRamp": [
+          "rgb(17 19 17 / 4%)",
+          "rgb(17 19 17 / 6%)",
+          "rgb(17 19 17 / 8%)",
+          "rgb(17 19 17 / 10%)",
+          "rgb(17 19 17 / 14%)",
+          "rgb(17 19 17 / 18%)",
+          "rgb(17 19 17 / 28%)",
+          "rgb(17 19 17 / 40%)"
+        ]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "rgb(17 19 17 / 18%)",
+        "tonalRamp": [
+          "rgb(17 19 17 / 4%)",
+          "rgb(17 19 17 / 6%)",
+          "rgb(17 19 17 / 8%)",
+          "rgb(17 19 17 / 10%)",
+          "rgb(17 19 17 / 14%)",
+          "rgb(17 19 17 / 18%)",
+          "rgb(17 19 17 / 28%)",
+          "rgb(17 19 17 / 40%)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home headline; 2.625rem mobile, 3.75rem sm, 4.5rem lg; one phrase carries the lime marker."
+      },
+      "display-case": {
+        "displayName": "Display Case",
+        "purpose": "Case-study title; 3rem mobile, 4.5rem sm, 5.5rem lg."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles; 2.25rem mobile, 3rem sm. Contact title runs to 3.75rem at -0.035em."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Featured project name; compact project cards use 1.625rem; case-study section titles 1.875rem to 2.75rem."
+      },
+      "title-sm": {
+        "displayName": "Title Small",
+        "purpose": "Capabilities list item titles."
+      },
+      "body-lg": {
+        "displayName": "Body Large",
+        "purpose": "Lead and long reading paragraphs, max 60 to 65ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Panel copy, nav links, contribution notes."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, inline actions, meta and footer."
+      },
+      "chip": {
+        "displayName": "Chip",
+        "purpose": "Status chips (600) and tech tags (500)."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel",
+        "value": "0 1px 2px rgb(17 19 17 / 6%), 0 12px 32px -12px rgb(17 19 17 / 14%)",
+        "purpose": "The only shadow: panels, cards, round icon buttons over images, lightbox."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Easing for every transition."
+      },
+      {
+        "name": "duration-hover",
+        "value": "200ms",
+        "purpose": "Color changes and arrow nudges on hover."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "durations 0.01ms, scroll-behavior auto",
+        "purpose": "All motion collapses under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ink pill for the main action on a surface (Download CV, first case-study action).",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Download CV <svg width=\"16\" height=\"16\" viewBox=\"0 0 256 256\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"24\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M128 40v136M72 120l56 56 56-56M40 216h176\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 20px; border-radius: 9999px; background: var(--portfolio-ink, #111311); color: var(--portfolio-ground, #f4f5f2); font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.9375rem; font-weight: 600; text-decoration: none; transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary svg { transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary:hover { background: #2a2e2a; } .ds-btn-primary:hover svg { transform: translateY(2px); } .ds-btn-primary:focus-visible { outline: 2px solid var(--portfolio-ink, #111311); outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White pill with a strong hairline, beside a primary action.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">View repository <svg width=\"16\" height=\"16\" viewBox=\"0 0 256 256\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"24\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M64 192L192 64M88 64h104v104\"/></svg></a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 20px; border-radius: 9999px; border: 1px solid var(--portfolio-line-strong, rgb(17 19 17 / 18%)); background: var(--portfolio-panel, #fff); color: var(--portfolio-ink, #111311); font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.9375rem; font-weight: 600; text-decoration: none; transition: border-color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-secondary svg { transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-secondary:hover { border-color: var(--portfolio-ink, #111311); } .ds-btn-secondary:hover svg { transform: translate(2px, -2px); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--portfolio-ink, #111311); outline-offset: 3px; }"
+    },
+    {
+      "name": "Round Icon Button",
+      "kind": "button",
+      "refersTo": "button-icon",
+      "description": "40px circle for zoom and close; lime only on hover.",
+      "html": "<button class=\"ds-btn-icon\" type=\"button\" aria-label=\"Close\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 256 256\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"24\" stroke-linecap=\"round\"><path d=\"M200 56L56 200M200 200L56 56\"/></svg></button>",
+      "css": ".ds-btn-icon { display: grid; place-items: center; width: 40px; height: 40px; border: 0; border-radius: 9999px; background: var(--portfolio-chip, #e8eae4); color: var(--portfolio-ink, #111311); cursor: pointer; transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-icon:hover { background: var(--portfolio-lime, #c8f03c); } .ds-btn-icon:focus-visible { outline: 2px solid var(--portfolio-ink, #111311); outline-offset: 3px; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Display-type name, muted pill links with chip hover, ink CV pill.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\">Lucas Epherra</a><nav><a class=\"ds-nav-link\" href=\"#\">Projects</a><a class=\"ds-nav-link\" href=\"#\">Capabilities</a><a class=\"ds-nav-link\" href=\"#\">About</a><a class=\"ds-nav-link\" href=\"#\">Contact</a></nav><a class=\"ds-nav-cta\" href=\"#\">Download CV</a></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 80px; padding: 0 32px; background: var(--portfolio-ground, #f4f5f2); color: var(--portfolio-ink, #111311); font-family: 'Hanken Grotesk', system-ui, sans-serif; } .ds-nav nav { display: flex; gap: 4px; } .ds-nav-brand { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 1.125rem; font-weight: 600; letter-spacing: -0.02em; color: inherit; text-decoration: none; } .ds-nav-link { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 9999px; color: var(--portfolio-muted, #565b55); font-size: 0.9375rem; text-decoration: none; transition: background-color 200ms, color 200ms; } .ds-nav-link:hover { background: var(--portfolio-chip, #e8eae4); color: var(--portfolio-ink, #111311); } .ds-nav-link:focus-visible, .ds-nav-cta:focus-visible { outline: 2px solid var(--portfolio-ink, #111311); outline-offset: 3px; } .ds-nav-cta { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 9999px; background: var(--portfolio-ink, #111311); color: var(--portfolio-ground, #f4f5f2); font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background-color 200ms; } .ds-nav-cta:hover { background: #2a2e2a; }"
+    },
+    {
+      "name": "Status Chip",
+      "kind": "chip",
+      "refersTo": "chip-status",
+      "description": "Lime pill with ink dot marking a project's live status.",
+      "html": "<span class=\"ds-chip-status\"><span class=\"ds-chip-dot\"></span>Deployed · early validation</span>",
+      "css": ".ds-chip-status { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 9999px; background: var(--portfolio-lime, #c8f03c); color: var(--portfolio-ink, #111311); font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.8125rem; font-weight: 600; } .ds-chip-dot { width: 6px; height: 6px; border-radius: 9999px; background: var(--portfolio-ink, #111311); }"
+    },
+    {
+      "name": "Tech Tag",
+      "kind": "chip",
+      "refersTo": "tag-tech",
+      "description": "Chip-grey 6px tag for stack items in case studies.",
+      "html": "<span class=\"ds-tag\">Next.js</span><span class=\"ds-tag\">NestJS</span>",
+      "css": ".ds-tag { display: inline-block; margin-right: 6px; padding: 4px 8px; border-radius: 6px; background: var(--portfolio-chip, #e8eae4); color: var(--portfolio-ink, #111311); font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.8125rem; font-weight: 500; }"
+    },
+    {
+      "name": "Stage Panel",
+      "kind": "card",
+      "refersTo": "card-panel",
+      "description": "White hairline panel with 12px inset framing a screenshot, plus a meta column and a 12px-radius ink action.",
+      "html": "<article class=\"ds-panel\"><div class=\"ds-panel-frame\"></div><div class=\"ds-panel-meta\"><span class=\"ds-panel-chip\">Deployed</span><h3>MiTaller360</h3><p>SaaS for automotive workshops</p><a class=\"ds-panel-cta\" href=\"#\">View case study <span aria-hidden=\"true\">&rarr;</span></a></div></article>",
+      "css": ".ds-panel { display: grid; grid-template-columns: minmax(0, 1fr) 16rem; gap: 16px; padding: 12px; border: 1px solid var(--portfolio-line, rgb(17 19 17 / 10%)); border-radius: 22px; background: var(--portfolio-panel, #fff); box-shadow: var(--portfolio-shadow, 0 1px 2px rgb(17 19 17 / 6%), 0 12px 32px -12px rgb(17 19 17 / 14%)); color: var(--portfolio-ink, #111311); font-family: 'Hanken Grotesk', system-ui, sans-serif; } .ds-panel-frame { aspect-ratio: 16 / 8.4; border: 1px solid var(--portfolio-line, rgb(17 19 17 / 10%)); border-radius: 14px; background: var(--portfolio-chip, #e8eae4); } .ds-panel-meta { padding: 16px 16px 8px; } .ds-panel-chip { display: inline-block; padding: 4px 12px; border-radius: 9999px; background: var(--portfolio-lime, #c8f03c); font-size: 0.8125rem; font-weight: 600; } .ds-panel-meta h3 { margin: 12px 0 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 2rem; font-weight: 600; line-height: 1; letter-spacing: -0.03em; } .ds-panel-meta p { margin: 8px 0 20px; color: var(--portfolio-muted, #565b55); font-size: 0.9375rem; } .ds-panel-cta { display: flex; align-items: center; justify-content: space-between; min-height: 48px; padding: 0 16px; border-radius: 12px; background: var(--portfolio-ink, #111311); color: var(--portfolio-ground, #f4f5f2); font-size: 0.9375rem; font-weight: 600; text-decoration: none; transition: background-color 200ms; } .ds-panel-cta:hover { background: #2a2e2a; } .ds-panel-cta:focus-visible { outline: 2px solid var(--portfolio-ink, #111311); outline-offset: 3px; }"
+    },
+    {
+      "name": "Contribution Note",
+      "kind": "custom",
+      "refersTo": "contribution-note",
+      "description": "Graphite-ground block inside each project card: muted label plus one ink sentence stating the personal contribution.",
+      "html": "<div class=\"ds-contribution\"><p class=\"ds-contribution-label\">My contribution</p><p class=\"ds-contribution-text\">I co-founded a SaaS that centralizes work orders, scheduling and receipts for workshops.</p></div>",
+      "css": ".ds-contribution { padding: 12px 16px; border-radius: 12px; background: var(--portfolio-ground, #f4f5f2); font-family: \"Hanken Grotesk\", system-ui, sans-serif; } .ds-contribution-label { margin: 0; font-size: 0.8125rem; font-weight: 600; color: var(--portfolio-muted, #565b55); } .ds-contribution-text { margin: 4px 0 0; font-size: 0.9375rem; line-height: 1.625; color: var(--portfolio-ink, #111311); }"
+    },
+    {
+      "name": "Headline Marker",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "Lime highlighter band behind one phrase of a display headline.",
+      "html": "<h1 class=\"ds-display\">I design and ship <mark class=\"ds-highlight\">complete web products</mark>.</h1>",
+      "css": ".ds-display { margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 3.5rem; font-weight: 600; line-height: 1.02; letter-spacing: -0.035em; color: var(--portfolio-ink, #111311); text-wrap: balance; } .ds-highlight { background: linear-gradient(var(--portfolio-lime, #c8f03c), var(--portfolio-lime, #c8f03c)) 0 88% / 100% 0.62em no-repeat; color: inherit; padding-inline: 0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }"
+    },
+    {
+      "name": "Contact Slab",
+      "kind": "card",
+      "refersTo": "slab-contact",
+      "description": "Ink slab closing the home page, with a ground email pill.",
+      "html": "<section class=\"ds-slab\"><h2>Let's build something that ships.</h2><a class=\"ds-slab-cta\" href=\"#\">hello@example.com</a></section>",
+      "css": ".ds-slab { padding: 56px; border-radius: 28px; background: var(--portfolio-ink, #111311); color: var(--portfolio-ground, #f4f5f2); } .ds-slab h2 { margin: 0; max-width: 18ch; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 3rem; font-weight: 600; line-height: 1.04; letter-spacing: -0.035em; } .ds-slab-cta { display: inline-flex; align-items: center; margin-top: 40px; min-height: 56px; padding: 0 24px; border-radius: 9999px; background: var(--portfolio-ground, #f4f5f2); color: var(--portfolio-ink, #111311); font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 1.125rem; font-weight: 600; text-decoration: none; transition: background-color 200ms; } .ds-slab-cta:hover { background: var(--portfolio-panel, #fff); } .ds-slab-cta:focus-visible { outline: 2px solid var(--portfolio-ground, #f4f5f2); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Grafito y lima",
+    "overview": "The work is the stage. A light graphite ground carries white product panels with hairline edges, and real screenshots sit inside them at large scale, so the first thing a visitor reads after the headline is a shipped product, not a name or a row of equal cards. The register is modern tech-product precision: one grotesque family for display with tight negative tracking, a calm humanist grotesque for reading, and almost no color.\n\nAcid lime is the only voice. It behaves like a highlighter pen, never like paint: one phrase in a headline, the status chip on a live product, the bullets of a case-study list, the text selection, and the hover of small round icon buttons. Everything else is graphite: ink for primary actions and the closing contact slab, muted grey for secondary text, a pale chip grey for tags.\n\nDensity is medium. Panels nest one frame inside another (white panel, 12px inset, bordered image frame), sections are separated by single hairlines and generous vertical space, and motion is limited to short hover nudges. The world refuses gradients as decoration, glass, glow, dark/hacker styling, and the previous cream, serif and copper identity.",
+    "keyCharacteristics": [
+      "Graphite-light ground with white hairline panels and one soft ambient shadow.",
+      "Acid lime as a highlighter only; never a button fill at rest, never decoration.",
+      "Bricolage Grotesque display at weight 600 with tight negative tracking; Hanken Grotesk body.",
+      "Pills for navigation, chips and most buttons; large rounded panels (22px, 28px for slabs).",
+      "Real product screenshots at large scale as the main imagery.",
+      "Motion limited to short hover nudges, ease-out, disabled under reduced motion."
+    ],
+    "rules": [
+      {
+        "name": "The Highlighter Rule",
+        "body": "Lime marks only what matters: one highlighted phrase per headline, status, active state, selection. It is never the resting fill of a button, never an icon color, never a background area.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Action Rule",
+        "body": "The primary action on any surface is ink with ground text. If a second action sits beside it, it is white with a strong hairline, not a second dark button.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Kicker Rule",
+        "body": "Headings stand alone: no eyebrow, overline or section number above them. Context comes from the heading itself.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tight Display Rule",
+        "body": "Every Bricolage heading carries negative tracking (-0.015em small, -0.03em section, -0.035em to -0.04em display) and balanced wrapping.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Shadow Rule",
+        "body": "There is one shadow. Hierarchy is carried by border, fill and size, never by a deeper shadow, a hard offset shadow, or a glow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do put a real product screenshot inside a white hairline panel at large scale wherever work is presented.",
+      "Do keep lime to the highlighter roles: one headline phrase, status chips, active dots and bullets, selection, icon-button hover.",
+      "Do make the primary action an ink pill (or the 12px project-card bar) with ground text and a trailing arrow that nudges on hover.",
+      "Do nest frames concentrically: 22px panel, 12px inset, 14px bordered frame.",
+      "Do separate sections with a single hairline and vertical space, not background bands.",
+      "Do keep motion to 180 to 260ms, ease-out, transform and opacity only, and honor reduced motion."
+    ],
+    "donts": [
+      "Don't fill a button with lime at rest, color icons lime, or use lime as a background area.",
+      "Don't place eyebrows, kickers, overlines or section numbers above headings.",
+      "Don't use gradients as decoration, glass/backdrop blur, glows, or hard offset shadows.",
+      "Don't add a second shadow level; depth is border, fill and the one Panel shadow.",
+      "Don't introduce a dark/hacker theme or bring back the cream, serif and copper identity.",
+      "Don't add motion beyond small hover nudges and the lightbox."
+    ]
+  }
+}

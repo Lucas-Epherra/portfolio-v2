@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeftIcon } from "@phosphor-icons/react/dist/ssr/ArrowLeft";
 import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr/ArrowRight";
 
+import { CONTACT_EMAIL } from "@/content/site";
 import type { CaseStudyContent, CaseStudyUiContent } from "@/types/case-study";
 import type { Locale } from "@/types/locale";
 
@@ -14,6 +15,9 @@ interface CaseStudyNavigationProps {
   ui: CaseStudyUiContent;
 }
 
+const linkClassName =
+  "group flex min-h-32 flex-col justify-between gap-6 rounded-[1.375rem] border border-line p-6 shadow-panel transition-colors duration-200 hover:border-line-strong sm:p-8";
+
 /** Conecta los casos entre sí sin ocultar la salida hacia el portfolio principal. */
 export function CaseStudyNavigation({
   locale,
@@ -22,79 +26,76 @@ export function CaseStudyNavigation({
   ui,
 }: CaseStudyNavigationProps) {
   return (
-    <nav aria-label={ui.caseStudyLabel} className="border-t border-line bg-background py-12 sm:py-14">
-      <Container className="grid gap-4 sm:grid-cols-2">
+    <nav aria-label={ui.caseStudyLabel} className="border-t border-line">
+      <Container className="py-12 sm:py-16">
         {previous ? (
           <Link
-            className="group border border-line bg-surface p-6 transition-colors duration-300 hover:border-accent/50 sm:p-8"
-            href={`/${locale}/projects/${previous.slug}`}
-          >
-            <span className="flex items-center gap-3 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-muted">
-              <ArrowLeftIcon
-                aria-hidden="true"
-                className="size-4 transition-transform duration-300 group-hover:-translate-x-1"
-                weight="regular"
-              />
-              {ui.previousCase}
-            </span>
-            <span className="mt-4 block font-serif text-2xl tracking-[-0.025em]">
-              {previous.number} — {previous.title}
-            </span>
-          </Link>
-        ) : (
-          <Link
-            className="group border border-line bg-surface p-6 transition-colors duration-300 hover:border-accent/50 sm:p-8"
+            className="group mb-4 inline-flex min-h-10 items-center gap-2 pr-3 text-sm font-medium text-muted transition-colors hover:text-ink"
             href={`/${locale}#work`}
           >
-            <span className="flex items-center gap-3 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-muted">
+            <ArrowLeftIcon
+              aria-hidden="true"
+              className="size-4 transition-transform duration-200 group-hover:-translate-x-1"
+              weight="bold"
+            />
+            {ui.backToPortfolio}
+          </Link>
+        ) : null}
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link
+            className={`${linkClassName} bg-panel`}
+            href={previous ? `/${locale}/projects/${previous.slug}` : `/${locale}#work`}
+          >
+            <span className="flex items-center gap-2 text-sm text-muted">
               <ArrowLeftIcon
                 aria-hidden="true"
-                className="size-4 transition-transform duration-300 group-hover:-translate-x-1"
-                weight="regular"
+                className="size-4 transition-transform duration-200 group-hover:-translate-x-1"
+                weight="bold"
               />
-              {ui.backToPortfolio}
+              {previous ? ui.previousCase : ui.backToPortfolio}
             </span>
-            <span className="mt-4 block font-serif text-2xl tracking-[-0.025em]">
-              Lucas Epherra
+            <span className="font-display text-3xl font-semibold tracking-[-0.03em]">
+              {previous ? previous.title : ui.portfolioLabel}
             </span>
           </Link>
-        )}
 
-        {next ? (
-          <Link
-            className="group border border-line bg-surface p-6 text-right transition-colors duration-300 hover:border-accent/50 sm:p-8"
-            href={`/${locale}/projects/${next.slug}`}
-          >
-            <span className="flex items-center justify-end gap-3 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-muted">
-              {ui.nextCase}
-              <ArrowRightIcon
-                aria-hidden="true"
-                className="size-4 transition-transform duration-300 group-hover:translate-x-1"
-                weight="regular"
-              />
-            </span>
-            <span className="mt-4 block font-serif text-2xl tracking-[-0.025em]">
-              {next.number} — {next.title}
-            </span>
-          </Link>
-        ) : (
-          <Link
-            className="group border border-line bg-dark p-6 text-right text-surface transition-colors duration-300 hover:border-accent-on-dark/70 sm:p-8"
-            href={`/${locale}#contact`}
-          >
-            <span className="flex items-center justify-end gap-3 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-surface/50">
-              {ui.contactLabel}
-              <ArrowRightIcon
-                aria-hidden="true"
-                className="size-4 transition-transform duration-300 group-hover:translate-x-1"
-                weight="regular"
-              />
-            </span>
-            <span className="mt-4 block font-serif text-2xl tracking-[-0.025em]">
-              Lucas Epherra
-            </span>
-          </Link>
-        )}
+          {next ? (
+            <Link
+              className={`${linkClassName} items-end bg-panel text-right`}
+              href={`/${locale}/projects/${next.slug}`}
+            >
+              <span className="flex items-center gap-2 text-sm text-muted">
+                {ui.nextCase}
+                <ArrowRightIcon
+                  aria-hidden="true"
+                  className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+                  weight="bold"
+                />
+              </span>
+              <span className="font-display text-3xl font-semibold tracking-[-0.03em]">
+                {next.title}
+              </span>
+            </Link>
+          ) : (
+            <a
+              className={`${linkClassName} items-end bg-slab text-right text-on-slab`}
+              href={`mailto:${CONTACT_EMAIL}`}
+            >
+              <span className="flex items-center gap-2 text-sm text-on-slab/70">
+                {ui.contactLabel}
+                <ArrowRightIcon
+                  aria-hidden="true"
+                  className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+                  weight="bold"
+                />
+              </span>
+              <span className="max-w-full break-words font-display text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">
+                {CONTACT_EMAIL}
+              </span>
+            </a>
+          )}
+        </div>
       </Container>
     </nav>
   );

@@ -1,49 +1,51 @@
 import Link from "next/link";
+import { DownloadSimpleIcon } from "@phosphor-icons/react/dist/ssr/DownloadSimple";
 
 import type { Locale } from "@/types/locale";
-import type { NavigationItem } from "@/types/site-content";
+import type { CallToAction, NavigationItem } from "@/types/site-content";
 
 import { Container } from "../ui/Container";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface SiteHeaderProps {
   alternateHref?: `/${string}`;
+  cvAction: CallToAction;
   languageLabel: string;
   locale: Locale;
   navigation: NavigationItem[];
   navigationLabel: string;
+  themeLabel: string;
 }
 
-/** Presenta marca, navegación interna y cambio de idioma sobre el hero oscuro. */
+/** Presenta marca, navegación interna, tema, cambio de idioma y descarga directa del CV. */
 export function SiteHeader({
   alternateHref,
+  cvAction,
   languageLabel,
   locale,
   navigation,
   navigationLabel,
+  themeLabel,
 }: SiteHeaderProps) {
   const alternateLocale: Locale = locale === "en" ? "es" : "en";
 
   return (
-    <header className="border-b border-surface/15 bg-dark text-surface">
-      <Container className="flex h-20 items-center justify-between gap-4 sm:h-24">
+    <header className="relative z-10">
+      <Container className="flex h-18 items-center justify-between gap-2 sm:h-20 sm:gap-4">
         <Link
           aria-label="Lucas Epherra — Home"
-          className="shrink-0 text-base font-extrabold uppercase tracking-[0.24em] transition-colors duration-300 hover:text-accent-on-dark sm:text-xl"
+          className="shrink-0 font-display text-lg font-semibold tracking-[-0.02em]"
           href={`/${locale}`}
         >
-          <span className="sm:hidden">L. E.</span>
-          <span className="hidden sm:inline">Lucas Epherra</span>
+          Lucas Epherra
         </Link>
 
-        <nav aria-label={navigationLabel}>
-          <ul className="flex items-center gap-5 md:gap-6 lg:gap-10">
-            {navigation.map((item, index) => (
-              <li
-                className={index === 0 ? "block" : "hidden md:block"}
-                key={item.href}
-              >
+        <nav aria-label={navigationLabel} className="hidden md:block">
+          <ul className="flex items-center gap-1">
+            {navigation.map((item) => (
+              <li key={item.href}>
                 <a
-                  className="group relative inline-flex py-3 text-xs font-semibold text-surface/65 transition-colors duration-300 after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-accent-on-dark after:transition-transform after:duration-300 hover:text-surface hover:after:scale-x-100 md:text-[0.8rem] lg:text-sm"
+                  className="inline-flex min-h-10 items-center rounded-full px-3.5 text-[0.9375rem] text-muted transition-colors duration-200 hover:bg-chip hover:text-ink"
                   href={item.href}
                 >
                   {item.label}
@@ -53,18 +55,29 @@ export function SiteHeader({
           </ul>
         </nav>
 
-        <div className="flex shrink-0 items-center gap-2 text-xs font-bold uppercase tracking-[0.16em]">
-          <span className="text-accent-on-dark">{locale}</span>
-          <span className="text-surface/25" aria-hidden="true">/</span>
+        <div className="flex shrink-0 items-center gap-1 sm:gap-2">
+          <ThemeToggle label={themeLabel} />
           <Link
             aria-label={languageLabel}
-            className="min-h-11 py-3 text-surface/55 transition-colors hover:text-surface"
+            className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-full text-sm font-semibold uppercase text-muted transition-colors duration-200 hover:bg-chip hover:text-ink"
             href={alternateHref ?? `/${alternateLocale}`}
             hrefLang={alternateLocale}
             lang={alternateLocale}
           >
             {alternateLocale}
           </Link>
+          <a
+            className="group inline-flex min-h-10 items-center gap-2 rounded-full bg-ink px-3 text-sm font-semibold text-ground sm:px-4 transition-colors duration-200 hover:bg-ink-hover"
+            download={cvAction.download}
+            href={cvAction.href}
+          >
+            <DownloadSimpleIcon
+              aria-hidden="true"
+              className="size-4 transition-transform duration-200 group-hover:translate-y-0.5"
+              weight="bold"
+            />
+            {cvAction.label}
+          </a>
         </div>
       </Container>
     </header>

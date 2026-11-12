@@ -20,34 +20,20 @@ export interface HeroContent {
   primaryAction: CallToAction;
   role: string;
   secondaryAction: CallToAction;
-  titleLines: string[];
+  title: string;
+  /** Fragmento literal del título que se resalta con el marcador lima. */
+  titleHighlight: string;
 }
 
-/** Enlace verificable asociado a un proyecto seleccionado. */
-export interface ProjectLink {
-  href: `https://${string}`;
-  label: string;
-}
-
-/** Enlace interno hacia una página propia del portfolio. */
-export interface InternalProjectLink {
-  href: `/${string}`;
-  label: string;
-}
-
-/** Contenido del proyecto insignia presentado en la portada. */
-export interface FeaturedProjectContent {
-  caseStudy: InternalProjectLink;
-  category: string;
-  highlights: string[];
-  image: `/${string}`;
-  imageAlt: string;
-  links: ProjectLink[];
-  number: string;
-  role: string;
+/** Etiquetas de las fichas de proyectos; los datos provienen de los casos de estudio. */
+export interface WorkContent {
+  caseStudyLabel: string;
+  contributionLabel: string;
+  /** Debe coincidir con la etiqueta del dato de rol en los casos de estudio. */
   roleLabel: string;
-  stack: string[];
-  summary: string[];
+  stackLabel: string;
+  /** Debe coincidir con la etiqueta del dato de estado en los casos de estudio. */
+  statusLabel: string;
   title: string;
 }
 
@@ -62,24 +48,6 @@ export interface AboutContent {
   facts: AboutFact[];
   paragraphs: string[];
   title: string;
-}
-
-/** Proyecto secundario con imagen y alcance resumido. */
-export interface SelectedProject {
-  alt: string;
-  caseStudy: InternalProjectLink;
-  category: string;
-  image: `/${string}`;
-  links: ProjectLink[];
-  number: string;
-  role: string;
-  stack: string[];
-  title: string;
-}
-
-/** Grupo localizado de proyectos seleccionados. */
-export interface SelectedProjectsContent {
-  projects: SelectedProject[];
 }
 
 /** Identificador semántico de cada capacidad técnica. */
@@ -114,14 +82,14 @@ export interface SiteContent {
   approach: ApproachContent;
   contact: ContactContent;
   description: string;
-  featuredProject: FeaturedProjectContent;
   footerNote: string;
   footerRights: string;
   hero: HeroContent;
   languageLabel: string;
   navigation: NavigationItem[];
   navigationLabel: string;
-  selectedProjects: SelectedProjectsContent;
+  themeLabel: string;
+  work: WorkContent;
 }
 
 /** Contenido completo indexado por cada idioma público soportado. */

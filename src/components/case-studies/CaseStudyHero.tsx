@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeftIcon } from "@phosphor-icons/react/dist/ssr/ArrowLeft";
-import { ArrowSquareOutIcon } from "@phosphor-icons/react/dist/ssr/ArrowSquareOut";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr/ArrowUpRight";
 
 import type { CaseStudyContent, CaseStudyUiContent } from "@/types/case-study";
 import type { Locale } from "@/types/locale";
@@ -14,110 +14,103 @@ interface CaseStudyHeroProps {
   ui: CaseStudyUiContent;
 }
 
-/** Presenta contexto, alcance, acciones y evidencia visual principal del caso. */
+/** Presenta contexto, alcance, acciones y la evidencia visual principal del caso. */
 export function CaseStudyHero({ content, locale, ui }: CaseStudyHeroProps) {
   return (
-    <>
-      <section className="bg-dark py-10 text-surface sm:py-14 lg:py-16">
-        <Container>
-          <Link
-            className="group inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.14em] text-surface/60 transition-colors hover:text-surface"
-            href={`/${locale}#work`}
-          >
-            <ArrowLeftIcon
-              aria-hidden="true"
-              className="size-4 transition-transform duration-300 group-hover:-translate-x-1"
-              weight="regular"
-            />
-            {ui.backToPortfolio}
-          </Link>
+    <section aria-labelledby="case-study-title">
+      <Container className="pb-16 pt-6 sm:pb-20 sm:pt-10">
+        <Link
+          className="group inline-flex min-h-10 items-center gap-2 rounded-full pr-3 text-sm font-medium text-muted transition-colors hover:text-ink"
+          href={`/${locale}#work`}
+        >
+          <ArrowLeftIcon
+            aria-hidden="true"
+            className="size-4 transition-transform duration-200 group-hover:-translate-x-1"
+            weight="bold"
+          />
+          {ui.backToPortfolio}
+        </Link>
 
-          <div className="mt-12 grid gap-12 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-7">
-              <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-accent-on-dark">
-                {ui.caseStudyLabel} · {content.number}
-              </p>
-              <h1 className="mt-5 max-w-4xl font-serif text-5xl leading-[0.98] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
-                {content.title}
-              </h1>
-              <p className="mt-4 text-sm font-semibold uppercase tracking-[0.12em] text-surface/50">
-                {content.category}
-              </p>
-              <p className="mt-8 max-w-3xl text-lg leading-8 text-surface/65 sm:text-xl">
-                {content.summary}
-              </p>
+        <div className="mt-8 grid gap-10 lg:mt-12 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-7">
+            <h1
+              className="font-display text-5xl font-semibold leading-[0.98] tracking-[-0.04em] sm:text-7xl lg:text-[5.5rem]"
+              id="case-study-title"
+            >
+              {content.title}
+            </h1>
+            <p className="mt-4 text-lg font-medium">
+              <mark className="highlight">{content.category}</mark>
+            </p>
+            <p className="mt-6 max-w-[60ch] text-lg leading-relaxed text-muted sm:text-xl">
+              {content.summary}
+            </p>
 
-              <div className="mt-9 flex flex-wrap gap-3">
-                {content.actions.map((action, index) => (
+            <ul className="mt-8 flex flex-wrap gap-3">
+              {content.actions.map((action, index) => (
+                <li key={action.href}>
                   <a
-                    className={
+                    aria-label={`${action.label}: ${content.title}`}
+                    className={`group inline-flex min-h-12 items-center gap-2 rounded-full px-5 text-[0.9375rem] font-semibold transition-colors duration-200 ${
                       index === 0
-                        ? "group inline-flex min-h-12 items-center gap-3 bg-accent-on-dark px-5 text-sm font-bold text-dark transition-colors duration-300 hover:bg-surface"
-                        : "group inline-flex min-h-12 items-center gap-3 border border-accent-on-dark/70 px-5 text-sm font-bold text-surface transition-colors duration-300 hover:bg-surface hover:text-dark"
-                    }
+                        ? "bg-ink text-ground hover:bg-ink-hover"
+                        : "border border-line-strong bg-panel text-ink hover:border-ink"
+                    }`}
                     href={action.href}
-                    key={action.href}
                     rel="noreferrer"
                     target="_blank"
                   >
                     {action.label}
-                    <ArrowSquareOutIcon
+                    <ArrowUpRightIcon
                       aria-hidden="true"
-                      className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                      weight="regular"
+                      className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      weight="bold"
                     />
                   </a>
-                ))}
-              </div>
-            </div>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            <dl className="border-t border-surface/15 lg:col-span-5">
+          <div className="lg:col-span-5">
+            <dl className="overflow-hidden rounded-[1.375rem] border border-line bg-panel shadow-panel">
               {content.facts.map((fact) => (
                 <div
-                  className="grid grid-cols-[7rem_1fr] gap-5 border-b border-surface/15 py-4"
+                  className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-4 border-b border-line px-5 py-4 last:border-b-0"
                   key={fact.label}
                 >
-                  <dt className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-surface/55">
-                    {fact.label}
-                  </dt>
-                  <dd className="text-sm leading-6 text-surface/70">{fact.value}</dd>
+                  <dt className="text-sm text-muted">{fact.label}</dt>
+                  <dd className="font-medium leading-snug">{fact.value}</dd>
                 </div>
               ))}
             </dl>
+            <ul aria-label="Stack" className="mt-3 flex flex-wrap gap-1.5 px-1">
+              {content.stack.map((technology) => (
+                <li
+                  className="rounded-md bg-chip px-2 py-1 text-[0.8125rem] font-medium"
+                  key={technology}
+                >
+                  {technology}
+                </li>
+              ))}
+            </ul>
           </div>
+        </div>
 
-          <ul className="mt-12 flex flex-wrap gap-x-3 gap-y-2 border-t border-surface/15 pt-6 text-xs text-surface/55">
-            {content.stack.map((technology) => (
-              <li
-                className="after:ml-3 after:text-accent-on-dark after:content-['/'] last:after:content-none"
-                key={technology}
-              >
-                {technology}
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
-
-      <section className="bg-surface py-8 sm:py-12">
-        <Container>
-          <figure className="overflow-hidden border border-line bg-background shadow-portfolio">
-            <div className="relative aspect-[4/3] overflow-hidden sm:aspect-video">
-              <Image
-                alt={content.heroAlt}
-                className="object-contain object-top"
-                fill
-                priority
-                sizes="(max-width: 1536px) 100vw, 1440px"
-                src={content.heroImage}
-              />
-            </div>
-            <figcaption className="border-t border-line px-5 py-4 text-xs leading-5 text-muted sm:px-7">
-              {content.heroAlt}
-            </figcaption>
-          </figure>
-        </Container>
-      </section>
-    </>
+        <figure className="mt-12 rounded-[1.375rem] border border-line bg-panel p-3 shadow-panel sm:mt-16">
+          <div className="relative aspect-[16/8.4] overflow-hidden rounded-[0.875rem] border border-line bg-chip">
+            <Image
+              alt={content.heroAlt}
+              className="object-cover object-top"
+              fill
+              priority
+              sizes="(max-width: 1440px) calc(100vw - 3rem), 1300px"
+              src={content.heroImage}
+            />
+          </div>
+          <figcaption className="px-2 pb-1 pt-3 text-sm text-muted">{content.heroAlt}</figcaption>
+        </figure>
+      </Container>
+    </section>
   );
 }

@@ -1,32 +1,93 @@
 @import "tailwindcss";
 
 :root {
-  --portfolio-background: #f2efe8;
-  --portfolio-surface: #faf9f5;
-  --portfolio-foreground: #20211f;
-  --portfolio-dark: #1f2321;
-  --portfolio-accent: #9c462f;
-  --portfolio-accent-on-dark: #d87858;
-  --portfolio-focus: #c36747;
-  --portfolio-muted: #646f64;
-  --portfolio-line: rgb(32 33 31 / 16%);
-  --portfolio-radius: 0.75rem;
-  --portfolio-shadow: 0 1.5rem 4rem rgb(31 35 33 / 10%);
+  color-scheme: light;
+  --portfolio-ground: #f4f5f2;
+  --portfolio-panel: #ffffff;
+  --portfolio-ink: #111311;
+  --portfolio-ink-hover: #2a2e2a;
+  --portfolio-muted: #565b55;
+  --portfolio-chip: #e8eae4;
+  --portfolio-lime: #c8f03c;
+  --portfolio-lime-strong: #b4dc22;
+  --portfolio-on-lime: #111311;
+  --portfolio-slab: #111311;
+  --portfolio-on-slab: #f4f5f2;
+  --portfolio-line: rgb(17 19 17 / 10%);
+  --portfolio-line-strong: rgb(17 19 17 / 18%);
+  --portfolio-scrim: rgb(17 19 17 / 70%);
+  --portfolio-scrollbar: rgb(17 19 17 / 28%);
+  --portfolio-highlight: var(--portfolio-lime);
+  --portfolio-highlight-text: inherit;
+  --portfolio-shadow: 0 1px 2px rgb(17 19 17 / 6%), 0 12px 32px -12px rgb(17 19 17 / 14%);
+  --portfolio-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/*
+ * Modo oscuro grafito: mismo mundo con la luz baja. Se aplica con data-theme
+ * (lo fija el script del layout) y, sin JavaScript, según la preferencia del sistema.
+ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --portfolio-ground: #121412;
+    --portfolio-panel: #1a1d1a;
+    --portfolio-ink: #eceee8;
+    --portfolio-ink-hover: #d4d8cf;
+    --portfolio-muted: #9ca197;
+    --portfolio-chip: #252925;
+    --portfolio-lime-strong: #c8f03c;
+    --portfolio-slab: #1f231f;
+    --portfolio-on-slab: #eceee8;
+    --portfolio-line: rgb(236 238 232 / 10%);
+    --portfolio-line-strong: rgb(236 238 232 / 20%);
+    --portfolio-scrim: rgb(6 7 6 / 80%);
+    --portfolio-scrollbar: rgb(236 238 232 / 24%);
+    --portfolio-highlight: rgb(200 240 60 / 16%);
+    --portfolio-highlight-text: var(--portfolio-lime);
+    --portfolio-shadow: 0 1px 2px rgb(0 0 0 / 40%), 0 12px 32px -12px rgb(0 0 0 / 60%);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --portfolio-ground: #121412;
+  --portfolio-panel: #1a1d1a;
+  --portfolio-ink: #eceee8;
+  --portfolio-ink-hover: #d4d8cf;
+  --portfolio-muted: #9ca197;
+  --portfolio-chip: #252925;
+  --portfolio-lime-strong: #c8f03c;
+  --portfolio-slab: #1f231f;
+  --portfolio-on-slab: #eceee8;
+  --portfolio-line: rgb(236 238 232 / 10%);
+  --portfolio-line-strong: rgb(236 238 232 / 20%);
+  --portfolio-scrim: rgb(6 7 6 / 80%);
+  --portfolio-scrollbar: rgb(236 238 232 / 24%);
+  --portfolio-highlight: rgb(200 240 60 / 16%);
+  --portfolio-highlight-text: var(--portfolio-lime);
+  --portfolio-shadow: 0 1px 2px rgb(0 0 0 / 40%), 0 12px 32px -12px rgb(0 0 0 / 60%);
 }
 
 @theme inline {
-  --color-background: var(--portfolio-background);
-  --color-surface: var(--portfolio-surface);
-  --color-foreground: var(--portfolio-foreground);
-  --color-dark: var(--portfolio-dark);
-  --color-accent: var(--portfolio-accent);
-  --color-accent-on-dark: var(--portfolio-accent-on-dark);
+  --color-ground: var(--portfolio-ground);
+  --color-panel: var(--portfolio-panel);
+  --color-ink: var(--portfolio-ink);
+  --color-ink-hover: var(--portfolio-ink-hover);
   --color-muted: var(--portfolio-muted);
+  --color-chip: var(--portfolio-chip);
+  --color-lime: var(--portfolio-lime);
+  --color-lime-strong: var(--portfolio-lime-strong);
+  --color-on-lime: var(--portfolio-on-lime);
+  --color-slab: var(--portfolio-slab);
+  --color-on-slab: var(--portfolio-on-slab);
+  --color-scrim: var(--portfolio-scrim);
   --color-line: var(--portfolio-line);
-  --font-sans: var(--font-manrope);
-  --font-serif: var(--font-source-serif);
-  --radius-portfolio: var(--portfolio-radius);
-  --shadow-portfolio: var(--portfolio-shadow);
+  --color-line-strong: var(--portfolio-line-strong);
+  --font-sans: var(--font-hanken);
+  --font-display: var(--font-bricolage);
+  --shadow-panel: var(--portfolio-shadow);
+  --ease-out-expo: var(--portfolio-ease);
 }
 
 *,
@@ -37,82 +98,83 @@
 
 html {
   min-width: 20rem;
-  background: var(--portfolio-background);
+  background: var(--portfolio-ground);
   scroll-behavior: smooth;
+  scrollbar-color: var(--portfolio-scrollbar) var(--portfolio-ground);
 }
 
 body {
   min-height: 100dvh;
   margin: 0;
-  background: var(--portfolio-background);
-  color: var(--portfolio-foreground);
-  font-family: var(--font-manrope), sans-serif;
+  background: var(--portfolio-ground);
+  color: var(--portfolio-ink);
+  font-family: var(--font-hanken), system-ui, sans-serif;
+  font-feature-settings: "ss01", "tnum" 0;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  caret-color: var(--portfolio-ink);
 }
 
 a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/*
+ * Resaltado de marcador: el único uso expresivo del lima en titulares. En oscuro
+ * la banda baja de intensidad y el texto toma el lima para conservar el contraste.
+ */
+.highlight {
+  background: linear-gradient(var(--portfolio-highlight), var(--portfolio-highlight)) 0 88% / 100% 0.62em no-repeat;
+  color: var(--portfolio-highlight-text);
+  padding-inline: 0.06em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
 .skip-link {
   position: fixed;
   left: 1rem;
   top: 1rem;
-  z-index: 20;
+  z-index: 50;
   transform: translateY(-200%);
-  border-radius: var(--portfolio-radius);
-  background: var(--portfolio-foreground);
-  color: var(--portfolio-background);
-  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: var(--portfolio-ink);
+  color: var(--portfolio-ground);
+  padding: 0.75rem 1.125rem;
   font-size: 0.875rem;
-  font-weight: 700;
-  transition: transform 180ms ease;
+  font-weight: 600;
+  transition: transform 200ms var(--portfolio-ease);
 }
 
 .skip-link:focus {
   transform: translateY(0);
 }
 
-.hero-surface {
-  background-image: radial-gradient(
-    circle at 46% 46%,
-    rgb(255 255 255 / 4%),
-    transparent 38%
-  );
-}
-
-.reveal {
-  animation: reveal-up 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.reveal-delay-1 {
-  animation-delay: 100ms;
-}
-
-.reveal-delay-2 {
-  animation-delay: 200ms;
-}
-
-@keyframes reveal-up {
-  from {
-    opacity: 0;
-    transform: translateY(1rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 ::selection {
-  background: var(--portfolio-accent);
-  color: var(--portfolio-surface);
+  background: var(--portfolio-lime);
+  color: var(--portfolio-on-lime);
+}
+
+/* El botón de tema muestra el ícono del modo al que lleva. */
+:root[data-theme="dark"] .theme-icon-to-dark,
+:root:not([data-theme="dark"]) .theme-icon-to-light {
+  display: none;
 }
 
 :focus-visible {
-  outline: 0.125rem solid var(--portfolio-focus);
-  outline-offset: 0.25rem;
+  outline: 2px solid var(--portfolio-ink);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -53,11 +53,11 @@ export function CaseStudyGalleryItem({
 
   return (
     <figure
-      className={`flex h-full flex-col overflow-hidden border border-surface/15 bg-surface text-foreground ${layoutClasses[image.layout]}`}
+      className={`flex h-full flex-col rounded-[1.375rem] border border-line bg-panel p-2.5 shadow-panel ${layoutClasses[image.layout]}`}
     >
       <button
         aria-label={`${viewLabel}: ${image.caption}`}
-        className="group relative flex flex-1 cursor-zoom-in items-center justify-center overflow-hidden bg-background text-left"
+        className="group relative flex flex-1 cursor-zoom-in items-center justify-center overflow-hidden rounded-[0.875rem] border border-line bg-chip text-left"
         onClick={openImage}
         type="button"
       >
@@ -73,34 +73,34 @@ export function CaseStudyGalleryItem({
           src={image.src}
           width={image.width}
         />
-        <span className="absolute right-4 top-4 grid size-10 place-items-center border border-surface/20 bg-dark/90 text-surface transition-colors duration-300 group-hover:bg-accent-on-dark group-hover:text-dark sm:right-5 sm:top-5">
+        <span className="absolute right-3 top-3 grid size-10 place-items-center rounded-full bg-panel text-ink shadow-panel transition-colors duration-200 group-hover:bg-lime group-hover:text-on-lime">
           <ArrowsOutSimpleIcon aria-hidden="true" className="size-4" weight="regular" />
         </span>
       </button>
 
-      <figcaption className="border-t border-line px-5 py-4 text-xs leading-5 text-muted sm:px-6">
+      <figcaption className="px-2.5 pb-1.5 pt-3 text-sm leading-relaxed text-muted">
         {image.caption}
       </figcaption>
 
       <dialog
         aria-label={image.caption}
-        className="m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-[96rem] overflow-hidden border border-surface/20 bg-dark p-0 text-surface backdrop:bg-dark/90"
+        className="m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-[96rem] overflow-hidden rounded-[1.375rem] border border-line bg-panel p-0 text-ink shadow-panel backdrop:bg-scrim"
         onClick={closeFromBackdrop}
         ref={dialogRef}
       >
         <div className="flex max-h-[calc(100dvh-2rem)] flex-col">
-          <header className="flex items-center justify-between gap-6 border-b border-surface/15 px-4 py-3 sm:px-6">
-            <p className="text-xs leading-5 text-surface/65">{image.caption}</p>
+          <header className="flex items-center justify-between gap-6 border-b border-line px-4 py-3 sm:px-5">
+            <p className="text-sm leading-relaxed text-muted">{image.caption}</p>
             <button
               aria-label={closeLabel}
-              className="grid size-10 shrink-0 place-items-center border border-surface/20 text-surface transition-colors duration-300 hover:border-accent-on-dark hover:bg-accent-on-dark hover:text-dark"
+              className="grid size-10 shrink-0 place-items-center rounded-full bg-chip text-ink transition-colors duration-200 hover:bg-lime hover:text-on-lime"
               onClick={closeImage}
               type="button"
             >
               <XIcon aria-hidden="true" className="size-4" weight="regular" />
             </button>
           </header>
-          <div className="min-h-0 overflow-auto bg-background p-2 sm:p-4">
+          <div className="min-h-0 overflow-auto bg-ground p-2 sm:p-4">
             <Image
               alt={image.alt}
               className="mx-auto h-auto max-h-[calc(100dvh-7rem)] w-auto max-w-full object-contain"

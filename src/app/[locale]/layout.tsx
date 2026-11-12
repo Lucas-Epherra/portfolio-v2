@@ -1,23 +1,24 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Source_Serif_4 } from "next/font/google";
+import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/next";
 
 import { SITE_URL, SOCIAL_IMAGE_PATHS, siteContent } from "@/content/site";
 import { isLocale, SUPPORTED_LOCALES } from "@/lib/locales";
+import { THEME_INIT_SCRIPT } from "@/lib/theme";
 
 import "../globals.css";
 
-const manrope = Manrope({
+const hanken = Hanken_Grotesk({
   display: "swap",
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-hanken",
 });
 
-const sourceSerif = Source_Serif_4({
+const bricolage = Bricolage_Grotesque({
   display: "swap",
   subsets: ["latin"],
-  variable: "--font-source-serif",
+  variable: "--font-bricolage",
 });
 
 interface LocaleLayoutProps {
@@ -28,8 +29,11 @@ interface LocaleLayoutProps {
 export const dynamicParams = false;
 
 export const viewport: Viewport = {
-  colorScheme: "light",
-  themeColor: "#1f2321",
+  colorScheme: "light dark",
+  themeColor: [
+    { color: "#f4f5f2", media: "(prefers-color-scheme: light)" },
+    { color: "#121412", media: "(prefers-color-scheme: dark)" },
+  ],
 };
 
 /** Genera en build solamente las rutas correspondientes a idiomas soportados. */
@@ -120,7 +124,14 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale} className={`${manrope.variable} ${sourceSerif.variable}`}>
+    <html
+      className={`${hanken.variable} ${bricolage.variable}`}
+      lang={locale}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body>
         {children}
         <Analytics />

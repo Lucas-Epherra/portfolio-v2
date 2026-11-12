@@ -15,6 +15,7 @@ export const siteContent = {
       "Full Stack Developer building complete web products with a strong frontend foundation, backend integrations and production delivery.",
     navigationLabel: "Primary navigation",
     languageLabel: "Cambiar el sitio a español",
+    themeLabel: "Dark mode",
     navigation: [
       { href: "#work", label: "Work" },
       { href: "#capabilities", label: "Capabilities" },
@@ -24,7 +25,8 @@ export const siteContent = {
     hero: {
       role: "Full Stack Developer",
       location: ["ARG", "UTC-3"],
-      titleLines: ["I design, build and", "ship complete", "web products."],
+      title: "I design, build and ship complete web products.",
+      titleHighlight: "web products",
       description:
         "From interfaces and product flows to APIs, data and production.",
       primaryAction: { href: "#work", label: "Explore selected work" },
@@ -34,76 +36,13 @@ export const siteContent = {
         label: "Download CV",
       },
     },
-    featuredProject: {
-      number: "01",
-      title: "MiTaller360",
-      caseStudy: {
-        href: "/en/projects/mitaller360",
-        label: "Read case study",
-      },
-      category: "Workshop management SaaS",
-      highlights: ["Authentication", "Work orders", "Scheduling", "Administration"],
+    work: {
+      title: "Selected work",
+      caseStudyLabel: "Read case study",
+      contributionLabel: "My contribution",
       roleLabel: "Role",
-      role: "Co-founder · Full Stack Developer",
-      summary: [
-        "A complete platform for workshops to manage clients, vehicles, work orders, scheduling and receipts.",
-        "Built across frontend, backend, data and production delivery.",
-      ],
-      stack: ["Next.js", "TypeScript", "NestJS", "Prisma", "PostgreSQL"],
-      image: "/images/projects/mitaller360-overview.webp",
-      imageAlt: "MiTaller360 workshop management dashboard",
-      links: [
-        {
-          href: "https://www.mitaller360.com",
-          label: "View live product",
-        },
-        {
-          href: "https://github.com/Lucas-Epherra/talleres-mvp",
-          label: "View repository",
-        },
-      ],
-    },
-    selectedProjects: {
-      projects: [
-        {
-          number: "02",
-          title: "OpsCore",
-          caseStudy: {
-            href: "/en/projects/opscore",
-            label: "Read case study",
-          },
-          category: "Operational incident management",
-          role: "Frontend Developer",
-          image: "/images/projects/opscore.webp",
-          alt: "OpsCore operational incident dashboard",
-          stack: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Django REST API"],
-          links: [
-            {
-              href: "https://github.com/No-Country-simulation/S04-26-Equipo-19-Web-App-Development",
-              label: "View repository",
-            },
-          ],
-        },
-        {
-          number: "03",
-          title: "Estudio Jurídico Lachat",
-          caseStudy: {
-            href: "/en/projects/estudio-lachat",
-            label: "Read case study",
-          },
-          category: "Professional legal website",
-          role: "Full Stack Developer",
-          image: "/images/projects/estudio-lachat.webp",
-          alt: "Homepage of the Estudio Jurídico Lachat website",
-          stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Resend"],
-          links: [
-            {
-              href: "https://www.estudiolachat.com.ar/",
-              label: "View live site",
-            },
-          ],
-        },
-      ],
+      stackLabel: "Stack",
+      statusLabel: "Status",
     },
     approach: {
       title: "What I build",
@@ -161,6 +100,7 @@ export const siteContent = {
       "Desarrollador Full Stack que construye productos web completos con una base sólida en frontend, integraciones backend y despliegue en producción.",
     navigationLabel: "Navegación principal",
     languageLabel: "Switch site language to English",
+    themeLabel: "Modo oscuro",
     navigation: [
       { href: "#work", label: "Proyectos" },
       { href: "#capabilities", label: "Capacidades" },
@@ -170,7 +110,8 @@ export const siteContent = {
     hero: {
       role: "Full Stack Developer",
       location: ["ARG", "UTC-3"],
-      titleLines: ["Diseño y despliego", "productos web", "completos."],
+      title: "Diseño y despliego productos web completos.",
+      titleHighlight: "productos web",
       description:
         "Desde interfaces y flujos de producto hasta APIs, datos y producción.",
       primaryAction: { href: "#work", label: "Explorar proyectos" },
@@ -180,76 +121,13 @@ export const siteContent = {
         label: "Descargar CV",
       },
     },
-    featuredProject: {
-      number: "01",
-      title: "MiTaller360",
-      caseStudy: {
-        href: "/es/projects/mitaller360",
-        label: "Ver caso de estudio",
-      },
-      category: "SaaS de gestión para talleres",
-      highlights: ["Autenticación", "Órdenes", "Agenda", "Administración"],
+    work: {
+      title: "Proyectos seleccionados",
+      caseStudyLabel: "Ver caso de estudio",
+      contributionLabel: "Mi aporte",
       roleLabel: "Rol",
-      role: "Cofundador · Full Stack Developer",
-      summary: [
-        "Una plataforma completa para gestionar clientes, vehículos, órdenes de trabajo, agenda y recibos.",
-        "Construida desde el frontend y el backend hasta los datos y el despliegue productivo.",
-      ],
-      stack: ["Next.js", "TypeScript", "NestJS", "Prisma", "PostgreSQL"],
-      image: "/images/projects/mitaller360-overview.webp",
-      imageAlt: "Panel de gestión de talleres de MiTaller360",
-      links: [
-        {
-          href: "https://www.mitaller360.com",
-          label: "Ver producto",
-        },
-        {
-          href: "https://github.com/Lucas-Epherra/talleres-mvp",
-          label: "Ver repositorio",
-        },
-      ],
-    },
-    selectedProjects: {
-      projects: [
-        {
-          number: "02",
-          title: "OpsCore",
-          caseStudy: {
-            href: "/es/projects/opscore",
-            label: "Ver caso de estudio",
-          },
-          category: "Gestión de incidentes operativos",
-          role: "Frontend Developer",
-          image: "/images/projects/opscore.webp",
-          alt: "Dashboard operativo de incidentes de OpsCore",
-          stack: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Django REST API"],
-          links: [
-            {
-              href: "https://github.com/No-Country-simulation/S04-26-Equipo-19-Web-App-Development",
-              label: "Ver repositorio",
-            },
-          ],
-        },
-        {
-          number: "03",
-          title: "Estudio Jurídico Lachat",
-          caseStudy: {
-            href: "/es/projects/estudio-lachat",
-            label: "Ver caso de estudio",
-          },
-          category: "Sitio web jurídico profesional",
-          role: "Full Stack Developer",
-          image: "/images/projects/estudio-lachat.webp",
-          alt: "Página principal del sitio Estudio Jurídico Lachat",
-          stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Resend"],
-          links: [
-            {
-              href: "https://www.estudiolachat.com.ar/",
-              label: "Ver sitio publicado",
-            },
-          ],
-        },
-      ],
+      stackLabel: "Stack",
+      statusLabel: "Estado",
     },
     approach: {
       title: "Lo que construyo",

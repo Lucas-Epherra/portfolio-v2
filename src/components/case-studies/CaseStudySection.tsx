@@ -1,59 +1,40 @@
 import type { CaseStudySectionContent } from "@/types/case-study";
 
-import { Container } from "../ui/Container";
-
 interface CaseStudySectionProps {
   content: CaseStudySectionContent;
-  muted?: boolean;
 }
 
-/** Renderiza una sección narrativa con jerarquía editorial y listas verificables. */
-export function CaseStudySection({
-  content,
-  muted = false,
-}: CaseStudySectionProps) {
+/** Renderiza una etapa del caso con párrafos y una lista verificable. */
+export function CaseStudySection({ content }: CaseStudySectionProps) {
   return (
     <section
+      aria-labelledby={`${content.id}-title`}
+      className="scroll-mt-6 border-t border-line py-14 first:border-t-0 first:pt-0 sm:py-20"
       id={content.id}
-      className={`scroll-mt-8 border-t border-line py-14 sm:py-16 lg:py-20 ${
-        muted ? "bg-background" : "bg-surface"
-      }`}
     >
-      <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-        <header className="lg:col-span-5">
-          <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-accent">
-            {content.number} · {content.eyebrow}
-          </p>
-          <h2 className="mt-5 max-w-xl font-serif text-4xl leading-[1.02] tracking-[-0.035em] sm:text-5xl">
-            {content.title}
-          </h2>
-          <span className="mt-8 block h-px w-20 bg-accent" aria-hidden="true" />
-        </header>
+      <h2
+        className="max-w-[22ch] font-display text-3xl font-semibold leading-[1.08] tracking-[-0.03em] sm:text-[2.75rem]"
+        id={`${content.id}-title`}
+      >
+        {content.title}
+      </h2>
 
-        <div className="lg:col-span-7">
-          <div className="grid gap-5 text-base leading-7 text-foreground/70 sm:text-lg sm:leading-8">
-            {content.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
+      <div className="mt-6 grid max-w-[65ch] gap-5 text-lg leading-relaxed text-ink/80">
+        {content.paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
 
-          {content.bullets ? (
-            <ol className="mt-9 border-t border-line">
-              {content.bullets.map((bullet, index) => (
-                <li
-                  className="grid grid-cols-[2.5rem_1fr] gap-4 border-b border-line py-4 text-sm leading-6 text-foreground/70"
-                  key={bullet}
-                >
-                  <span className="font-bold text-accent">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span>{bullet}</span>
-                </li>
-              ))}
-            </ol>
-          ) : null}
-        </div>
-      </Container>
+      {content.bullets ? (
+        <ul className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2">
+          {content.bullets.map((bullet) => (
+            <li className="flex gap-3 bg-panel px-5 py-4 leading-relaxed md:last:odd:col-span-2" key={bullet}>
+              <span aria-hidden="true" className="mt-2 size-2 shrink-0 rounded-[3px] bg-lime-strong" />
+              <span>{bullet}</span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
     </section>
   );
 }

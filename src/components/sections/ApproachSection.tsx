@@ -18,42 +18,45 @@ const approachIcons = {
   product: StackIcon,
 } satisfies Record<ApproachIconName, typeof StackIcon>;
 
-/** Resume las áreas de construcción de producto mediante capacidades concretas. */
+/** Resume las áreas de construcción como capas de un mismo producto. */
 export function ApproachSection({ content }: ApproachSectionProps) {
   return (
-    <section id="capabilities" className="scroll-mt-8 bg-dark py-14 text-surface sm:py-16">
-      <Container className="grid gap-12 lg:grid-cols-12 lg:gap-10">
-        <div className="lg:col-span-4">
-          <h2 className="font-serif text-4xl tracking-[-0.03em] sm:text-5xl">
+    <section aria-labelledby="capabilities-title" className="scroll-mt-4 border-t border-line" id="capabilities">
+      <Container className="grid gap-10 py-20 sm:py-28 lg:grid-cols-12 lg:gap-12">
+        <div className="lg:col-span-5">
+          <h2
+            className="font-display text-4xl font-semibold leading-[1.05] tracking-[-0.03em] sm:text-5xl"
+            id="capabilities-title"
+          >
             {content.title}
           </h2>
-          <p className="mt-4 max-w-xs text-lg leading-7 text-surface/55">
+          <p className="mt-5 max-w-sm text-lg leading-relaxed text-muted">
             {content.introduction}
           </p>
-          <span className="mt-8 block h-px w-28 bg-accent-on-dark" aria-hidden="true" />
         </div>
 
-        <ol className="border-t border-surface/15 lg:col-span-8">
+        <ul className="lg:col-span-7">
           {content.steps.map((step) => {
             const StepIcon = approachIcons[step.icon];
 
             return (
               <li
-                className="grid grid-cols-[2rem_2.25rem_1fr] items-start gap-x-3 gap-y-2 border-b border-surface/15 py-5 sm:grid-cols-[3rem_2.5rem_0.8fr_1.4fr]"
+                className="grid grid-cols-[1.5rem_minmax(0,1fr)] gap-x-4 gap-y-1 border-t border-line py-6 last:border-b sm:grid-cols-[1.5rem_minmax(0,0.9fr)_minmax(0,1.3fr)] sm:gap-x-6"
                 key={step.number}
               >
-                <span className="pt-2 text-xs font-bold text-accent-on-dark">{step.number}</span>
-                <span className="flex size-8 items-center justify-center border border-surface/15 text-accent-on-dark">
-                  <StepIcon aria-hidden="true" className="size-[1.125rem]" weight="regular" />
-                </span>
-                <h3 className="pt-1.5 text-sm font-semibold text-surface/85">{step.title}</h3>
-                <p className="col-span-2 col-start-2 text-sm leading-6 text-surface/60 sm:col-span-1 sm:col-start-auto sm:pt-1">
-                  {step.description}
-                </p>
+                <StepIcon
+                  aria-hidden="true"
+                  className="row-span-2 mt-1 size-6 sm:row-span-1 sm:mt-0 sm:self-center"
+                  weight="regular"
+                />
+                <h3 className="self-center font-display text-xl font-semibold tracking-[-0.015em]">
+                  {step.title}
+                </h3>
+                <p className="leading-relaxed text-muted sm:self-center">{step.description}</p>
               </li>
             );
           })}
-        </ol>
+        </ul>
       </Container>
     </section>
   );

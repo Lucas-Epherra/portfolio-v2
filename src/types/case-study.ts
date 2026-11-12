@@ -53,6 +53,8 @@ export interface CaseStudySectionContent {
 export interface CaseStudyContent {
   actions: CaseStudyAction[];
   category: string;
+  /** Aporte personal en una frase, visible en las fichas de la portada. */
+  contribution: string;
   description: string;
   facts: CaseStudyFact[];
   gallery: CaseStudyImage[];
