@@ -2,8 +2,8 @@ import type { LocalizedSiteContent } from "@/types/site-content";
 
 export const SITE_URL = "https://www.lucasepherra.com.ar";
 export const SOCIAL_IMAGE_PATHS = {
-  en: "/images/social/portfolio-og-en-v2.png",
-  es: "/images/social/portfolio-og-es-v2.png",
+  en: "/images/social/portfolio-og-en-v3.png",
+  es: "/images/social/portfolio-og-es-v3.png",
 } as const;
 export const CONTACT_EMAIL = "lucasepherra@gmail.com";
 export const GITHUB_URL = "https://github.com/Lucas-Epherra";
